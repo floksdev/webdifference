@@ -1,4 +1,10 @@
 {
+  "/blog/page": "app/blog/page.js",
   "/a-propos/page": "app/a-propos/page.js",
-  "/blog/page": "app/blog/page.js"
+  "/page": "app/page.js",
+  "/devis/page": "app/devis/page.js",
+  "/portfolio/page": "app/portfolio/page.js",
+  "/automatisations/page": "app/automatisations/page.js",
+  "/offres/page": "app/offres/page.js",
+  "/contact/page": "app/contact/page.js"
 }

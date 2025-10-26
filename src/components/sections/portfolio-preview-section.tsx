@@ -1,26 +1,14 @@
 import Link from "next/link";
 
-const categories = ["SaaS", "E-commerce", "Fintech", "Marque", "Automatisation"];
+import { projects } from "@/data/projects";
 
-const projects = [
-  {
-    title: "FlowOps Analytics",
-    stack: ["Next.js", "Supabase", "Plausible"],
-    status: "Projet en cours",
-    impact: "+42% de MRR",
-  },
-  {
-    title: "Lumen Cosmetics",
-    stack: ["Shopify Headless", "Stripe", "Zapier"],
-    status: "Live",
-    impact: "x3 taux de conversion",
-  },
-  {
-    title: "Nova CRM",
-    stack: ["Next.js", "OpenAI", "PostgreSQL"],
-    status: "Prototype",
-    impact: "MVP livré en 21 jours",
-  },
+const sectors = [
+  "Site vitrine",
+  "E-commerce",
+  "SaaS & applications",
+  "SEO & acquisition",
+  "Maintenance",
+  "Refonte",
 ];
 
 export function PortfolioPreviewSection() {
@@ -30,53 +18,74 @@ export function PortfolioPreviewSection() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="space-y-3">
             <h2 className="text-3xl font-semibold sm:text-4xl">
-              Proof of Work live
+              Cas clients et résultats vérifiés
             </h2>
             <p className="text-base text-white/70">
-              Galeries filtrables, case studies détaillés, statistiques
-              d&apos;impact et outils en libre accès.
+              Chaque projet partage ses chiffres clés, le contexte métier et la
+              manière dont nous avons accompagné l’équipe.
             </p>
           </div>
           <Link
             href="/portfolio"
             className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold uppercase text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
           >
-            Explorer le portefeuille
+            Explorer le portfolio complet
           </Link>
         </div>
-        <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
-          {categories.map((category) => (
+        <div className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em] text-white/60">
+          {sectors.map((sector) => (
             <span
-              key={category}
-              className="rounded-full border border-white/20 px-4 py-2 bg-[color:var(--color-surface)]/60 text-white/75"
+              key={sector}
+              className="rounded-full border border-white/20 bg-[color:var(--color-surface)]/70 px-4 py-2 text-white/80"
             >
-              {category}
+              {sector}
             </span>
           ))}
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {projects.map((project) => (
-            <div
-              key={project.title}
-              className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-[color:var(--color-surface)] p-6"
+            <article
+              key={project.slug}
+              className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6"
             >
               <div className="flex items-center justify-between">
-                <p className="text-sm uppercase tracking-[0.3em] text-[color:var(--color-secondary)]/80">
-                  {project.status}
+                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-secondary)]/80">
+                  {project.status === "LIVE"
+                    ? "En ligne"
+                    : project.status === "IN_PROGRESS"
+                      ? "En cours"
+                      : "Prototype"}
                 </p>
-                <p className="text-xs text-white/50">{project.impact}</p>
+                <p className="text-xs text-white/60">{project.impact}</p>
               </div>
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-              <p className="text-sm text-white/60">
-                Stack: {project.stack.join(" · ")}
-              </p>
-              <button
-                type="button"
-                className="mt-auto inline-flex w-fit items-center gap-2 text-sm font-semibold text-white/70 transition hover:text-white"
+              <h3 className="text-xl font-semibold text-white">
+                {project.title}
+              </h3>
+              <p className="text-sm text-white/70">{project.tagline}</p>
+              <ul className="space-y-2 text-sm text-white/65">
+                {project.stack.slice(0, 3).map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+              <div className="mt-auto">
+                <p className="text-xs uppercase tracking-[0.25em] text-white/55">
+                  Métriques clés
+                </p>
+                <div className="mt-2 grid gap-2">
+                  {project.metrics?.slice(0, 2).map((metric) => (
+                    <p key={metric.label} className="text-sm text-white/70">
+                      {metric.label} : {metric.value}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href={project.caseStudyUrl ?? "/portfolio"}
+                className="mt-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
               >
-                Voir le case study →
-              </button>
-            </div>
+                Voir le détail →
+              </Link>
+            </article>
           ))}
         </div>
       </div>

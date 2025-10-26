@@ -1,10 +1,22 @@
 import Link from "next/link";
 
 const timeline = [
-  { year: "2016", text: "Premiers MVP SaaS livrés pour startups parisiennes." },
-  { year: "2019", text: "Spécialisation Next.js · Automatisations Zapier/Notion." },
-  { year: "2021", text: "Portefeuille international, accompagnement growth B2B." },
-  { year: "2024", text: "Création de Web Difference : IA + Ops automatisés." },
+  {
+    year: "2016",
+    text: "Premiers sites vitrines et boutiques livrés pour artisans et commerces locaux.",
+  },
+  {
+    year: "2019",
+    text: "Accompagnement de franchises et PME : processus clarifiés, maintenance continue.",
+  },
+  {
+    year: "2021",
+    text: "Ouverture aux projets SaaS et applications métiers avec méthode orientée résultats.",
+  },
+  {
+    year: "2024",
+    text: "Création de Web Difference : automatisations et pédagogie au service de la simplicité.",
+  },
 ];
 
 export function AboutSection() {
@@ -14,30 +26,30 @@ export function AboutSection() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div className="space-y-6">
             <h2 className="text-3xl font-semibold sm:text-4xl">
-              À propos · Tristan
+              À propos de Tristan · fondateur
             </h2>
             <p className="text-base text-white/70">
-              8 ans à challenger les codes du produit digital. J&apos;allie design,
-              dev, automatismes et data pour lancer des expériences qui
-              performent dès J+1.
+              8 ans d&apos;accompagnement auprès de dirigeants, responsables
+              marketing et entrepreneurs qui veulent un site ou une application
+              qui fonctionne tout de suite, sans jargon et avec un seul contact.
             </p>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>• Certifié Next.js, Stripe, Zapier Expert+</li>
-              <li>• Clients : Alan, Sunday, Shine, Station F</li>
-              <li>• Stack : Next.js, React, Node.js, Prisma, OpenAI</li>
+              <li>• +120 projets livrés : vitrine, e-commerce, SaaS, SEO, maintenance</li>
+              <li>• Méthode : écoute, plan clair, tutoriels vidéo et disponibilité</li>
+              <li>• Clients accompagnés : santé, restauration, industrie, services, tech</li>
             </ul>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-3 text-sm font-semibold uppercase text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
               >
-                Parler à Tristan en 24h
+                Demander un échange rapide
               </Link>
               <Link
                 href="https://cal.com"
                 className="inline-flex items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold uppercase text-white/80 transition hover:border-[color:var(--color-secondary)] hover:text-white"
               >
-                Réserver un créneau
+                Choisir un créneau visio
               </Link>
             </div>
           </div>

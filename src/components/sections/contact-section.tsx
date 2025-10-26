@@ -10,11 +10,11 @@ export function ContactSection() {
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6 text-center">
         <h2 className="text-3xl font-semibold sm:text-4xl">
-          Contact / Audit express
+          Prêt à démarrer ou besoin d&apos;un conseil ?
         </h2>
         <p className="text-base text-white/70">
-          Posez votre question en 24h ou lancez un audit flash (intégration
-          WhatsApp, Slack, Calendly & ICS inclus).
+          Expliquez-nous votre situation : nous répondons sous 24h avec un
+          devis clair, un créneau d&apos;appel et les prochaines étapes.
         </p>
         <form
           className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-[color:var(--color-surface)] p-6 text-left shadow-lg shadow-[rgba(108,99,255,0.15)]"
@@ -33,12 +33,12 @@ export function ContactSection() {
             />
           </label>
           <label className="text-sm font-medium text-white/70">
-            Votre question / besoin
+            Votre besoin
             <textarea
               value={question}
               onChange={(event) => setQuestion(event.target.value)}
               rows={4}
-              placeholder="Décrivez votre projet, votre besoin ou la problématique à résoudre."
+              placeholder="Site vitrine, e-commerce, refonte, SEO, maintenance ou application… dites-nous tout."
               className="mt-2 w-full rounded-2xl border border-white/10 bg-[color:rgba(14,22,31,0.65)] px-4 py-3 text-white outline-none transition focus:border-[color:var(--color-secondary)]"
             />
           </label>
@@ -49,8 +49,8 @@ export function ContactSection() {
             Recevoir un audit express
           </button>
           <p className="text-xs text-white/60">
-            En envoyant ce formulaire, vous recevez un lien Calendly + ICS, un
-            canal WhatsApp et l&apos;onboarding client automatisé.
+            Après envoi, vous recevez automatiquement un récap, un lien de
+            rendez-vous et l’accès à votre espace client sécurisé.
           </p>
         </form>
       </div>

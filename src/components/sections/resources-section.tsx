@@ -6,11 +6,10 @@ export function ResourcesSection() {
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="flex flex-col gap-4 text-center">
-          <h2 className="text-3xl font-semibold sm:text-4xl">
-            Blog & ressources
-          </h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl">Guides & FAQ</h2>
           <p className="text-base text-white/70">
-            Guides, checklists, webinars et replays pour rester en avance.
+            Des contenus simples à lire pour comprendre budgets, délais,
+            référencement et bonnes pratiques avant de vous lancer.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
@@ -24,6 +23,7 @@ export function ResourcesSection() {
                 {post.category}
               </span>
               <h3 className="text-lg font-semibold">{post.title}</h3>
+              <p className="text-sm text-white/60">{post.summary}</p>
               <p className="text-sm text-white/60">
                 Lire l&apos;article →
               </p>
