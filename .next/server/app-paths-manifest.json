@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/devis/page": "app/devis/page.js",
+  "/a-propos/page": "app/a-propos/page.js",
+  "/page": "app/page.js",
+  "/offres/page": "app/offres/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/automatisations/page": "app/automatisations/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/portfolio/page": "app/portfolio/page.js"
+}

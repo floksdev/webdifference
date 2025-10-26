@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/favicon.ico/route": "/favicon.ico",
+  "/devis/page": "/devis",
+  "/a-propos/page": "/a-propos",
+  "/page": "/",
+  "/offres/page": "/offres",
+  "/blog/page": "/blog",
+  "/automatisations/page": "/automatisations",
+  "/contact/page": "/contact",
+  "/portfolio/page": "/portfolio"
+}

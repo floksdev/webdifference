@@ -1,0 +1,14 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/devis/layout,_N_T_/devis/page,_N_T_/devis"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/devis/__PAGE__",
+    "/devis",
+    "/_index"
+  ]
+}

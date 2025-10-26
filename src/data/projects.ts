@@ -1,4 +1,4 @@
-import type { ProjectStatus } from "@prisma/client";
+type ProjectStatus = "PLANNED" | "IN_PROGRESS" | "LIVE" | "MAINTENANCE";
 
 export type ProjectCard = {
   slug: string;
