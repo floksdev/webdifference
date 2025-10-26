@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Controller, FormProvider, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
+import type { z } from "zod";
 
 import { projectTypes, designLevels, featurePacks } from "@/data/quote-config";
 import { projectQuoteSchema } from "@/lib/schemas/project-quote";
@@ -53,11 +54,13 @@ const animations = {
   exit: { opacity: 0, y: -16 },
 };
 
+type ProjectQuoteFormValues = z.input<typeof projectQuoteSchema>;
+
 export function QuoteWizard() {
   const [step, setStep] = useState(0);
   const { data, update } = useQuoteStore();
 
-  const form = useForm<ProjectQuoteInput>({
+  const form = useForm<ProjectQuoteFormValues, undefined, ProjectQuoteInput>({
     resolver: zodResolver(projectQuoteSchema),
     defaultValues: data,
     mode: "onChange",
