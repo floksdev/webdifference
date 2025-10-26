@@ -1,0 +1,190 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// High-level schema sketch capturing planned feature set.
+model Client {
+  id        String    @id @default(cuid())
+  name      String
+  email     String    @unique
+  company   String?
+  phone     String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  projects  Project[]
+  quotes    Quote[]
+}
+
+model Project {
+  id             String          @id @default(cuid())
+  name           String
+  slug           String          @unique
+  summary        String
+  description    String
+  heroImage      String?
+  status         ProjectStatus   @default(PLANNED)
+  deliveredAt    DateTime?
+  impactStats    Json?
+  showcaseMedia  Json?
+  stackTags      String[]
+  clientId       String
+  client         Client          @relation(fields: [clientId], references: [id])
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  caseStudies    CaseStudy[]
+  testimonials   Testimonial[]
+}
+
+model CaseStudy {
+  id          String   @id @default(cuid())
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id])
+  headline    String
+  story       String
+  beforeMedia Json?
+  afterMedia  Json?
+  metrics     Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Quote {
+  id                 String              @id @default(cuid())
+  clientId           String?
+  client             Client?             @relation(fields: [clientId], references: [id])
+  projectType        ProjectType
+  designLevel        DesignLevel
+  functionalScope    Json
+  requiresMarketing  Boolean
+  deadline           DateTime?
+  budgetMin          Int
+  budgetMax          Int
+  paymentPreference  PaymentMethod       @default(IBAN)
+  pricingBreakdown   Json
+  status             QuoteStatus         @default(DRAFT)
+  pdfUrl             String?
+  subscriptionModel  Json?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+}
+
+model Testimonial {
+  id          String    @id @default(cuid())
+  quote       String
+  author      String
+  role        String?
+  rating      Int       @default(5)
+  platform    String?
+  projectId   String?
+  project     Project?  @relation(fields: [projectId], references: [id])
+  createdAt   DateTime  @default(now())
+}
+
+model Offer {
+  id             String     @id @default(cuid())
+  slug           String     @unique
+  name           String
+  headline       String
+  price          String
+  billing        String?
+  description    String
+  features       String[]
+  tier           OfferTier
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  summary     String
+  body        String
+  category    String
+  tags        String[]
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AutomationPlaybook {
+  id          String   @id @default(cuid())
+  title       String
+  summary     String
+  steps       Json
+  integrations String[]
+  createdAt   DateTime @default(now())
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String
+  scheduledAt DateTime
+  replayUrl   String?
+  ctaUrl      String?
+  createdAt   DateTime @default(now())
+}
+
+model AutomationLog {
+  id          String   @id @default(cuid())
+  type        String
+  payload     Json
+  status      AutomationStatus @default(PENDING)
+  error       String?
+  createdAt   DateTime @default(now())
+  processedAt DateTime?
+}
+
+enum ProjectStatus {
+  PLANNED
+  IN_PROGRESS
+  LIVE
+  MAINTENANCE
+}
+
+enum QuoteStatus {
+  DRAFT
+  SENT
+  ACCEPTED
+  DECLINED
+}
+
+enum ProjectType {
+  SAAS
+  SITE_VITRINE
+  REDESIGN
+  ECOMMERCE
+  BRANDING
+}
+
+enum DesignLevel {
+  STARTER
+  SUR_MESURE
+  LUXE
+}
+
+enum PaymentMethod {
+  IBAN
+  STRIPE
+  DOWN_PAYMENT
+}
+
+enum AutomationStatus {
+  PENDING
+  SUCCESS
+  FAILED
+}
+
+enum OfferTier {
+  STARTER
+  PREMIUM
+  GROWTH
+  CUSTOM
+}
