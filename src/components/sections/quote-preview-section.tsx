@@ -1,125 +1,120 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 
-const steps = [
-  { title: "Brief intelligent", description: "Définissez votre vision en 90 secondes." },
-  { title: "Prototype immersif", description: "Prototype cliquable livré sous 72h." },
-  { title: "Livraison orchestrée", description: "Développement Next.js + automatisations connectées." },
-  { title: "Croissance continue", description: "Monitoring, analytics et optimisation mensuelle." },
+const journeySteps = [
+  {
+    title: "Question express",
+    description:
+      "60 secondes pour préciser votre besoin (site, e-commerce, SaaS, SEO ou maintenance).",
+    cta: "Formulaire simple, pas de jargon.",
+  },
+  {
+    title: "Prototype & plan d’action",
+    description:
+      "Maquette ou checklist de refonte livrée sous 72 h avec budget, délais et priorités.",
+    cta: "Vous validez avant de lancer.",
+  },
+  {
+    title: "Production & mise en ligne",
+    description:
+      "Développement, contenus, SEO et intégrations traités en suivant un calendrier transparent.",
+    cta: "Mise en ligne rapide et sécurisée.",
+  },
+  {
+    title: "Suivi & croissance",
+    description:
+      "Optimisation continue, A/B tests, campagnes SEO/Ads et maintenance 24/7 selon votre pack.",
+    cta: "Vous gardez la main, nous pilotons.",
+  },
 ];
 
-const stack = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Stripe",
-  "Prisma",
-  "Supabase",
-  "OpenAI",
-  "Zapier",
-  "Plausible",
-  "DocuSign",
+const highlights = [
+  { label: "Prototype offert", value: "72 h" },
+  { label: "Mise en ligne moyenne", value: "10 jours" },
+  { label: "Suivi et maintenance", value: "inclus 30 jours" },
 ];
 
 export function QuotePreviewSection() {
   return (
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
-      <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
-          <div className="flex flex-col gap-6">
+      <div className="mx-auto flex max-w-6xl flex-col gap-14 px-6">
+        <div className="grid gap-10 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-8 shadow-lg shadow-[rgba(108,99,255,0.18)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="space-y-4">
+            <span className="inline-flex rounded-full bg-[color:rgba(0,224,255,0.14)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+              Parcours client simple
+            </span>
             <h2 className="text-3xl font-semibold sm:text-4xl">
-              Devis automatisé. Zéro friction.
+              Votre projet en 4 étapes claires
             </h2>
             <p className="text-base text-white/70">
-              Simulateur temps réel, segmentation par niveau de design, options
-              d&apos;accompagnement et paiement instantané. Dès l&apos;envoi, vous
-              recevez un PDF signé électroniquement, un onboarding automatisé et
-              la roadmap Notion.
+              Définissez votre projet en 60 secondes, recevez une maquette sous
+              3 jours, mettez en ligne en 10 jours, profitez d&apos;un suivi
+              continu 30 jours et plus. 100% automatisé, 100% humain.
             </p>
             <Link
               href="/devis"
               className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold uppercase text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
             >
-              Lancer le générateur
+              Lancer le devis express
             </Link>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="rounded-3xl border border-white/10 bg-[color:var(--color-surface)] p-6 shadow-2xl shadow-[rgba(108,99,255,0.2)] backdrop-blur"
-          >
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-medium text-white/60">
-                  Estimation live
-                </p>
-                <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-secondary)]/80">
-                  +3 scénarios
-                </span>
-              </div>
-              <div className="rounded-2xl bg-gradient-to-br from-[color:rgba(108,99,255,0.35)] via-[color:rgba(0,224,255,0.2)] to-[color:rgba(108,99,255,0.18)] p-4">
+          <div className="grid gap-4">
+            {journeySteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="rounded-2xl border border-white/10 bg-[color:rgba(44,62,80,0.75)] p-4"
+              >
                 <div className="flex items-baseline justify-between">
-                  <p className="text-lg font-semibold">Pack Growth</p>
-                  <p className="text-sm font-semibold text-white/70">
-                    À partir de
-                  </p>
-                </div>
-                <p className="mt-2 text-4xl font-bold">7 900€</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/50">
-                  Paiement IBAN instantané ou Stripe
-                </p>
-              </div>
-              <div className="grid gap-2 text-sm text-white/70">
-                <p>✓ Signature électronique intégrée</p>
-                <p>✓ Notifications Slack + Notion automatiques</p>
-                <p>✓ Token IA pour chatbot support</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold">Parcours client animé</h3>
-            <div className="grid gap-4">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={step.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ delay: index * 0.12 }}
-                  className="rounded-2xl border border-white/10 bg-[color:var(--color-surface)]/80 p-4"
-                >
-                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/55">
                     {index + 1}
                   </p>
-                  <p className="mt-2 text-lg font-semibold">{step.title}</p>
-                  <p className="mt-2 text-sm text-white/70">
-                    {step.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+                  <p className="text-xs text-white/60">{step.cta}</p>
+                </div>
+                <p className="mt-2 text-lg font-semibold text-white">
+                  {step.title}
+                </p>
+                <p className="mt-2 text-sm text-white/70">{step.description}</p>
+              </div>
+            ))}
           </div>
+        </div>
 
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold">Stack technique favorite</h3>
-            <div className="flex flex-wrap gap-3">
-              {stack.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/15 bg-[color:var(--color-surface)]/70 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/75"
-                >
-                  {item}
-                </span>
+        <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-white">
+              Automatisation visible et rassurante
+            </h3>
+            <p className="text-base text-white/70">
+              Une fois le questionnaire envoyé, vous recevez
+              automatiquement votre devis PDF, un récap WhatsApp, l’accès au
+              portail client et le planning partagé. Chaque action est suivie
+              par des notifications claires.
+            </p>
+            <ul className="space-y-2 text-sm text-white/70">
+              <li>• Devis instantané avec trois scénarios de budget</li>
+              <li>• Signature électronique sécurisée &amp; facturation simple</li>
+              <li>• Tableaux de bord live : SEO, ventes, trafic et leads</li>
+            </ul>
+          </div>
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[color:rgba(108,99,255,0.35)] via-[color:rgba(0,224,255,0.18)] to-[color:rgba(108,99,255,0.22)] p-6 text-center shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+            <p className="text-sm uppercase tracking-[0.35em] text-white/65">
+              Timeline type
+            </p>
+            <div className="mt-6 grid gap-4">
+              {highlights.map((item) => (
+                <div key={item.label}>
+                  <p className="text-xs uppercase tracking-[0.3em] text-white/55">
+                    {item.label}
+                  </p>
+                  <p className="text-2xl font-semibold text-white">
+                    {item.value}
+                  </p>
+                </div>
               ))}
             </div>
+            <p className="mt-6 text-sm text-white/70">
+              Votre responsable projet reste disponible par WhatsApp, mail ou
+              visio selon vos préférences.
+            </p>
           </div>
         </div>
       </div>

@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const clientLogos = [
-  "NovaTech",
-  "AlphaCorp",
-  "Skyline Ventures",
-  "Pulse Media",
-  "Kinetic Labs",
+  "PME & artisans",
+  "Franchises",
+  "Startups",
+  "Organismes publics",
+  "Indépendants",
 ];
 
 export function HeroSection() {
@@ -34,12 +34,15 @@ export function HeroSection() {
             Web Difference
           </span>
           <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl text-white">
-            Votre différence débute ici.
+            Agence web n°1 pour site vitrine, e-commerce, SaaS, mobile, SEO et maintenance.
           </h1>
           <p className="max-w-2xl text-lg text-white/75 md:text-xl">
-            Studio produit & automation pour SaaS, marques audacieuses et
-            entreprises qui veulent accélérer sans friction. Design premium,
-            automatisations IA, onboarding instantané.
+            Simple. Rapide. Pro. Sans jargon technique. Nous construisons votre
+            présence en ligne, la faisons vivre et l&apos;optimisons avec un
+            accompagnement humain renforcé par des automatisations intelligentes.
+          </p>
+          <p className="max-w-xl text-sm uppercase tracking-[0.3em] text-white/60">
+            Votre futur site, boutique, app mobile, SEO ou maintenance : on s&apos;en occupe.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
@@ -49,10 +52,10 @@ export function HeroSection() {
               Obtenir un devis instantané
             </Link>
             <Link
-              href="/portfolio"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white/80 transition hover:border-[color:var(--color-secondary)] hover:text-white"
             >
-              Voir les réalisations
+              Parler à un expert en 24h
             </Link>
           </div>
         </motion.div>
@@ -65,7 +68,7 @@ export function HeroSection() {
         >
           <div className="flex-1">
             <p className="text-sm font-medium uppercase tracking-[0.35em] text-white/60">
-              +120 projets accélérés
+              Preuves en toute transparence
             </p>
             <div className="mt-4 flex flex-wrap gap-6 text-sm text-white/75">
               <div>
@@ -77,17 +80,15 @@ export function HeroSection() {
                 </p>
               </div>
               <div>
-                <p className="text-2xl font-semibold text-white">+68%</p>
+                <p className="text-2xl font-semibold text-white">+120</p>
                 <p className="text-xs uppercase tracking-[0.25em] text-white/60">
-                  Croissance moyenne
+                  Projets livrés
                 </p>
               </div>
               <div>
-                <p className="text-2xl font-semibold text-white">
-                  6<span className="text-sm text-white/60">x</span>
-                </p>
+                <p className="text-2xl font-semibold text-white">+68%</p>
                 <p className="text-xs uppercase tracking-[0.25em] text-white/60">
-                  ROI moyen
+                  Croissance constatée
                 </p>
               </div>
             </div>

@@ -6,17 +6,23 @@ import { OffersSection } from "@/components/sections/offers-section";
 import { PortfolioPreviewSection } from "@/components/sections/portfolio-preview-section";
 import { QuotePreviewSection } from "@/components/sections/quote-preview-section";
 import { ResourcesSection } from "@/components/sections/resources-section";
+import { ProofSection } from "@/components/sections/proof-section";
+import { WhyChooseSection } from "@/components/sections/why-choose-section";
+import { FaqSection } from "@/components/sections/faq-section";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <ProofSection />
       <QuotePreviewSection />
-      <PortfolioPreviewSection />
-      <AutomationSection />
       <OffersSection />
-      <AboutSection />
+      <AutomationSection />
+      <WhyChooseSection />
+      <PortfolioPreviewSection />
       <ResourcesSection />
+      <FaqSection />
+      <AboutSection />
       <ContactSection />
     </>
   );
