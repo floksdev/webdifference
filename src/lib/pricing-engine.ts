@@ -5,7 +5,7 @@ import {
   projectTypes,
   rushMultiplier,
 } from "@/data/quote-config";
-import type { ProjectQuoteInput } from "@/lib/stores/use-quote-store";
+import type { ProjectQuoteInput } from "@/lib/schemas/project-quote";
 
 export type PricingBreakdownItem = {
   label: string;
