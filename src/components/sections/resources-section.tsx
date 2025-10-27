@@ -8,8 +8,8 @@ export function ResourcesSection() {
         <div className="flex flex-col gap-4 text-center">
           <h2 className="text-3xl font-semibold sm:text-4xl">Guides & FAQ</h2>
           <p className="text-base text-white/70">
-            Des contenus simples à lire pour comprendre budgets, délais,
-            référencement et bonnes pratiques avant de vous lancer.
+            Des mini-guides pour connaître les budgets, les délais et le bon plan
+            avant de lancer votre projet web.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
@@ -17,16 +17,19 @@ export function ResourcesSection() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-[color:var(--color-surface)] p-6 transition hover:border-[color:var(--color-secondary)] hover:text-white"
+              className="flex flex-col gap-3 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6 transition hover:border-[color:var(--color-secondary)] hover:text-white"
             >
               <span className="inline-flex w-fit rounded-full bg-[color:rgba(0,224,255,0.15)] px-3 py-1 text-xs uppercase tracking-[0.3em] text-white/70">
                 {post.category}
               </span>
-              <h3 className="text-lg font-semibold">{post.title}</h3>
-              <p className="text-sm text-white/60">{post.summary}</p>
-              <p className="text-sm text-white/60">
-                Lire l&apos;article →
+              <h3 className="text-lg font-semibold text-white">{post.title}</h3>
+              <p className="text-xs uppercase tracking-[0.25em] text-white/50">
+                {post.readTime} · {new Date(post.publishedAt).toLocaleDateString("fr-FR", {
+                  month: "short",
+                  day: "2-digit",
+                })}
               </p>
+              <p className="text-sm text-white/60">Lire l&apos;article →</p>
             </Link>
           ))}
         </div>
