@@ -1,18 +1,22 @@
 import Link from "next/link";
 
 type Offer = {
+  id: string;
   name: string;
   price: string;
   description: string;
   items: string[];
+  badge: string;
 };
 
 const offers: Offer[] = [
   {
+    id: "offres-site-vitrine",
     name: "Site vitrine",
     price: "À partir de 2 900 €",
     description:
       "Valorisez votre activité, attirez plus de demandes et rassurez vos prospects dès la première visite.",
+    badge: "Idéal artisans & TPE",
     items: [
       "Structure claire : accueil, services, avis, contact",
       "SEO local optimisé et formulaires connectés",
@@ -20,10 +24,12 @@ const offers: Offer[] = [
     ],
   },
   {
+    id: "offres-ecommerce",
     name: "E-commerce",
     price: "À partir de 5 900 €",
     description:
       "Vendez en ligne simplement avec un parcours d’achat fluide, des paiements sécurisés et des campagnes prêtes.",
+    badge: "Boost ventes en ligne",
     items: [
       "Catalogue modulable et fiches produits SEO",
       "Tunnel de commande optimisé mobile",
@@ -31,10 +37,12 @@ const offers: Offer[] = [
     ],
   },
   {
+    id: "offres-refonte",
     name: "Refonte & optimisation",
     price: "Sur devis",
     description:
       "Modernisez votre image, améliorez la vitesse et augmentez votre conversion sans repartir de zéro.",
+    badge: "Relook & performances",
     items: [
       "Audit complet UX, SEO et technique",
       "Roadmap claire : priorités, gains, budget",
@@ -42,10 +50,12 @@ const offers: Offer[] = [
     ],
   },
   {
+    id: "offres-saas",
     name: "SaaS & application",
     price: "Sur devis",
     description:
       "Développez votre projet innovant avec une équipe qui gère design, produit, développement et suivi.",
+    badge: "Prototype 72h + suivi",
     items: [
       "Prototype cliquable offert",
       "Parcours utilisateur testé en conditions réelles",
@@ -53,10 +63,12 @@ const offers: Offer[] = [
     ],
   },
   {
+    id: "offres-seo",
     name: "SEO & Google Ads",
     price: "Pack mensuel dès 790 €",
     description:
       "Soyez visible sur vos mots-clés et transformez vos visites en opportunités avec un plan d’actions simple.",
+    badge: "Visibilité durable",
     items: [
       "Étude de mots-clés et contenu guidé",
       "Optimisations techniques et netlinking",
@@ -64,10 +76,12 @@ const offers: Offer[] = [
     ],
   },
   {
+    id: "offres-maintenance",
     name: "Maintenance & bug fix",
     price: "À partir de 190 €/mois",
     description:
       "Sécurisez votre site, corrigez les bugs et bénéficiez d’un support réactif par un interlocuteur unique.",
+    badge: "Sérénité & support",
     items: [
       "Surveillance 24/7 et sauvegardes quotidiennes",
       "Corrections garanties sous 24h ouvrées",
@@ -78,10 +92,15 @@ const offers: Offer[] = [
 
 export function OffersSection() {
   return (
-    <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
+    <section
+      id="offres"
+      className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24"
+    >
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="flex flex-col gap-4 text-center">
-          <h2 className="text-3xl font-semibold sm:text-4xl">Vous cherchez…</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl text-white">
+            Vous cherchez…
+          </h2>
           <p className="text-base text-white/70">
             Sélectionnez votre besoin : nous avons le plan d’action, le budget
             et l’équipe prêts à démarrer.
@@ -90,13 +109,19 @@ export function OffersSection() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {offers.map((offer) => (
             <div
-              key={offer.name}
-              className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-[color:var(--color-surface)] p-6 text-left shadow-sm shadow-[rgba(108,99,255,0.12)]"
+              key={offer.id}
+              id={offer.id}
+              className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/90 p-6 text-left shadow-[0_12px_42px_rgba(0,0,0,0.28)]"
             >
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-[color:var(--color-secondary)]/85">
-                  {offer.name}
-                </p>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm uppercase tracking-[0.3em] text-[color:var(--color-secondary)]/85">
+                    {offer.name}
+                  </p>
+                  <span className="rounded-full bg-[color:rgba(108,99,255,0.25)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/85">
+                    {offer.badge}
+                  </span>
+                </div>
                 <p className="mt-3 text-2xl font-semibold text-white">
                   {offer.price}
                 </p>
