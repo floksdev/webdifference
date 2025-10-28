@@ -50,7 +50,7 @@ export function AudienceSelectorSection() {
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6">
         <div className="flex flex-col gap-3 text-center">
-          <span className="mx-auto inline-flex rounded-full bg-[color:rgba(0,224,255,0.18)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.32em] text-white/85">
+          <span className="mx-auto inline-flex rounded-full bg-[color:rgba(0,224,255,0.18)] px-4 py-1 text-xs font-semibold text-white/85">
             Choisissez votre parcours
           </span>
           <h2
@@ -72,7 +72,7 @@ export function AudienceSelectorSection() {
               className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6 shadow-[0_18px_48px_rgba(0,0,0,0.25)]"
             >
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[color:var(--color-secondary)]/85">
+                <p className="text-sm font-semibold text-[color:var(--color-secondary)]/85">
                   {audience.label}
                 </p>
                 <p className="mt-3 text-lg font-semibold text-white">
@@ -83,13 +83,13 @@ export function AudienceSelectorSection() {
               <div className="flex flex-col gap-2">
                 <Link
                   href={audience.primaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#6C63FF] to-[#00E0FF] px-5 py-2.5 text-sm font-semibold uppercase text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#6C63FF] to-[#00E0FF] px-5 py-2.5 text-sm font-semibold text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
                 >
                   {audience.primaryCta.label}
                 </Link>
                 <Link
                   href={audience.secondaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-[color:var(--color-secondary)] hover:text-white"
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-2.5 text-xs font-semibold text-white/80 transition hover:border-[color:var(--color-secondary)] hover:text-white"
                 >
                   {audience.secondaryCta.label}
                 </Link>

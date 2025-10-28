@@ -1,2 +1,1306 @@
-[00:00:05.616] Server  LOG      ✓ Ready in 5.4s
-[00:00:28.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.767] Server  LOG      ✓ Ready in 1502ms
+[00:01:16.127] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:16.296] Browser WARN    Image with src "/whatsapp-wallpaper2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:02:04.495] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:04.655] Browser WARN    Image with src "/whatsapp-wallpaper2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:00.468] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:115:1]
+ 112 │             })}
+ 113 │           </div>
+ 114 │         </div>
+ 115 │       </div>
+     ·         ───
+ 116 │ 
+ 117 │       {open ? (
+ 118 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+[00:03:00.758] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:115:1]
+ 112 │             })}
+ 113 │           </div>
+ 114 │         </div>
+ 115 │       </div>
+     ·         ───
+ 116 │ 
+ 117 │       {open ? (
+ 118 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:00.770] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:115:1]
+ 112 │             })}
+ 113 │           </div>
+ 114 │         </div>
+ 115 │       </div>
+     ·         ───
+ 116 │ 
+ 117 │       {open ? (
+ 118 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:02.577] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:115:1]
+ 112 │             })}
+ 113 │           </div>
+ 114 │         </div>
+ 115 │       </div>
+     ·         ───
+ 116 │ 
+ 117 │       {open ? (
+ 118 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:02.582] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:115:1]
+ 112 │             })}
+ 113 │           </div>
+ 114 │         </div>
+ 115 │       </div>
+     ·         ───
+ 116 │ 
+ 117 │       {open ? (
+ 118 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:05.731] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:05.934] Browser WARN    Image with src "/whatsapp-wallpaper2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:10.492] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:122:1]
+ 119 │             })}
+ 120 │           </div>
+ 121 │         </div>
+ 122 │       </div>
+     ·         ───
+ 123 │ 
+ 124 │       {open ? (
+ 125 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:10.506] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:122:1]
+ 119 │             })}
+ 120 │           </div>
+ 121 │         </div>
+ 122 │       </div>
+     ·         ───
+ 123 │ 
+ 124 │       {open ? (
+ 125 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:11.139] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:122:1]
+ 119 │             })}
+ 120 │           </div>
+ 121 │         </div>
+ 122 │       </div>
+     ·         ───
+ 123 │ 
+ 124 │       {open ? (
+ 125 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:03:11.242] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:122:1]
+ 119 │             })}
+ 120 │           </div>
+ 121 │         </div>
+ 122 │       </div>
+     ·         ───
+ 123 │ 
+ 124 │       {open ? (
+ 125 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:03:18.281] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:18.412] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:18.606] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:18.606] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:116:1]
+ 113 │             })}
+ 114 │           </div>
+ 115 │         </div>
+ 116 │       </div>
+     ·         ───
+ 117 │ 
+ 118 │       {open ? (
+ 119 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:18.918] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:116:1]
+ 113 │             })}
+ 114 │           </div>
+ 115 │         </div>
+ 116 │       </div>
+     ·         ───
+ 117 │ 
+ 118 │       {open ? (
+ 119 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:18.926] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:116:1]
+ 113 │             })}
+ 114 │           </div>
+ 115 │         </div>
+ 116 │       </div>
+     ·         ───
+ 117 │ 
+ 118 │       {open ? (
+ 119 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:19.690] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:115:1]
+ 112 │             })}
+ 113 │           </div>
+ 114 │         </div>
+ 115 │       </div>
+     ·         ───
+ 116 │ 
+ 117 │       {open ? (
+ 118 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:19.953] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:116:1]
+ 113 │             })}
+ 114 │           </div>
+ 115 │         </div>
+ 116 │       </div>
+     ·         ───
+ 117 │ 
+ 118 │       {open ? (
+ 119 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:03:20.056] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:115:1]
+ 112 │             })}
+ 113 │           </div>
+ 114 │         </div>
+ 115 │       </div>
+     ·         ───
+ 116 │ 
+ 117 │       {open ? (
+ 118 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:03:22.022] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:22.251] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:22.251] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·  ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·    ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·      ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:22.358] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:22.590] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·  ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·    ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·      ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:22.600] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·  ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·    ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·      ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:03:23.253] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·  ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·    ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·      ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:03:23.355] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·  ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·    ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+  × Expression expected
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:57:1]
+ 54 │   return (
+ 55 │     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │ <<<<<<< ours
+    ·      ──
+ 58 │ 
+ 59 │           <div className="relative flex flex-col gap-3 px-6 py-8 ">
+ 60 │ =======
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:03:34.785] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:35.417] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:36.258] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:37.598] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:30.916] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:53.258] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected ',', got '{'
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:119:1]
+ 116 │         </div>
+ 117 │       </div>
+ 118 │ 
+ 119 │       {open ? (
+     ·       ─
+ 120 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+ 121 │           <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[rgba(12,22,33,0.92)] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+ 122 │             <button
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:04:53.487] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected ',', got '{'
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:119:1]
+ 116 │         </div>
+ 117 │       </div>
+ 118 │ 
+ 119 │       {open ? (
+     ·       ─
+ 120 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+ 121 │           <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[rgba(12,22,33,0.92)] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+ 122 │             <button
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:04:54.076] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected ',', got '{'
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:119:1]
+ 116 │         </div>
+ 117 │       </div>
+ 118 │ 
+ 119 │       {open ? (
+     ·       ─
+ 120 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+ 121 │           <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[rgba(12,22,33,0.92)] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+ 122 │             <button
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:04:54.179] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected ',', got '{'
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:119:1]
+ 116 │         </div>
+ 117 │       </div>
+ 118 │ 
+ 119 │       {open ? (
+     ·       ─
+ 120 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+ 121 │           <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[rgba(12,22,33,0.92)] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+ 122 │             <button
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:04:54.319] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:54.533] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:54.533] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected ',', got '{'
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │         </div>
+ 116 │       </div>
+ 117 │ 
+ 118 │       {open ? (
+     ·       ─
+ 119 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+ 120 │           <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[rgba(12,22,33,0.92)] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+ 121 │             <button
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:04:54.715] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:54.900] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected ',', got '{'
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │         </div>
+ 116 │       </div>
+ 117 │ 
+ 118 │       {open ? (
+     ·       ─
+ 119 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+ 120 │           <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[rgba(12,22,33,0.92)] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+ 121 │             <button
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:04:54.904] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected ',', got '{'
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │         </div>
+ 116 │       </div>
+ 117 │ 
+ 118 │       {open ? (
+     ·       ─
+ 119 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+ 120 │           <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[rgba(12,22,33,0.92)] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+ 121 │             <button
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:04:55.399] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected ',', got '{'
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │         </div>
+ 116 │       </div>
+ 117 │ 
+ 118 │       {open ? (
+     ·       ─
+ 119 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+ 120 │           <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[rgba(12,22,33,0.92)] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+ 121 │             <button
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:04:55.501] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected ',', got '{'
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │         </div>
+ 116 │       </div>
+ 117 │ 
+ 118 │       {open ? (
+     ·       ─
+ 119 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+ 120 │           <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-[rgba(12,22,33,0.92)] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+ 121 │             <button
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:04:57.532] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:58.277] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:59.143] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:00.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:46.551] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·         ───
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:05:46.711] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·         ───
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:05:47.199] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·         ───
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:05:47.300] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected corresponding JSX closing tag for <section>
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·         ───
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:05:49.403] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:49.506] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:49.663] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:49.663] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expression expected
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·       ─
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·        ─────
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:05:49.848] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expression expected
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·       ─
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·        ─────
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:05:49.853] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expression expected
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·       ─
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·        ─────
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:05:50.366] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·       ─
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·        ─────
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+
+Caused by:
+    Syntax Error
+[00:05:50.469] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expression expected
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·       ─
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+  × Unterminated regexp literal
+     ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:118:1]
+ 115 │             })}
+ 116 │           </div>
+ 117 │         </div>
+ 118 │       </div>
+     ·        ─────
+ 119 │ 
+ 120 │       {open ? (
+ 121 │         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4 py-6">
+     ╰────
+
+Caused by:
+    Syntax Error
+[00:05:53.905] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:54.300] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:55.184] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:56.631] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:00.281] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+[00:06:00.740] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:06:00.751] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:06:00.775] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
+[00:06:01.293] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:06:01.396] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:06:17.218] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:06:17.472] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:06:17.705] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:06:17.706] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:06:18.090] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:06:18.100] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:06:18.879] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:06:18.982] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:06:53.566] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:06:54.135] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:06:54.135] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:06:54.326] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:06:54.506] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:06:54.514] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:06:55.007] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:06:55.110] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error:   × Expected '</', got '}'
+    ╭─[/Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx:59:1]
+ 56 │       <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6">
+ 57 │         <div className="relative overflow-hidden rounded-[36px] shadow-[0_35px_80px_rgba(0,0,0,0.35)]">
+ 58 │           <div className="absolute inset-0 -z-20 bg-[url('/whastapp-wallpaper.jpg')] bg-cover bg-center opacity-90"
+ 59 │           {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(44,62,80,0.4),_rgba(44,62,80,0.75))]" /> */}
+    ·                                                                                                                                         ─
+ 60 │           {/* <div className="absolute inset-0 -z-5 bg-[linear-gradient(180deg,rgba(2,8,16,0.2),rgba(2,8,16,0.6))]" /> */}
+ 61 │           <div className="relative flex flex-col gap-3 px-6 py-8">
+ 62 │             {messages.map((message) => {
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:07:37.631] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:37.796] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:37.797] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error: 
+
+Caused by:
+    0: Failed to read source code from /Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx
+    1: No such file or directory (os error 2)
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:07:37.883] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:38.339] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error: 
+
+Caused by:
+    0: Failed to read source code from /Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx
+    1: No such file or directory (os error 2)
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:07:38.341] Server  ERROR    ⨯ ./src/components/sections/conversation-section.tsx
+Error: 
+
+Caused by:
+    0: Failed to read source code from /Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx
+    1: No such file or directory (os error 2)
+
+Import trace for requested module:
+./src/components/sections/conversation-section.tsx
+./src/app/page.tsx
+[00:07:38.816] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error: 
+
+Caused by:
+    0: Failed to read source code from /Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx
+    1: No such file or directory (os error 2)
+[00:07:38.919] Browser ERROR   ./src/components/sections/conversation-section.tsx
+Error: 
+
+Caused by:
+    0: Failed to read source code from /Users/tastroplaragebaaah/Desktop/Projets/WebDifference/webdifference/src/components/sections/conversation-section.tsx
+    1: No such file or directory (os error 2)
+[00:07:44.886] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:45.126] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:45.390] Server  ERROR    ⨯ ReferenceError: ConversationSection is not defined
+[00:07:45.392] Server  ERROR    ⨯ ReferenceError: ConversationSection is not defined
+[00:07:45.690] Server  ERROR    ⨯ ReferenceError: ConversationSection is not defined
+[00:07:45.729] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:45.743] Server  ERROR    ⨯ ReferenceError: ConversationSection is not defined
+[00:07:46.680] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:48.074] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:56.670] Browser ERROR   ./src/app/page.tsx:15:1
+Module not found: Can't resolve '@/components/sections/reviews-section'
+  13 | import { BenefitsStrip } from "@/components/sections/benefits-strip";
+  14 | import { ConversationSection } from "@/components/sections/conversation-section";
+> 15 | import { ReviewsSection } from "@/components/sections/reviews-section";
+     | ^
+  16 | import { FloatingQuickActions } from "@/components/floating-quick-actions";
+  17 |
+  18 | export default function Home() {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:12:56.781] Server  ERROR    ⨯ ./src/app/page.tsx:15:1
+Module not found: Can't resolve '@/components/sections/reviews-section'
+  13 | import { BenefitsStrip } from "@/components/sections/benefits-strip";
+  14 | import { ConversationSection } from "@/components/sections/conversation-section";
+> 15 | import { ReviewsSection } from "@/components/sections/reviews-section";
+     | ^
+  16 | import { FloatingQuickActions } from "@/components/floating-quick-actions";
+  17 |
+  18 | export default function Home() {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:12:57.088] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '@/components/sections/reviews-section'
+  13 | import { BenefitsStrip } from "@/components/sections/benefits-strip";
+  14 | import { ConversationSection } from "@/components/sections/conversation-section";
+> 15 | import { ReviewsSection } from "@/components/sections/reviews-section";
+     | ^
+  16 | import { FloatingQuickActions } from "@/components/floating-quick-actions";
+  17 |
+  18 | export default function Home() {
+
+https://nextjs.org/docs/messages/module-not-found
+
+[00:12:57.191] Browser ERROR   ./src/app/page.tsx:15:1
+Module not found: Can't resolve '@/components/sections/reviews-section'
+  13 | import { BenefitsStrip } from "@/components/sections/benefits-strip";
+  14 | import { ConversationSection } from "@/components/sections/conversation-section";
+> 15 | import { ReviewsSection } from "@/components/sections/reviews-section";
+     | ^
+  16 | import { FloatingQuickActions } from "@/components/floating-quick-actions";
+  17 |
+  18 | export default function Home() {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:14:39.469] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:14:39.937] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:14:39.937] Browser ERROR   ./src/app/page.tsx:15:1
+Module not found: Can't resolve '@/components/sections/reviews-section'
+  13 | import { BenefitsStrip } from "@/components/sections/benefits-strip";
+  14 | import { ConversationSection } from "@/components/sections/conversation-section";
+> 15 | import { ReviewsSection } from "@/components/sections/reviews-section";
+     | ^
+  16 | import { FloatingQuickActions } from "@/components/floating-quick-actions";
+  17 |
+  18 | export default function Home() {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:14:40.218] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:14:40.399] Server  ERROR    ⨯ ./src/app/page.tsx:15:1
+Module not found: Can't resolve '@/components/sections/reviews-section'
+  13 | import { BenefitsStrip } from "@/components/sections/benefits-strip";
+  14 | import { ConversationSection } from "@/components/sections/conversation-section";
+> 15 | import { ReviewsSection } from "@/components/sections/reviews-section";
+     | ^
+  16 | import { FloatingQuickActions } from "@/components/floating-quick-actions";
+  17 |
+  18 | export default function Home() {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:14:40.402] Browser ERROR   ./src/app/page.tsx:15:1
+Module not found: Can't resolve '@/components/sections/reviews-section'
+  13 | import { BenefitsStrip } from "@/components/sections/benefits-strip";
+  14 | import { ConversationSection } from "@/components/sections/conversation-section";
+> 15 | import { ReviewsSection } from "@/components/sections/reviews-section";
+     | ^
+  16 | import { FloatingQuickActions } from "@/components/floating-quick-actions";
+  17 |
+  18 | export default function Home() {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:14:40.627] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '@/components/sections/reviews-section'
+  13 | import { BenefitsStrip } from "@/components/sections/benefits-strip";
+  14 | import { ConversationSection } from "@/components/sections/conversation-section";
+> 15 | import { ReviewsSection } from "@/components/sections/reviews-section";
+     | ^
+  16 | import { FloatingQuickActions } from "@/components/floating-quick-actions";
+  17 |
+  18 | export default function Home() {
+
+https://nextjs.org/docs/messages/module-not-found
+
+[00:14:40.728] Browser ERROR   ./src/app/page.tsx:15:1
+Module not found: Can't resolve '@/components/sections/reviews-section'
+  13 | import { BenefitsStrip } from "@/components/sections/benefits-strip";
+  14 | import { ConversationSection } from "@/components/sections/conversation-section";
+> 15 | import { ReviewsSection } from "@/components/sections/reviews-section";
+     | ^
+  16 | import { FloatingQuickActions } from "@/components/floating-quick-actions";
+  17 |
+  18 | export default function Home() {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:15:48.193] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:15:48.719] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:15:48.966] Server  ERROR    ⨯ ReferenceError: ReviewsSection is not defined
+[00:15:48.967] Server  ERROR    ⨯ ReferenceError: ReviewsSection is not defined
+[00:15:49.089] Server  ERROR    ⨯ ReferenceError: ReviewsSection is not defined
+[00:15:49.111] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:15:49.122] Server  ERROR    ⨯ ReferenceError: ReviewsSection is not defined
+[00:15:49.578] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:49.787] Browser ERROR   uncaughtError: ReferenceError: ReviewsSection is not defined
+[00:15:53.143] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:53.295] Browser WARN    Image with src "/whatsapp-wallpaper2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes

@@ -115,10 +115,10 @@ export function OffersSection() {
             >
               <div>
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm uppercase tracking-[0.3em] text-[color:var(--color-secondary)]/85">
+                  <p className="text-sm font-semibold text-[color:var(--color-secondary)]/85">
                     {offer.name}
                   </p>
-                  <span className="rounded-full bg-[color:rgba(108,99,255,0.25)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/85">
+                  <span className="rounded-full bg-[color:rgba(108,99,255,0.25)] px-3 py-1 text-[10px] font-semibold text-white/85">
                     {offer.badge}
                   </span>
                 </div>
@@ -136,7 +136,7 @@ export function OffersSection() {
               </ul>
               <Link
                 href="/devis"
-                className="mt-auto inline-flex w-fit items-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold uppercase text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
+                className="mt-auto inline-flex w-fit items-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
               >
                 Obtenir un devis express
               </Link>

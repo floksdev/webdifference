@@ -1,18 +1,18 @@
 const benefits = [
   {
-    title: "Résultats mesurables",
-    description: "+42% de croissance moyenne sous 10 jours après mise en ligne.",
-    icon: "📈",
+    title: "Suivi en temps réel",
+    description: "Suivez l’avancement du projet et recevez un lien d'accès dès le départ.",
+    icon: "🔗",
   },
   {
-    title: "Accompagnement humain",
-    description: "Un interlocuteur unique + tutoriels vidéo pour chaque étape.",
-    icon: "🤝",
+    title: "Rapidité garantie",
+    description: "Projet rendu avant la date prévue ou réduction immédiate sur le solde.",
+    icon: "⏱️",
   },
   {
-    title: "Automatisation totale",
-    description: "Devis, signature, onboarding et suivi client gérés pour vous.",
-    icon: "⚡️",
+    title: "Fiabilité totale",
+    description: "100 % de clients satisfaits, accompagnement humain et suivi sur-mesure.",
+    icon: "✅",
   },
 ];
 
@@ -20,6 +20,11 @@ export function BenefitsStrip() {
   return (
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6">
+        <div className="flex flex-col gap-2 text-center">
+          <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+            Mais où est la différence ?
+          </h2>
+        </div>
         <div className="grid gap-4 md:grid-cols-3">
           {benefits.map((benefit) => (
             <div
