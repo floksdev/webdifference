@@ -27,12 +27,12 @@ export function PortfolioPreviewSection() {
           </div>
           <Link
             href="/portfolio"
-            className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold uppercase text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
+            className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
           >
             Explorer le portfolio complet
           </Link>
         </div>
-        <div className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.3em] text-white/60">
+        <div className="flex flex-wrap gap-3 text-xs text-white/60">
           {sectors.map((sector) => (
             <span
               key={sector}
@@ -49,7 +49,7 @@ export function PortfolioPreviewSection() {
               className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6"
             >
               <div className="flex items-center justify-between">
-                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-secondary)]/80">
+                <p className="text-xs font-semibold text-[color:var(--color-secondary)]/80">
                   {project.status === "LIVE"
                     ? "En ligne"
                     : project.status === "IN_PROGRESS"
@@ -68,7 +68,7 @@ export function PortfolioPreviewSection() {
                 ))}
               </ul>
               <div className="mt-auto">
-                <p className="text-xs uppercase tracking-[0.25em] text-white/55">
+                <p className="text-xs text-white/55">
                   Métriques clés
                 </p>
                 <div className="mt-2 grid gap-2">

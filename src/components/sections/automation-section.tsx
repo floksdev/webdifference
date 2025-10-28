@@ -39,7 +39,7 @@ export function AutomationSection() {
             </ul>
             <Link
               href="/automatisations"
-              className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold uppercase text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
+              className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
             >
               Voir comment ça fonctionne
             </Link>

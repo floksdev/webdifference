@@ -23,7 +23,7 @@ export function StepIndicator({ steps, current }: StepIndicatorProps) {
                   : "border-white/10 bg-[color:var(--color-surface)]/70 text-white/70",
             )}
           >
-            <p className="text-xs uppercase tracking-[0.3em]">
+            <p className="text-sm font-semibold">
               {String(index + 1).padStart(2, "0")}
             </p>
             <p className="mt-2 text-sm font-semibold">{step.title}</p>

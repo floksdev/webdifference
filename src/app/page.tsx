@@ -11,6 +11,8 @@ import { WhyChooseSection } from "@/components/sections/why-choose-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { AudienceSelectorSection } from "@/components/sections/audience-selector-section";
 import { BenefitsStrip } from "@/components/sections/benefits-strip";
+import { ConversationSection } from "@/components/sections/conversation-section";
+// import { ReviewsSection } from "@/components/sections/reviews-section";
 import { FloatingQuickActions } from "@/components/floating-quick-actions";
 
 export default function Home() {
@@ -18,6 +20,8 @@ export default function Home() {
     <>
       <HeroSection />
       <BenefitsStrip />
+      <ConversationSection />
+      {/* <ReviewsSection /> */}
       <ProofSection />
       <AudienceSelectorSection />
       <QuotePreviewSection />

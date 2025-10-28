@@ -41,13 +41,13 @@ export function AboutSection() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-3 text-sm font-semibold uppercase text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
+                className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-3 text-sm font-semibold text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
               >
                 Demander un échange rapide
               </Link>
               <Link
                 href="https://cal.com"
-                className="inline-flex items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold uppercase text-white/80 transition hover:border-[color:var(--color-secondary)] hover:text-white"
+                className="inline-flex items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/80 transition hover:border-[color:var(--color-secondary)] hover:text-white"
               >
                 Choisir un créneau visio
               </Link>
@@ -63,7 +63,7 @@ export function AboutSection() {
                 {timeline.map((item) => (
                   <li key={item.year} className="relative pl-6">
                     <span className="absolute left-0 top-1.5 h-2 w-2 -translate-x-[5px] rounded-full bg-[color:var(--color-primary)]" />
-                    <p className="text-sm uppercase tracking-[0.3em] text-white/50">
+                    <p className="text-sm font-semibold text-white/60">
                       {item.year}
                     </p>
                     <p className="mt-2 text-sm text-white/70">{item.text}</p>

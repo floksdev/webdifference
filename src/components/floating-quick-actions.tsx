@@ -29,12 +29,12 @@ export function FloatingQuickActions() {
       <button
         type="button"
         onClick={() => setDismissed(true)}
-        className="ml-auto text-xs uppercase tracking-[0.3em] text-white/45 transition hover:text-white/70"
+        className="ml-auto text-xs text-white/45 transition hover:text-white/70"
         aria-label="Fermer les raccourcis"
       >
         fermer
       </button>
-      <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/70">
+      <p className="text-sm font-semibold text-white/70">
         Besoin d&apos;aide ?
       </p>
       <div className="flex flex-col gap-2">
@@ -42,7 +42,7 @@ export function FloatingQuickActions() {
           <Link
             key={action.href}
             href={action.href}
-            className={`flex flex-col rounded-2xl px-4 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition hover:scale-[1.02] ${action.style}`}
+            className={`flex flex-col rounded-2xl px-4 py-3 text-sm font-semibold transition hover:scale-[1.02] ${action.style}`}
           >
             {action.label}
             <span className="pt-1 text-[10px] font-normal normal-case text-white/80">

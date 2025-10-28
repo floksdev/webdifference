@@ -19,11 +19,11 @@ export function ResourcesSection() {
               href={`/blog/${post.slug}`}
               className="flex flex-col gap-3 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6 transition hover:border-[color:var(--color-secondary)] hover:text-white"
             >
-              <span className="inline-flex w-fit rounded-full bg-[color:rgba(0,224,255,0.15)] px-3 py-1 text-xs uppercase tracking-[0.3em] text-white/70">
+              <span className="inline-flex w-fit rounded-full bg-[color:rgba(0,224,255,0.15)] px-3 py-1 text-xs font-semibold text-white/70">
                 {post.category}
               </span>
               <h3 className="text-lg font-semibold text-white">{post.title}</h3>
-              <p className="text-xs uppercase tracking-[0.25em] text-white/50">
+              <p className="text-xs text-white/50">
                 {post.readTime} · {new Date(post.publishedAt).toLocaleDateString("fr-FR", {
                   month: "short",
                   day: "2-digit",
@@ -36,13 +36,13 @@ export function ResourcesSection() {
         <div className="flex flex-wrap justify-center gap-4 text-sm text-white/70">
           <Link
             href="/blog"
-            className="inline-flex items-center rounded-full border border-white/20 px-5 py-3 uppercase transition hover:border-[color:var(--color-secondary)] hover:text-white"
+            className="inline-flex items-center rounded-full border border-white/20 px-5 py-3 transition hover:border-[color:var(--color-secondary)] hover:text-white"
           >
             Accéder au blog
           </Link>
           <Link
             href="/ressources/newsletter"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-3 uppercase transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-3 transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
           >
             S&apos;abonner à la newsletter
           </Link>

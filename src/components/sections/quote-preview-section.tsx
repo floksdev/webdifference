@@ -39,7 +39,7 @@ export function QuotePreviewSection() {
       <div className="mx-auto flex max-w-6xl flex-col gap-14 px-6">
         <div className="grid gap-10 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-8 shadow-lg shadow-[rgba(108,99,255,0.18)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
-            <span className="inline-flex rounded-full bg-[color:rgba(0,224,255,0.14)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+            <span className="inline-flex rounded-full bg-[color:rgba(0,224,255,0.14)] px-4 py-1 text-xs font-semibold text-white/80">
               Parcours client simple
             </span>
             <h2 className="text-3xl font-semibold sm:text-4xl">
@@ -52,7 +52,7 @@ export function QuotePreviewSection() {
             </p>
             <Link
               href="/devis"
-              className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold uppercase text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
+              className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
             >
               Lancer le devis express
             </Link>
@@ -62,13 +62,13 @@ export function QuotePreviewSection() {
               <div
                 key={step.title}
                 className="rounded-2xl border border-white/10 bg-[color:rgba(44,62,80,0.75)] p-4"
-              >
-                <div className="flex items-baseline justify-between">
-                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/55">
-                    {index + 1}
-                  </p>
-                  <p className="text-xs text-white/60">{step.cta}</p>
-                </div>
+                >
+                  <div className="flex items-baseline justify-between">
+                    <p className="text-sm font-semibold text-white/70">
+                      {index + 1}
+                    </p>
+                    <p className="text-xs text-white/60">{step.cta}</p>
+                  </div>
                 <p className="mt-2 text-lg font-semibold text-white">
                   {step.title}
                 </p>
@@ -96,13 +96,13 @@ export function QuotePreviewSection() {
             </ul>
           </div>
           <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[color:rgba(108,99,255,0.35)] via-[color:rgba(0,224,255,0.18)] to-[color:rgba(108,99,255,0.22)] p-6 text-center shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
-            <p className="text-sm uppercase tracking-[0.35em] text-white/65">
+            <p className="text-sm text-white/65">
               Timeline type
             </p>
             <div className="mt-6 grid gap-4">
               {highlights.map((item) => (
                 <div key={item.label}>
-                  <p className="text-xs uppercase tracking-[0.3em] text-white/55">
+                  <p className="text-xs text-white/55">
                     {item.label}
                   </p>
                   <p className="text-2xl font-semibold text-white">

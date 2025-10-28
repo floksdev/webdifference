@@ -34,7 +34,7 @@ export function SelectableCard({
       )}
     >
       {badge ? (
-        <span className="inline-flex w-fit rounded-full bg-[color:rgba(0,224,255,0.12)] px-3 py-1 text-xs uppercase tracking-[0.24em] text-white/80">
+        <span className="inline-flex w-fit rounded-full bg-[color:rgba(0,224,255,0.12)] px-3 py-1 text-xs font-semibold text-white/80">
           {badge}
         </span>
       ) : null}

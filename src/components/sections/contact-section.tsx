@@ -44,7 +44,7 @@ export function ContactSection() {
           </label>
           <button
             type="submit"
-            className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-[rgba(0,224,255,0.25)] transition hover:shadow-[rgba(108,99,255,0.3)]"
+            className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[rgba(0,224,255,0.25)] transition hover:shadow-[rgba(108,99,255,0.3)]"
           >
             Recevoir un audit express
           </button>

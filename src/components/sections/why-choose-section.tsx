@@ -28,7 +28,7 @@ export function WhyChooseSection() {
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="flex flex-col gap-4 text-center">
-          <span className="mx-auto inline-flex rounded-full bg-[color:rgba(108,99,255,0.2)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
+          <span className="mx-auto inline-flex rounded-full bg-[color:rgba(108,99,255,0.2)] px-4 py-1 text-xs font-semibold text-white/80">
             Pourquoi Web Difference ?
           </span>
           <h2 className="text-3xl font-semibold sm:text-4xl">
@@ -57,13 +57,13 @@ export function WhyChooseSection() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/devis"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-6 py-3 text-sm font-semibold uppercase text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-6 py-3 text-sm font-semibold text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
           >
             Obtenir un devis express
           </Link>
           <Link
             href="/portfolio"
-            className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold uppercase text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
+            className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
           >
             Découvrir les cas clients
           </Link>
