@@ -4,16 +4,18 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { OffersSection } from "@/components/sections/offers-section";
 import { PortfolioPreviewSection } from "@/components/sections/portfolio-preview-section";
-import { QuotePreviewSection } from "@/components/sections/quote-preview-section";
 import { ResourcesSection } from "@/components/sections/resources-section";
-import { ProofSection } from "@/components/sections/proof-section";
 import { WhyChooseSection } from "@/components/sections/why-choose-section";
 import { FaqSection } from "@/components/sections/faq-section";
-import { AudienceSelectorSection } from "@/components/sections/audience-selector-section";
 import { BenefitsStrip } from "@/components/sections/benefits-strip";
-import { ConversationSection } from "@/components/sections/conversation-section";
+import ConversationSection from '@/components/sections/conversation-section';
+import { ProductSection } from "@/components/sections/product-section";
+import { ExistingSiteSection } from "@/components/sections/existing-site-section";
+import ReviewsRecommendationsSection from "@/components/sections/reviews-recommendations-section";
+import ProjectCalloutSection  from "@/components/sections/project-callout-section";
 // import { ReviewsSection } from "@/components/sections/reviews-section";
-import { FloatingQuickActions } from "@/components/floating-quick-actions";
+import { ProofSection } from "@/components/sections/proof-section";
+import ChatWidget from "@/components/chat-widget";
 
 export default function Home() {
   return (
@@ -21,19 +23,14 @@ export default function Home() {
       <HeroSection />
       <BenefitsStrip />
       <ConversationSection />
-      {/* <ReviewsSection /> */}
-      <ProofSection />
-      <AudienceSelectorSection />
-      <QuotePreviewSection />
+      <ProjectCalloutSection />
       <OffersSection />
-      <AutomationSection />
-      <WhyChooseSection />
-      <PortfolioPreviewSection />
+      <ExistingSiteSection />
+      <ReviewsRecommendationsSection />
       <ResourcesSection />
       <FaqSection />
-      <AboutSection />
       <ContactSection />
-      <FloatingQuickActions />
+      <ChatWidget />
     </>
   );
 }
