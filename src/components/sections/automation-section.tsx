@@ -38,10 +38,10 @@ export function AutomationSection() {
               <li>• Rapports clairs, accessibles depuis votre portail client</li>
             </ul>
             <Link
-              href="/automatisations"
+              href="/contact"
               className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
             >
-              Voir comment ça fonctionne
+              Discuter automatisations
             </Link>
           </div>
           <div className="space-y-6">

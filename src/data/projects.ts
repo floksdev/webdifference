@@ -50,7 +50,6 @@ export const projects: ProjectCard[] = [
       { label: "Commande moyenne", value: "+68€" },
     ],
     liveUrl: "https://lumen.example.com",
-    caseStudyUrl: "/portfolio/lumen-cosmetics",
   },
   {
     slug: "nova-crm",
@@ -67,6 +66,5 @@ export const projects: ProjectCard[] = [
       { label: "Testeurs impliqués", value: "15" },
       { label: "Cycle de signature", value: "-60%" },
     ],
-    caseStudyUrl: "/portfolio/nova-crm",
   },
 ];

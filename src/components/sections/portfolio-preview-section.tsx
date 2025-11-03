@@ -26,10 +26,10 @@ export function PortfolioPreviewSection() {
             </p>
           </div>
           <Link
-            href="/portfolio"
+            href="/contact"
             className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
           >
-            Explorer le portfolio complet
+            Demander des références
           </Link>
         </div>
         <div className="flex flex-wrap gap-3 text-xs text-white/60">
@@ -80,7 +80,7 @@ export function PortfolioPreviewSection() {
                 </div>
               </div>
               <Link
-                href={project.caseStudyUrl ?? "/portfolio"}
+                href={project.caseStudyUrl ?? "/contact"}
                 className="mt-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
               >
                 Voir le détail →

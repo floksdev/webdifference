@@ -3,11 +3,7 @@ import type { MetadataRoute } from "next";
 const routes = [
   "",
   "devis",
-  "portfolio",
-  "automatisations",
   "offres",
-  "a-propos",
-  "blog",
   "contact",
 ];
 

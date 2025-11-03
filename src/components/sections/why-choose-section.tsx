@@ -62,10 +62,10 @@ export function WhyChooseSection() {
             Obtenir un devis express
           </Link>
           <Link
-            href="/portfolio"
+            href="/contact"
             className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
           >
-            Découvrir les cas clients
+            Discuter de vos besoins
           </Link>
         </div>
       </div>

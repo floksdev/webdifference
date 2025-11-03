@@ -18,7 +18,7 @@ export const automationPlays: AutomationPlay[] = [
     icon: "🧾",
     integrations: ["DocuSign", "Stripe", "Notion", "Slack"],
     outcome: "-80% de temps de closing, +100% de visibilité finance.",
-    cta: { label: "Voir le workflow", href: "/automatisations#signature" },
+    cta: { label: "Voir le workflow", href: "/contact" },
   },
   {
     title: "Portail client augmenté",
