@@ -153,7 +153,8 @@ export default function ChatWidget() {
     if (!trimmed) return;
 
     // Ajoute le message utilisateur
-    const updated = [...messages, { role: "user", content: trimmed }];
+    const userEntry: ChatEntry = { role: "user", content: trimmed };
+    const updated: ChatEntry[] = [...messages, userEntry];
     setMessages(updated);
     setPendingMessage("");
 
