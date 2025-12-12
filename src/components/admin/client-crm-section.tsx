@@ -16,6 +16,19 @@ type ClientRecord = {
   quoteFileUrl: string | null;
 };
 
+type SupabaseClient = {
+  id: string;
+  first_name: string | null;
+  last_name: string | null;
+  company: string | null;
+  email: string;
+  phone: string | null;
+  notes: string | null;
+  last_interaction: string | null;
+  invoice_link: string | null;
+  quote_file_url: string | null;
+};
+
 type ClientForm = {
   firstName: string;
   lastName: string;
@@ -75,8 +88,8 @@ export function ClientCrmSection() {
       return;
     }
 
-    const normalized =
-      data?.map((client) => ({
+    const normalized: ClientRecord[] =
+      data?.map((client: SupabaseClient) => ({
         id: client.id,
         firstName: client.first_name ?? "",
         lastName: client.last_name ?? "",

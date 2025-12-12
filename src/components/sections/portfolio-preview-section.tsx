@@ -57,7 +57,9 @@ export function PortfolioPreviewSection() {
             >
               <button
                 type="button"
-                ref={(el) => (imageRefs.current[project.slug] = el)}
+                ref={(el) => {
+                  imageRefs.current[project.slug] = el;
+                }}
                 onClick={(e) => handleImageClick(project, e)}
                 className="relative w-full overflow-hidden rounded-2xl bg-[#1C1C1C] cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(113,221,174,0.5)]"
               >
