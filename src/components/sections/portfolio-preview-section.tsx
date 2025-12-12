@@ -40,20 +40,25 @@ export function PortfolioPreviewSection() {
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="text-center">
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/ideeailles.png"
+              alt="Idée ailes"
+              width={300}
+              height={300}
+              className="w-auto h-auto"
+            />
+          </div>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-            Le détail au cœur de chaque projet
+            Le détail au <span className="text-[#F3C16D] text-4xl sm:text-5xl underline decoration-[#F3C16D] decoration-2 underline-offset-4">cœur</span> de chaque <span className="text-[#F3C16D] text-4xl sm:text-5xl">projet</span>
           </h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {projects.map((project, index) => {
-            const isCenter = index === 1;
-            const baseOpacity = isCenter ? "bg-[#71DDAE]/35" : "bg-[#71DDAE]/25";
-            const hoverOpacity = isCenter ? "hover:bg-[#71DDAE]/45" : "hover:bg-[#71DDAE]/40";
-            
             return (
             <article
               key={project.slug}
-              className={`group relative flex flex-col gap-6 rounded-3xl p-6 transition-all duration-300 ${baseOpacity} ${hoverOpacity}`}
+              className="group relative flex flex-col gap-6 rounded-3xl p-6 transition-all duration-300 bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A]"
             >
               <button
                 type="button"
@@ -82,52 +87,52 @@ export function PortfolioPreviewSection() {
                   </div>
                 </div>
               </button>
-              <h3 className="text-2xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-black">
                 {project.slug === "portfolio-project" ? "Portfolio [DEMO]" : project.title}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.slug === "jwl-marketing" ? (
                   <>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       Site Vitrine/E-commerce
                     </span>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       SEO
                     </span>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       Design sur-mesure
                     </span>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       API's
                     </span>
                   </>
                 ) : project.slug === "greenbeamcraft" ? (
                   <>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       Site E-commerce
                     </span>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       Configurateur 2D/3D
                     </span>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       Interface admin
                     </span>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       API's
                     </span>
                   </>
                 ) : project.slug === "portfolio-project" ? (
                   <>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       Site vitrine
                     </span>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       Design sur mesure
                     </span>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       Animations Motion
                     </span>
-                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black">
                       API's
                     </span>
                   </>
@@ -135,7 +140,7 @@ export function PortfolioPreviewSection() {
                   project.stack.slice(0, 4).map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80"
+                      className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-black"
                     >
                       {tag}
                     </span>
