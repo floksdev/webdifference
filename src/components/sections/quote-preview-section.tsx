@@ -37,22 +37,22 @@ export function QuotePreviewSection() {
   return (
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-14 px-6">
-        <div className="grid gap-10 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-8 shadow-lg shadow-[rgba(108,99,255,0.18)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="grid gap-10 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-8 shadow-lg shadow-[rgba(113,221,174,0.18)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
-            <span className="inline-flex rounded-full bg-[color:rgba(0,224,255,0.14)] px-4 py-1 text-xs font-semibold text-white/80">
+            <span className="inline-flex rounded-full bg-[color:rgba(113,221,174,0.14)] px-4 py-1 text-xs font-semibold text-[#1C1C1C]/80">
               Parcours client simple
             </span>
-            <h2 className="text-3xl font-semibold sm:text-4xl">
+            <h2 className="text-3xl font-semibold sm:text-4xl text-[#1C1C1C]">
               Votre projet en 4 étapes claires
             </h2>
-            <p className="text-base text-white/70">
+            <p className="text-base text-[#1C1C1C]/80">
               Définissez votre projet en 60 secondes, recevez une maquette sous
               3 jours, mettez en ligne en 10 jours, profitez d&apos;un suivi
               continu 30 jours et plus. 100% automatisé, 100% humain.
             </p>
             <Link
               href="/devis"
-              className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
+              className="inline-flex w-fit items-center rounded-full border border-[#1C1C1C]/20 px-5 py-3 text-sm font-semibold text-[#1C1C1C] transition hover:border-[#1C1C1C] hover:bg-[#1C1C1C]/10"
             >
               Lancer le devis express
             </Link>
@@ -61,7 +61,7 @@ export function QuotePreviewSection() {
             {journeySteps.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-2xl border border-white/10 bg-[color:rgba(44,62,80,0.75)] p-4"
+                className="rounded-2xl border border-white/10 bg-[color:rgba(28,28,28,0.75)] p-4"
                 >
                   <div className="flex items-baseline justify-between">
                     <p className="text-sm font-semibold text-white/70">
@@ -95,7 +95,7 @@ export function QuotePreviewSection() {
               <li>• Tableaux de bord live : SEO, ventes, trafic et leads</li>
             </ul>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[color:rgba(108,99,255,0.35)] via-[color:rgba(0,224,255,0.18)] to-[color:rgba(108,99,255,0.22)] p-6 text-center shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-[color:rgba(113,221,174,0.35)] via-[color:rgba(255,255,255,0.18)] to-[color:rgba(113,221,174,0.22)] p-6 text-center shadow-[0_20px_60px_rgba(0,0,0,0.28)]">
             <p className="text-sm text-white/65">
               Timeline type
             </p>

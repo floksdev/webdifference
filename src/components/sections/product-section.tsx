@@ -33,13 +33,13 @@ export function ProductSection() {
               key={product.title}
               className="flex flex-col gap-3 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6 shadow-[0_18px_42px_rgba(8,20,32,0.28)]"
             >
-              <h3 className="text-xl font-semibold text-white">{product.title}</h3>
-              <p className="text-sm text-white/70">{product.description}</p>
-              <ul className="mt-2 space-y-2 text-sm text-white/65">
+              <h3 className="text-xl font-semibold text-[#1C1C1C]">{product.title}</h3>
+              <p className="text-sm text-[#1C1C1C]/80">{product.description}</p>
+              <ul className="mt-2 space-y-2 text-sm text-[#1C1C1C]/70">
                 {product.details.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-[color:var(--color-secondary)]" />
-                    <span>{item}</span>
+                    <span className="mt-1 h-2 w-2 rounded-full bg-[#1C1C1C]" />
+                    <span className="text-[#1C1C1C]">{item}</span>
                   </li>
                 ))}
               </ul>

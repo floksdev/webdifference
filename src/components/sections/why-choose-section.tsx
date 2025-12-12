@@ -28,7 +28,7 @@ export function WhyChooseSection() {
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="flex flex-col gap-4 text-center">
-          <span className="mx-auto inline-flex rounded-full bg-[color:rgba(108,99,255,0.2)] px-4 py-1 text-xs font-semibold text-white/80">
+          <span className="mx-auto inline-flex rounded-full bg-[color:rgba(113,221,174,0.2)] px-4 py-1 text-xs font-semibold text-white/80">
             Pourquoi Web Difference ?
           </span>
           <h2 className="text-3xl font-semibold sm:text-4xl">
@@ -43,12 +43,12 @@ export function WhyChooseSection() {
           {reasons.map((reason) => (
             <div
               key={reason.title}
-              className="rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6 text-left shadow-sm shadow-[rgba(0,224,255,0.15)]"
+              className="rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6 text-left shadow-sm shadow-[rgba(113,221,174,0.15)]"
             >
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-lg font-semibold text-[#1C1C1C]">
                 {reason.title}
               </h3>
-              <p className="mt-2 text-sm text-white/70">
+              <p className="mt-2 text-sm text-[#1C1C1C]/80">
                 {reason.description}
               </p>
             </div>
@@ -57,7 +57,7 @@ export function WhyChooseSection() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/devis"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-6 py-3 text-sm font-semibold text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-6 py-3 text-sm font-semibold text-slate-900 transition hover:shadow-lg hover:shadow-[rgba(113,221,174,0.25)]"
           >
             Obtenir un devis express
           </Link>

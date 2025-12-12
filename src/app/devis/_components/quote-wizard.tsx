@@ -124,10 +124,10 @@ export function QuoteWizard() {
                 className="space-y-6 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/80 p-6"
               >
                 <div className="space-y-3">
-                  <h2 className="text-xl font-semibold text-white">
+                  <h2 className="text-xl font-semibold text-[#1C1C1C]">
                     Quel type de projet ?
                   </h2>
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-[#1C1C1C]/80">
                     Choisissez le format qui correspond le mieux à vos objectifs.
                   </p>
                 </div>
@@ -144,7 +144,7 @@ export function QuoteWizard() {
                   ))}
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-base font-semibold text-white">
+                  <h3 className="text-base font-semibold text-[#1C1C1C]">
                     Niveau de design
                   </h3>
                   <div className="grid gap-3 md:grid-cols-3">
@@ -200,10 +200,10 @@ export function QuoteWizard() {
                 className="space-y-6 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/80 p-6"
               >
                 <div className="space-y-3">
-                  <h2 className="text-xl font-semibold text-white">
+                  <h2 className="text-xl font-semibold text-[#1C1C1C]">
                     Fonctionnalités clés
                   </h2>
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-[#1C1C1C]/80">
                     Sélectionnez les modules qui vous intéressent. Ajoutez-en
                     plusieurs si besoin.
                   </p>
@@ -241,10 +241,10 @@ export function QuoteWizard() {
                 className="space-y-6 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/80 p-6"
               >
                 <div className="space-y-3">
-                  <h2 className="text-xl font-semibold text-white">
+                  <h2 className="text-xl font-semibold text-[#1C1C1C]">
                     Planning & accompagnement
                   </h2>
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-[#1C1C1C]/80">
                     Besoin d&apos;un mode rush, d&apos;un accompagnement marketing ou
                     d&apos;un paiement spécifique ?
                   </p>
@@ -253,12 +253,12 @@ export function QuoteWizard() {
                   control={form.control}
                   name="marketingSupport"
                   render={({ field }) => (
-                    <label className="flex cursor-pointer items-center justify-between rounded-3xl border border-white/10 bg-white/5 p-4">
+                    <label className="flex cursor-pointer items-center justify-between rounded-3xl border border-[#1C1C1C]/10 bg-[#1C1C1C]/5 p-4">
                       <div>
-                        <p className="text-sm font-semibold text-white">
+                        <p className="text-sm font-semibold text-[#1C1C1C]">
                           Accompagnement marketing & SEO
                         </p>
-                        <p className="text-xs text-white/65">
+                        <p className="text-xs text-[#1C1C1C]/70">
                           Sprints contenus, plan SEO technique, analytics & playbooks.
                         </p>
                       </div>
@@ -272,16 +272,16 @@ export function QuoteWizard() {
                   )}
                 />
                 <div className="grid gap-4 md:grid-cols-2">
-                  <label className="flex flex-col gap-2 text-sm text-white/70">
+                  <label className="flex flex-col gap-2 text-sm text-[#1C1C1C]/80">
                     Deadline idéale
                     <input
                       type="date"
                       value={watchedValues.deadline ?? ""}
                       onChange={(event) => form.setValue("deadline", event.target.value)}
-                      className="rounded-2xl border border-white/10 bg-[color:rgba(14,22,31,0.65)] px-4 py-3 text-white outline-none transition focus:border-[color:var(--color-secondary)]"
+                      className="rounded-2xl border border-[#1C1C1C]/20 bg-white/80 px-4 py-3 text-[#1C1C1C] outline-none transition focus:border-[#1C1C1C]"
                     />
                   </label>
-                  <label className="flex flex-col gap-2 text-sm text-white/70">
+                  <label className="flex flex-col gap-2 text-sm text-[#1C1C1C]/80">
                     Préférence de paiement
                     <div className="flex flex-wrap gap-2">
                       {paymentPreferences.map((option) => (
@@ -310,7 +310,7 @@ export function QuoteWizard() {
                 className="space-y-6 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/80 p-6"
               >
                 <div className="space-y-2">
-                  <h2 className="text-xl font-semibold text-white">
+                  <h2 className="text-xl font-semibold text-[#1C1C1C]">
                     Résumé & prochaine étape
                   </h2>
                   <p className="text-sm text-white/70">
@@ -361,7 +361,7 @@ export function QuoteWizard() {
                 </ul>
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-[rgba(0,224,255,0.25)] transition hover:shadow-[rgba(108,99,255,0.3)]"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-slate-900 shadow-lg shadow-[rgba(113,221,174,0.25)] transition hover:shadow-[rgba(113,221,174,0.35)]"
                 >
                   Recevoir la proposition détaillée
                 </button>

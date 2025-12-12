@@ -1,94 +1,236 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaCalendarAlt } from "react-icons/fa";
 
 import { projects } from "@/data/projects";
 
-const sectors = [
-  "Site vitrine",
-  "E-commerce",
-  "SaaS & applications",
-  "SEO & acquisition",
-  "Maintenance",
-  "Refonte",
-];
-
 export function PortfolioPreviewSection() {
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [clickedImageRef, setClickedImageRef] = useState<{ x: number; y: number; width: number; height: number } | null>(null);
+  const imageRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
+
+  const handleImageClick = (project: typeof projects[0], event: React.MouseEvent<HTMLButtonElement>) => {
+    const button = event.currentTarget;
+    const rect = button.getBoundingClientRect();
+    
+    setClickedImageRef({
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+      width: rect.width,
+      height: rect.height,
+    });
+    
+    setTimeout(() => {
+      setSelectedProject(project.slug);
+    }, 100);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    setClickedImageRef(null);
+  };
+
+  const currentProject = projects.find((p) => p.slug === selectedProject);
+
   return (
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="space-y-3">
-            <h2 className="text-3xl font-semibold sm:text-4xl">
-              Cas clients et résultats vérifiés
-            </h2>
-            <p className="text-base text-white/70">
-              Chaque projet partage ses chiffres clés, le contexte métier et la
-              manière dont nous avons accompagné l’équipe.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="inline-flex w-fit items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/85 transition hover:border-[color:var(--color-secondary)] hover:text-white"
-          >
-            Demander des références
-          </Link>
-        </div>
-        <div className="flex flex-wrap gap-3 text-xs text-white/60">
-          {sectors.map((sector) => (
-            <span
-              key={sector}
-              className="rounded-full border border-white/20 bg-[color:var(--color-surface)]/70 px-4 py-2 text-white/80"
-            >
-              {sector}
-            </span>
-          ))}
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-white sm:text-4xl">
+            Le détail au cœur de chaque projet
+          </h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {projects.map((project) => (
+          {projects.map((project, index) => {
+            const isCenter = index === 1;
+            const baseOpacity = isCenter ? "bg-[#71DDAE]/35" : "bg-[#71DDAE]/25";
+            const hoverOpacity = isCenter ? "hover:bg-[#71DDAE]/45" : "hover:bg-[#71DDAE]/40";
+            
+            return (
             <article
               key={project.slug}
-              className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6"
+              className={`group relative flex flex-col gap-6 rounded-3xl p-6 transition-all duration-300 ${baseOpacity} ${hoverOpacity}`}
             >
-              <div className="flex items-center justify-between">
-                <p className="text-xs font-semibold text-[color:var(--color-secondary)]/80">
-                  {project.status === "LIVE"
-                    ? "En ligne"
-                    : project.status === "IN_PROGRESS"
-                      ? "En cours"
-                      : "Prototype"}
-                </p>
-                <p className="text-xs text-white/60">{project.impact}</p>
-              </div>
-              <h3 className="text-xl font-semibold text-white">
-                {project.title}
-              </h3>
-              <p className="text-sm text-white/70">{project.tagline}</p>
-              <ul className="space-y-2 text-sm text-white/65">
-                {project.stack.slice(0, 3).map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-              <div className="mt-auto">
-                <p className="text-xs text-white/55">
-                  Métriques clés
-                </p>
-                <div className="mt-2 grid gap-2">
-                  {project.metrics?.slice(0, 2).map((metric) => (
-                    <p key={metric.label} className="text-sm text-white/70">
-                      {metric.label} : {metric.value}
-                    </p>
-                  ))}
-                </div>
-              </div>
-              <Link
-                href={project.caseStudyUrl ?? "/contact"}
-                className="mt-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
+              <button
+                type="button"
+                ref={(el) => (imageRefs.current[project.slug] = el)}
+                onClick={(e) => handleImageClick(project, e)}
+                className="relative w-full overflow-hidden rounded-2xl bg-[#1C1C1C] cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(113,221,174,0.5)]"
               >
-                Voir le détail →
-              </Link>
+                {project.thumbnail && (
+                  <Image
+                    src={project.thumbnail}
+                    alt={project.title}
+                    width={800}
+                    height={600}
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="h-auto w-full"
+                    unoptimized
+                  />
+                )}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover:bg-[#71DDAE]/10">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 rounded-full bg-[#71DDAE] backdrop-blur-sm px-4 py-2 shadow-lg">
+                    <span className="text-[#1C1C1C] text-sm font-semibold">Voir le site</span>
+                    <span className="text-[#1C1C1C]">→</span>
+                  </div>
+                </div>
+              </button>
+              <h3 className="text-2xl font-bold text-white">
+                {project.slug === "portfolio-project" ? "Portfolio [DEMO]" : project.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.slug === "jwl-marketing" ? (
+                  <>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      Site Vitrine/E-commerce
+                    </span>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      SEO
+                    </span>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      Design sur-mesure
+                    </span>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      API's
+                    </span>
+                  </>
+                ) : project.slug === "greenbeamcraft" ? (
+                  <>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      Site E-commerce
+                    </span>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      Configurateur 2D/3D
+                    </span>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      Interface admin
+                    </span>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      API's
+                    </span>
+                  </>
+                ) : project.slug === "portfolio-project" ? (
+                  <>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      Site vitrine
+                    </span>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      Design sur mesure
+                    </span>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      Animations Motion
+                    </span>
+                    <span className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80">
+                      API's
+                    </span>
+                  </>
+                ) : (
+                  project.stack.slice(0, 4).map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-[#71DDAE]/40 bg-[#2A9D7A]/60 px-3 py-1 text-xs font-normal text-white/80"
+                    >
+                      {tag}
+                    </span>
+                  ))
+                )}
+              </div>
             </article>
-          ))}
+            );
+          })}
+        </div>
+        <div className="flex justify-center">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] px-8 py-4 text-2xl font-extrabold tracking-wide text-[#1C1C1C] shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95"
+            style={{
+              height: "68px",
+            }}
+          >
+            <FaCalendarAlt className="text-2xl" />
+            Prendre un RDV →
+          </Link>
         </div>
       </div>
+
+      {/* Modal avec iframe et animation d'expansion */}
+      <AnimatePresence>
+        {selectedProject && currentProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={clickedImageRef ? {
+                x: clickedImageRef.x - window.innerWidth / 2,
+                y: clickedImageRef.y - window.innerHeight / 2,
+                width: clickedImageRef.width,
+                height: clickedImageRef.height,
+                scale: 0.3,
+                opacity: 0,
+              } : {
+                scale: 0.8,
+                opacity: 0,
+              }}
+              animate={{
+                x: 0,
+                y: 0,
+                width: "85vw",
+                height: "90vh",
+                scale: 1,
+                opacity: 1,
+              }}
+              exit={{
+                scale: 0.8,
+                opacity: 0,
+              }}
+              transition={{
+                type: "spring",
+                duration: 0.6,
+                bounce: 0.2,
+              }}
+              className="relative rounded-2xl border border-white/10 bg-[#1C1C1C] shadow-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+                <h3 className="text-lg font-semibold text-white">
+                  {currentProject.slug === "portfolio-project" ? "Portfolio [DEMO]" : currentProject.title}
+                </h3>
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-white/20"
+                  aria-label="Fermer"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="relative h-[calc(90vh-80px)] overflow-hidden">
+                {currentProject.liveUrl && currentProject.liveUrl !== "#" ? (
+                  <iframe
+                    src={currentProject.liveUrl}
+                    className="h-full w-full border-0"
+                    title={currentProject.title}
+                    allow="fullscreen"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center text-white/60">
+                    <p>URL du site non disponible</p>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

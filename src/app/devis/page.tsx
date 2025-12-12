@@ -17,7 +17,7 @@ export default function QuotePage() {
       <header className="space-y-6">
         <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70">
           <span>Devis instantané</span>
-          <span className="rounded-full bg-[color:rgba(0,224,255,0.15)] px-2 py-1 text-[10px] uppercase tracking-[0.4em] text-white/80">
+          <span className="rounded-full bg-[color:rgba(113,221,174,0.15)] px-2 py-1 text-[10px] uppercase tracking-[0.4em] text-white/80">
             Bêta
           </span>
         </div>

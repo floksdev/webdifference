@@ -41,7 +41,7 @@ export function AboutSection() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-3 text-sm font-semibold text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
+                className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-3 text-sm font-semibold text-slate-900 transition hover:shadow-lg hover:shadow-[rgba(113,221,174,0.25)]"
               >
                 Demander un échange rapide
               </Link>

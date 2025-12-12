@@ -1,10 +1,18 @@
 "use client";
 
+import {
+  authenticateAdmin,
+  createAdminSession,
+  isAdminAuthenticated as checkAdminAuth,
+  logoutAdmin,
+  onAuthStateChange,
+} from "@/lib/admin-auth";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
 const STORAGE_KEY = "webdifference.chat-widget.open";
+const ADMIN_TRIGGER = "admin access 2025";
 
 // Type modifié pour inclure éventuellement des actions CTA
 type ChatEntry = {
@@ -27,6 +35,13 @@ export default function ChatWidget() {
     },
   ]);
   const [isTyping, setIsTyping] = useState(false);
+  const [showAdminModal, setShowAdminModal] = useState(false);
+  const [adminEmail, setAdminEmail] = useState("");
+  const [adminPassword, setAdminPassword] = useState("");
+  const [adminError, setAdminError] = useState<string | null>(null);
+  const [isAdminLoading, setIsAdminLoading] = useState(false);
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
+  const [isAdminMenuOpen, setAdminMenuOpen] = useState(false);
 
   const messagesRef = useRef<HTMLDivElement>(null);
 
@@ -73,6 +88,18 @@ export default function ChatWidget() {
     () => !open && attentionCounter > 0,
     [open, attentionCounter],
   );
+
+  useEffect(() => {
+    setIsAdminAuthenticated(checkAdminAuth());
+    const unsubscribe = onAuthStateChange((authenticated) => {
+      setIsAdminAuthenticated(authenticated);
+    });
+    return unsubscribe;
+  }, []);
+
+  useEffect(() => {
+    setAdminMenuOpen(isAdminAuthenticated);
+  }, [isAdminAuthenticated]);
 
   // Défilement automatique lorsque messages ou état de frappe change
   useEffect(() => {
@@ -158,6 +185,19 @@ export default function ChatWidget() {
     setMessages(updated);
     setPendingMessage("");
 
+    if (trimmed.toLowerCase() === ADMIN_TRIGGER) {
+      setShowAdminModal(true);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content:
+            "Ouverture du portail administrateur sécurisée. Veuillez vous authentifier.",
+        },
+      ]);
+      return;
+    }
+
     // Détecte une demande de contact
     const lower = trimmed.toLowerCase();
     if (
@@ -211,6 +251,37 @@ export default function ChatWidget() {
         },
       ]);
     }
+  }
+
+  async function handleAdminLogin(event: FormEvent) {
+    event.preventDefault();
+    setAdminError(null);
+    setIsAdminLoading(true);
+    try {
+      const isValid = authenticateAdmin(adminEmail, adminPassword);
+      if (!isValid) {
+        throw new Error("Email ou mot de passe incorrect.");
+      }
+      createAdminSession(adminEmail);
+      setIsAdminAuthenticated(true);
+      setShowAdminModal(false);
+      setAdminEmail("");
+      setAdminPassword("");
+    } catch (error) {
+      setAdminError(
+        error instanceof Error
+          ? error.message
+          : "Connexion impossible pour le moment.",
+      );
+    } finally {
+      setIsAdminLoading(false);
+    }
+  }
+
+  async function handleAdminLogout() {
+    logoutAdmin();
+    setIsAdminAuthenticated(false);
+    setAdminMenuOpen(false);
   }
 
   return (
@@ -356,6 +427,57 @@ export default function ChatWidget() {
                   <SendIcon className="h-5 w-5" />
                 </button>
               </form>
+              {isAdminAuthenticated && (
+                <div className="mt-4 rounded-2xl border border-emerald-400/20 bg-emerald-400/5 p-4 text-white/90">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-sm font-semibold text-white">
+                        Portail administrateur
+                      </p>
+                      <p className="text-xs text-white/70">
+                        Accès exclusif Web Difference confirmé.
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleAdminLogout}
+                      className="inline-flex items-center justify-center rounded-xl border border-white/15 px-3 py-2 text-xs font-semibold text-white transition hover:border-white/35 hover:bg-white/10"
+                    >
+                      Se déconnecter
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    className="mt-3 inline-flex w-full items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-left text-sm font-semibold text-white transition hover:border-white/20"
+                    onClick={() => setAdminMenuOpen((prev) => !prev)}
+                  >
+                    <span>{isAdminMenuOpen ? "Masquer le menu admin" : "Afficher le menu admin"}</span>
+                    <span aria-hidden>{isAdminMenuOpen ? "−" : "+"}</span>
+                  </button>
+                  {isAdminMenuOpen && (
+                    <div className="mt-3 grid gap-2 text-sm">
+                      <button
+                        type="button"
+                        className="rounded-xl border border-white/10 bg-white/8 px-4 py-3 text-left font-semibold text-white transition hover:border-white/20 hover:bg-white/12"
+                      >
+                        📊 Vue analytique interne
+                      </button>
+                      <button
+                        type="button"
+                        className="rounded-xl border border-white/10 bg-white/8 px-4 py-3 text-left font-semibold text-white transition hover:border-white/20 hover:bg-white/12"
+                      >
+                        🧠 Scripts IA & prompts
+                      </button>
+                      <button
+                        type="button"
+                        className="rounded-xl border border-white/10 bg-white/8 px-4 py-3 text-left font-semibold text-white transition hover:border-white/20 hover:bg-white/12"
+                      >
+                        🛠️ Configuration CTA
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
@@ -396,6 +518,63 @@ export default function ChatWidget() {
           )}
         </motion.button>
       </aside>
+
+      {showAdminModal && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm">
+          <div className="w-full max-w-sm rounded-3xl border border-white/15 bg-[#0f172a]/95 p-6 text-white shadow-2xl">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-lg font-semibold">Accès administrateur</p>
+                <p className="text-sm text-white/70">
+                  Authentifiez-vous pour déverrouiller le menu caché.
+                </p>
+              </div>
+              <button
+                type="button"
+                aria-label="Fermer la fenêtre d'authentification"
+                className="text-white/60 transition hover:text-white"
+                onClick={() => setShowAdminModal(false)}
+              >
+                ✕
+              </button>
+            </div>
+            <form className="mt-5 space-y-4" onSubmit={handleAdminLogin}>
+              <label className="space-y-2 text-sm text-white/80">
+                <span>Adresse e-mail</span>
+                <input
+                  type="email"
+                  value={adminEmail}
+                  onChange={(event) => setAdminEmail(event.target.value)}
+                  className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none transition placeholder:text-white/40 focus:border-white/40"
+                  placeholder="admin@webdifference.fr"
+                  required
+                />
+              </label>
+              <label className="space-y-2 text-sm text-white/80">
+                <span>Mot de passe</span>
+                <input
+                  type="password"
+                  value={adminPassword}
+                  onChange={(event) => setAdminPassword(event.target.value)}
+                  className="w-full rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-white outline-none transition placeholder:text-white/40 focus:border-white/40"
+                  placeholder="********"
+                  required
+                />
+              </label>
+              {adminError && (
+                <p className="text-sm text-rose-300">{adminError}</p>
+              )}
+              <button
+                type="submit"
+                disabled={isAdminLoading}
+                className="inline-flex w-full items-center justify-center rounded-2xl bg-emerald-400/90 px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-emerald-300 disabled:opacity-70"
+              >
+                {isAdminLoading ? "Connexion..." : "Se connecter"}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Styles pour cacher les scrollbars */}
       <style jsx>{`

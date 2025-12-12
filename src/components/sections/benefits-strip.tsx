@@ -1,18 +1,25 @@
+import Image from "next/image";
+
 const benefits = [
   {
-    title: "Suivi en temps réel",
+    title: "Suivi instantané",
     description: "Suivez l’avancement du projet et recevez un lien d'accès dès le départ.",
-    icon: "🔗",
+    image: "/assets/main/suivientempsreel.png",
   },
   {
-    title: "Rapidité garantie",
-    description: "Projet rendu avant la date prévue ou réduction immédiate sur le solde.",
-    icon: "⏱️",
+    title: "Résultat garanti",
+    description: "Engagement sur les objectifs fixés ou ajustement jusqu'à satisfaction complète.",
+    image: "/assets/main/resultatgaranti.png",
   },
   {
     title: "Fiabilité totale",
     description: "100 % de clients satisfaits, accompagnement humain et suivi sur-mesure.",
-    icon: "✅",
+    image: "/assets/main/fiabilitetotale.png",
+  },
+  {
+    title: "Rapidité au RDV",
+    description: "Projet rendu avant la date prévue ou réduction immédiate sur le solde.",
+    image: "/assets/main/rapiditeaurdv.png",
   },
 ];
 
@@ -21,24 +28,42 @@ export function BenefitsStrip() {
     <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-12">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6">
         <div className="flex flex-col gap-2 text-center">
+          <div className="flex justify-center mb-2">
+            <Image
+              src="/assets/main/ouestladifférence.png"
+              alt="Mais où est la différence ?"
+              width={450}
+              height={300}
+              className="w-auto h-auto max-w-[450px]"
+            />
+          </div>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-            Mais où est la différence ?
+          Mais <span className="text-[#71DDAE] text-4xl sm:text-5xl">où</span> est la <span className="text-[#71DDAE] text-4xl sm:text-5xl">différence</span> ?
           </h2>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {benefits.map((benefit) => (
+        <div className="grid gap-4 md:grid-cols-2">
+          {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-5 shadow-[0_16px_40px_rgba(0,0,0,0.28)] transition-transform hover:-translate-y-1"
+              className={`group relative overflow-hidden rounded-3xl p-5 shadow-lg transition-transform hover:-translate-y-1 ${
+                index % 2 === 0 
+                  ? "bg-gradient-to-r from-[#2A9D7A] to-[#71DDAE]" 
+                  : "bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A]"
+              }`}
             >
-              <div className="absolute -right-6 -top-10 h-24 w-24 rounded-full bg-gradient-to-br from-[#6C63FF] to-[#00E0FF] opacity-30 blur-2xl" />
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#6C63FF] to-[#00E0FF] text-lg">
-                {benefit.icon}
-              </span>
-              <h3 className="mt-4 text-lg font-semibold text-white">
-                {benefit.title}
-              </h3>
-              <p className="mt-2 text-sm text-white/70">{benefit.description}</p>
+              <div className="flex items-center gap-3">
+                <Image
+                  src={benefit.image}
+                  alt={benefit.title}
+                  width={60}
+                  height={60}
+                  className="h-16 w-auto flex-shrink-0"
+                />
+                <h3 className="text-3xl font-bold text-[#1C1C1C]">
+                  {benefit.title}
+                </h3>
+              </div>
+              <p className="mt-3 text-sm text-[#1C1C1C]/80">{benefit.description}</p>
             </div>
           ))}
         </div>

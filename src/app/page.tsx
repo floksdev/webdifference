@@ -13,24 +13,23 @@ import { ProductSection } from "@/components/sections/product-section";
 import { ExistingSiteSection } from "@/components/sections/existing-site-section";
 import ReviewsRecommendationsSection from "@/components/sections/reviews-recommendations-section";
 import ProjectCalloutSection  from "@/components/sections/project-callout-section";
+import { AppointmentSection } from "@/components/sections/appointment-section";
 // import { ReviewsSection } from "@/components/sections/reviews-section";
-import { ProofSection } from "@/components/sections/proof-section";
-import ChatWidget from "@/components/chat-widget";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <BenefitsStrip />
-      <ConversationSection />
-      <ProjectCalloutSection />
+      <PortfolioPreviewSection />
+      {/* <ConversationSection /> */}
+      {/* <ProjectCalloutSection /> */}
       <OffersSection />
       <ExistingSiteSection />
       <ReviewsRecommendationsSection />
-      <ResourcesSection />
       <FaqSection />
-      <ContactSection />
-      <ChatWidget />
+      <ResourcesSection />
+      <AppointmentSection />
     </>
   );
 }

@@ -17,8 +17,8 @@ export function TogglePill({ active, onClick, icon, children }: TogglePillProps)
       className={cn(
         "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition",
         active
-          ? "border-[color:var(--color-secondary)]/80 bg-[color:var(--color-secondary)]/15 text-white"
-          : "border-white/15 bg-[color:var(--color-surface)]/60 text-white/75 hover:border-[color:var(--color-secondary)]/50",
+          ? "border-[color:var(--color-secondary)]/80 bg-[color:var(--color-secondary)]/15 text-slate-900"
+          : "border-[#1C1C1C]/15 bg-[color:var(--color-surface)]/60 text-[#1C1C1C]/80 hover:border-[color:var(--color-secondary)]/50",
       )}
     >
       {icon ? <span>{icon}</span> : null}

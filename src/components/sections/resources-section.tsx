@@ -18,17 +18,17 @@ export function ResourcesSection() {
               key={post.slug}
               className="flex flex-col gap-3 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 p-6"
             >
-              <span className="inline-flex w-fit rounded-full bg-[color:rgba(0,224,255,0.15)] px-3 py-1 text-xs font-semibold text-white/70">
+              <span className="inline-flex w-fit rounded-full bg-[color:rgba(113,221,174,0.15)] px-3 py-1 text-xs font-semibold text-[#1C1C1C]/70">
                 {post.category}
               </span>
-              <h3 className="text-lg font-semibold text-white">{post.title}</h3>
-              <p className="text-xs text-white/50">
+              <h3 className="text-lg font-semibold text-[#1C1C1C]">{post.title}</h3>
+              <p className="text-xs text-[#1C1C1C]/60">
                 {post.readTime} · {new Date(post.publishedAt).toLocaleDateString("fr-FR", {
                   month: "short",
                   day: "2-digit",
                 })}
               </p>
-              <p className="text-sm text-white/60">{post.summary}</p>
+              <p className="text-sm text-[#1C1C1C]/70">{post.summary}</p>
             </article>
           ))}
         </div>
@@ -41,7 +41,7 @@ export function ResourcesSection() {
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-3 transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-3 text-slate-900 transition hover:shadow-lg hover:shadow-[rgba(113,221,174,0.25)]"
           >
             Recevoir la newsletter
           </Link>

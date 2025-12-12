@@ -26,21 +26,21 @@ export function SelectableCard({
       disabled={disabled}
       className={cn(
         "group relative flex h-full w-full flex-col gap-2 rounded-3xl border p-5 text-left transition",
-        "border-white/10 bg-[color:var(--color-surface)]/80 hover:border-[color:var(--color-secondary)]/60 hover:shadow-lg hover:shadow-[rgba(0,224,255,0.15)]",
+        "border-white/10 bg-[color:var(--color-surface)]/80 hover:border-[color:var(--color-secondary)]/60 hover:shadow-lg hover:shadow-[rgba(113,221,174,0.15)]",
         active
-          ? "border-[color:var(--color-secondary)]/90 shadow-[0_0_0_1px_rgba(0,224,255,0.2)]"
+          ? "border-[color:var(--color-secondary)]/90 shadow-[0_0_0_1px_rgba(113,221,174,0.2)]"
           : "border-white/10",
         disabled && "cursor-not-allowed opacity-50",
       )}
     >
       {badge ? (
-        <span className="inline-flex w-fit rounded-full bg-[color:rgba(0,224,255,0.12)] px-3 py-1 text-xs font-semibold text-white/80">
+        <span className="inline-flex w-fit rounded-full bg-[color:rgba(113,221,174,0.12)] px-3 py-1 text-xs font-semibold text-[#1C1C1C]/80">
           {badge}
         </span>
       ) : null}
-      <span className="text-base font-semibold text-white">{children}</span>
+      <span className="text-base font-semibold text-[#1C1C1C]">{children}</span>
       {description ? (
-        <span className="text-sm text-white/70">{description}</span>
+        <span className="text-sm text-[#1C1C1C]/80">{description}</span>
       ) : null}
     </button>
   );

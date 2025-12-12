@@ -41,8 +41,8 @@ export default function ConversationSection() {
                       priority
                     />
                     <span className="absolute inset-0 bg-slate-950/60 backdrop-blur-[1px]" />
-                    <span className="absolute h-[220%] w-[220%] rounded-full bg-[radial-gradient(circle,rgba(0,224,255,0.28)_0%,rgba(14,26,45,0)_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-2xl border border-white/20 bg-gradient-to-br from-[color:var(--color-primary)] via-[#7c74ff] to-[color:var(--color-secondary)] text-2xl font-semibold text-white shadow-[0_35px_90px_-35px_rgba(0,224,255,0.65)] transition-transform duration-200 group-hover:scale-110 group-active:scale-95">
+                    <span className="absolute h-[220%] w-[220%] rounded-full bg-[radial-gradient(circle,rgba(113,221,174,0.28)_0%,rgba(14,26,45,0)_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-2xl border border-white/20 bg-gradient-to-br from-[color:var(--color-primary)] via-[#71DDAE] to-[color:var(--color-secondary)] text-2xl font-semibold text-slate-900 shadow-[0_35px_90px_-35px_rgba(113,221,174,0.65)] transition-transform duration-200 group-hover:scale-110 group-active:scale-95">
                       <span className="pl-1">▶</span>
                       <span className="absolute inset-0 rounded-2xl border border-white/40 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
                       <span className="absolute inset-[-14px] rounded-[26px] border border-white/10" />

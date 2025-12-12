@@ -50,7 +50,7 @@ export function AudienceSelectorSection() {
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6">
         <div className="flex flex-col gap-3 text-center">
-          <span className="mx-auto inline-flex rounded-full bg-[color:rgba(0,224,255,0.18)] px-4 py-1 text-xs font-semibold text-white/85">
+          <span className="mx-auto inline-flex rounded-full bg-[color:rgba(113,221,174,0.18)] px-4 py-1 text-xs font-semibold text-white/85">
             Choisissez votre parcours
           </span>
           <h2
@@ -75,15 +75,15 @@ export function AudienceSelectorSection() {
                 <p className="text-sm font-semibold text-[color:var(--color-secondary)]/85">
                   {audience.label}
                 </p>
-                <p className="mt-3 text-lg font-semibold text-white">
+                <p className="mt-3 text-lg font-semibold text-[#1C1C1C]">
                   {audience.highlight}
                 </p>
-                <p className="mt-2 text-sm text-white/70">{audience.description}</p>
+                <p className="mt-2 text-sm text-[#1C1C1C]/80">{audience.description}</p>
               </div>
               <div className="flex flex-col gap-2">
                 <Link
                   href={audience.primaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#6C63FF] to-[#00E0FF] px-5 py-2.5 text-sm font-semibold text-white transition hover:shadow-lg hover:shadow-[rgba(0,224,255,0.25)]"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:shadow-lg hover:shadow-[rgba(113,221,174,0.25)]"
                 >
                   {audience.primaryCta.label}
                 </Link>

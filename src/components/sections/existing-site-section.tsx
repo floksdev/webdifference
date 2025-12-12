@@ -1,6 +1,7 @@
  "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
+import Link from "next/link";
 
 type Option = {
   id: string;
@@ -18,16 +19,16 @@ const options: Option[] = [
   {
     id: "audit",
     title: "Audit express & plan d'action",
-    summary: "Analyse 360 degres en 72 h",
+    summary: "Analyse 360 degrés en 72 h",
     description:
       "On passe au crible vos parcours, la vitesse et le SEO pour mettre le doigt sur ce qui freine vos conversions.",
-    proof: "Rapport priorise livré + restitution live",
+    proof: "Rapport priorisé livré + restitution live",
     ctaLabel: "Audit 0 €",
     ctaHint: "72 h",
     icon: (
       <svg
         viewBox="0 0 32 32"
-        className="h-9 w-9 text-emerald-300"
+        className="h-10 w-10 text-white"
         fill="none"
         stroke="currentColor"
         strokeWidth="1.8"
@@ -38,15 +39,15 @@ const options: Option[] = [
       </svg>
     ),
     bullets: [
-      "Score UX, technique et contenu note",
-      "Roadmap d'actions priorisee et chiffre",
-      "Session live avec vos equipes pour aligner tout le monde",
+      "Score UX, technique et contenu noté",
+      "Roadmap d'actions priorisée et chiffrée",
+      "Session live avec vos équipes pour aligner tout le monde",
     ],
   },
   {
     id: "refonte",
     title: "Refonte progressive",
-    summary: "Modernisation sans repartir de zero",
+    summary: "Modernisation sans repartir de zéro",
     description:
       "On garde vos acquis, on modernise le design et on optimise chaque parcours pour relancer la conversion.",
     proof: "-45 % de temps de chargement moyen sur nos refontes",
@@ -55,7 +56,7 @@ const options: Option[] = [
     icon: (
       <svg
         viewBox="0 0 32 32"
-        className="h-9 w-9 text-sky-300"
+        className="h-10 w-10 text-white"
         fill="none"
         stroke="currentColor"
         strokeWidth="1.8"
@@ -65,9 +66,9 @@ const options: Option[] = [
       </svg>
     ),
     bullets: [
-      "Design system et contenus revisites par iteractions",
-      "Test utilisateurs ou AB test inclus sur les pages cle",
-      "Accompagnement produit, marketing et dev en parallele",
+      "Design system et contenus revisités par itérations",
+      "Test utilisateurs ou AB test inclus sur les pages clés",
+      "Accompagnement produit, marketing et dev en parallèle",
     ],
   },
   {
@@ -75,14 +76,14 @@ const options: Option[] = [
     title: "Maintenance & coaching continu",
     summary: "Support dev + marketing",
     description:
-      "On prend en charge la sante technique et les evolutions avec un coaching mensuel pour votre equipe.",
-    proof: "98 % des demandes resolues en moins de 24 h",
+      "On prend en charge la santé technique et les évolutions avec un coaching mensuel pour votre équipe.",
+    proof: "98 % des demandes résolues en moins de 24 h",
     ctaLabel: "Maintenance",
     ctaHint: "Sans engagement",
     icon: (
       <svg
         viewBox="0 0 32 32"
-        className="h-9 w-9 text-purple-300"
+        className="h-10 w-10 text-white"
         fill="none"
         stroke="currentColor"
         strokeWidth="1.8"
@@ -94,113 +95,79 @@ const options: Option[] = [
       </svg>
     ),
     bullets: [
-      "Monitoring 24/7, sauvegardes et correctifs illimites",
-      "Plan d'evolution produit declenche a chaque point mensuel",
-      "Support Slack direct avec l'equipe projet",
+      "Monitoring 24/7, sauvegardes et correctifs illimités",
+      "Plan d'évolution produit déclenché à chaque point mensuel",
+      "Support Slack direct avec l'équipe projet",
     ],
   },
 ];
 
 export function ExistingSiteSection() {
-  const [activeId, setActiveId] = useState<string | null>(null);
-
-  const toggle = (id: string) => {
-    setActiveId((current) => (current === id ? null : id));
-  };
-
   return (
-    <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-20">
-      <div className="mx-auto flex max-w-4xl flex-col gap-12 px-6 text-center">
-        <div className="flex flex-col gap-4">
+    <section className="border-t border-white/10 py-16">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+        <div className="flex flex-col gap-3 text-center">
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">
             Votre site n'est pas passé entre nos mains ?
           </h2>
-          <p className="text-base text-white/70">
-            Pas de panique : on peut auditer, moderniser ou accompagner votre
-            plateforme actuelle sans repartir de zero. Choisissez la porte
-            d'entree qui vous parle.
+          <p className="text-base text-white/80 max-w-2xl mx-auto">
+            Pas de panique : on peut auditer, moderniser ou accompagner votre plateforme actuelle sans repartir de zéro.
           </p>
         </div>
 
-        <div className="flex flex-col divide-y divide-white/5 rounded-3xl border border-white/10 bg-[color:var(--color-surface)]/85 shadow-[0_24px_60px_rgba(8,20,42,0.35)]">
-          {options.map((option) => {
-            const isOpen = activeId === option.id;
-            return (
-              <div key={option.id}>
-                <button
-                  type="button"
-                  onClick={() => toggle(option.id)}
-                  aria-expanded={isOpen}
-                  aria-controls={`${option.id}-content`}
-                  className="flex w-full items-center gap-4 px-6 py-5 text-left transition hover:bg-white/4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-secondary)]"
-                >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80">
+        {/* Grande carte unique et compacte */}
+        <div className="rounded-2xl bg-gradient-to-br from-[#71DDAE]/15 to-[#2A9D7A]/15 border border-[#71DDAE]/30 backdrop-blur-sm shadow-lg p-6 md:p-8">
+          <div className="flex flex-col gap-6">
+            {options.map((option, index) => (
+              <div
+                key={option.id}
+                className={`flex flex-col md:flex-row gap-4 items-start ${index < options.length - 1 ? 'pb-6 border-b border-[#71DDAE]/20' : ''}`}
+              >
+                {/* Icône */}
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#71DDAE] to-[#2A9D7A] border border-white/20">
+                  <div className="text-white">
                     {option.icon}
-                  </span>
-                  <div className="flex flex-1 flex-col">
-                    <span className="text-sm font-semibold uppercase text-white/60">
-                      {option.summary}
-                    </span>
-                    <span className="text-lg font-semibold text-white">
-                      {option.title}
-                    </span>
-                  </div>
-                  <span
-                    className={`inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white transition ${
-                      isOpen ? "bg-[color:var(--color-secondary)] text-slate-950" : "bg-white/5"
-                    }`}
-                    aria-hidden
-                  >
-                    {isOpen ? "−" : "+"}
-                  </span>
-                </button>
-
-                <div
-                  id={`${option.id}-content`}
-                  className={`grid overflow-hidden px-6 transition-all duration-200 ${
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                  }`}
-                >
-                  <div className="flex flex-col gap-5 overflow-hidden py-6 md:flex-row md:items-start md:gap-8">
-                    <div className="flex-1 space-y-3 text-left">
-                      <p className="text-sm text-white/75">
-                        {option.description}
-                      </p>
-                      <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase text-white/70">
-                        <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--color-secondary)]" />
-                        {option.proof}
-                      </span>
-                      <ul className="mt-2 space-y-2 text-sm text-white/75">
-                        {option.bullets.map((point) => (
-                          <li key={point} className="flex items-start gap-3">
-                            <span className="mt-[2px] inline-flex h-4 w-4 items-center justify-center rounded-full bg-[color:var(--color-secondary)]/85 text-[10px] font-bold text-slate-950">
-                              ✓
-                            </span>
-                            <span>{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="flex flex-col gap-3 md:w-48">
-                      <a
-                        href="/devis"
-                        className="inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--color-secondary)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[color:var(--color-secondary)]/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-secondary)]"
-                      >
-                        {option.ctaLabel}
-                        <span className="text-xs font-medium text-white/70">
-                          {option.ctaHint}
-                        </span>
-                      </a>
-                      <p className="text-xs text-white/50">
-                        Besoin d'en savoir plus ? On vous montre des cas clients
-                        en live.
-                      </p>
-                    </div>
                   </div>
                 </div>
+                
+                {/* Contenu */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <h3 className="text-lg font-bold text-white">
+                      {option.title}
+                    </h3>
+                    <span className="text-xs text-[#71DDAE] font-medium">
+                      {option.proof}
+                    </span>
+                  </div>
+                  <p className="text-sm text-white/75 mb-3 leading-relaxed">
+                    {option.description}
+                  </p>
+                  
+                  {/* Points clés en ligne */}
+                  <div className="flex flex-wrap gap-x-4 gap-y-2 mb-3">
+                    {option.bullets.map((point) => (
+                      <div key={point} className="flex items-center gap-1.5">
+                        <span className="text-[#71DDAE] text-xs">✓</span>
+                        <span className="text-xs text-white/80">{point}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* CTA */}
+                  <Link
+                    href="/devis"
+                    className="inline-flex items-center gap-2 rounded-lg border border-[#71DDAE]/60 bg-gradient-to-r from-[#2A9D7A]/60 to-[#2A9D7A]/40 px-4 py-2 text-xs font-semibold text-white transition-all hover:border-[#71DDAE] hover:from-[#2A9D7A]/80 hover:to-[#2A9D7A]/60"
+                  >
+                    {option.ctaLabel}
+                    <span className="text-[10px] text-white/70">
+                      {option.ctaHint}
+                    </span>
+                  </Link>
+                </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>

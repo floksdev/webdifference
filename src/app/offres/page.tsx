@@ -39,29 +39,29 @@ export default function OffersPage() {
         {offers.map((offer) => (
           <article
             key={offer.slug}
-            className={`flex flex-col gap-4 rounded-3xl border p-6 ${offer.highlight ? "border-[color:var(--color-secondary)]/60 bg-[color:var(--color-surface)] shadow-lg shadow-[rgba(0,224,255,0.12)]" : "border-white/10 bg-[color:var(--color-surface)]/70"}`}
+            className={`flex flex-col gap-4 rounded-3xl border p-6 ${offer.highlight ? "border-[color:var(--color-secondary)]/60 bg-[color:var(--color-surface)] shadow-lg shadow-[rgba(113,221,174,0.12)]" : "border-white/10 bg-[color:var(--color-surface)]/70"}`}
           >
             <div className="flex items-center justify-between">
-              <span className="text-xs uppercase tracking-[0.3em] text-white/60">
+              <span className="text-xs uppercase tracking-[0.3em] text-[#1C1C1C]/60">
                 {offer.billing}
               </span>
               {offer.highlight ? (
-                <span className="rounded-full bg-[color:rgba(0,224,255,0.15)] px-3 py-1 text-[10px] uppercase tracking-[0.4em] text-white">
+                <span className="rounded-full bg-[color:rgba(113,221,174,0.15)] px-3 py-1 text-[10px] uppercase tracking-[0.4em] text-[#1C1C1C]">
                   Best-seller
                 </span>
               ) : null}
             </div>
-            <h2 className="text-xl font-semibold text-white">{offer.title}</h2>
-            <p className="text-3xl font-bold text-white">{offer.price}</p>
-            <p className="text-sm text-white/70">{offer.description}</p>
-            <ul className="space-y-2 text-sm text-white/70">
+            <h2 className="text-xl font-semibold text-[#1C1C1C]">{offer.title}</h2>
+            <p className="text-3xl font-bold text-[#1C1C1C]">{offer.price}</p>
+            <p className="text-sm text-[#1C1C1C]/80">{offer.description}</p>
+            <ul className="space-y-2 text-sm text-[#1C1C1C]/80">
               {offer.features.map((feature) => (
-                <li key={feature}>• {feature}</li>
+                <li key={feature} className="text-[#1C1C1C]">• {feature}</li>
               ))}
             </ul>
             <Link
               href={offer.slug === "custom" ? "/contact" : "/devis"}
-              className={`mt-auto inline-flex w-fit items-center rounded-full px-4 py-2 text-xs font-semibold uppercase ${offer.highlight ? "bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] text-white" : "border border-white/20 text-white/80 transition hover:border-[color:var(--color-secondary)] hover:text-white"}`}
+              className={`mt-auto inline-flex w-fit items-center rounded-full px-4 py-2 text-xs font-semibold uppercase ${offer.highlight ? "bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] text-slate-900" : "border border-[#1C1C1C]/20 text-[#1C1C1C] transition hover:border-[#1C1C1C] hover:bg-[#1C1C1C]/10"}`}
             >
               {offer.ctaLabel ?? "En savoir plus"}
             </Link>
