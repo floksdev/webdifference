@@ -5,7 +5,7 @@ const audiences = [
     label: "Artisan · TPE locale",
     description: "Boostez votre visibilité et prenez des rendez-vous en ligne.",
     primaryCta: {
-      href: "/devis?type=vitrine",
+      href: "/contact",
       label: "Obtenir mon devis vitrine",
     },
     secondaryCta: {
@@ -18,7 +18,7 @@ const audiences = [
     label: "PME · Retail · E-commerce",
     description: "Lancez ou relancez votre boutique en ligne sans stress.",
     primaryCta: {
-      href: "/devis?type=ecommerce",
+      href: "/contact",
       label: "Chiffrer ma boutique",
     },
     secondaryCta: {
@@ -31,7 +31,7 @@ const audiences = [
     label: "Startup · Projet SaaS / App",
     description: "Prototype, développement et suivi complet avec une seule équipe.",
     primaryCta: {
-      href: "/devis?type=saas",
+      href: "/contact",
       label: "Planifier mon prototype",
     },
     secondaryCta: {

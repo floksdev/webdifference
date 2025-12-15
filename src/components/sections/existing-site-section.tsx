@@ -156,7 +156,7 @@ export function ExistingSiteSection() {
                   
                   {/* CTA */}
                   <Link
-                    href="/devis"
+                    href="/contact"
                     className="inline-flex items-center gap-2 rounded-lg border border-[#E0ACBC]/60 bg-gradient-to-r from-[#D4A5C7]/60 to-[#D4A5C7]/40 px-4 py-2 text-xs font-semibold text-white transition-all hover:border-[#E0ACBC] hover:from-[#D4A5C7]/80 hover:to-[#D4A5C7]/60"
                   >
                     {option.ctaLabel}

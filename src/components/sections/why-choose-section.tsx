@@ -56,7 +56,7 @@ export function WhyChooseSection() {
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            href="/devis"
+            href="/contact"
             className="inline-flex items-center rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-secondary)] px-6 py-3 text-sm font-semibold text-slate-900 transition hover:shadow-lg hover:shadow-[rgba(113,221,174,0.25)]"
           >
             Obtenir un devis express

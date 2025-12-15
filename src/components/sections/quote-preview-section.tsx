@@ -51,7 +51,7 @@ export function QuotePreviewSection() {
               continu 30 jours et plus. 100% automatisé, 100% humain.
             </p>
             <Link
-              href="/devis"
+              href="/contact"
               className="inline-flex w-fit items-center rounded-full border border-[#1C1C1C]/20 px-5 py-3 text-sm font-semibold text-[#1C1C1C] transition hover:border-[#1C1C1C] hover:bg-[#1C1C1C]/10"
             >
               Lancer le devis express

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const quickReplies = [
   {
-    href: "/devis",
+    href: "/contact",
     label: "Demander un devis express",
   },
   {

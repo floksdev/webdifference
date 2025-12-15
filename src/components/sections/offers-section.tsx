@@ -635,7 +635,7 @@ export function OffersSection() {
 
                     {/* CTA premium */}
                     <Link
-                      href="/devis"
+                      href="/contact"
                       className="mt-4 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#1C1C1C] px-8 py-4 text-base font-bold text-white shadow-[0_8px_24px_rgba(28,28,28,0.4)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_32px_rgba(28,28,28,0.5)] active:scale-100"
                     >
                       <FaCalendarAlt className="text-xl" />

@@ -13,9 +13,8 @@ import { FaPhone } from "react-icons/fa6";
 
 const links = [
   { href: "/", label: "Accueil" },
-  { href: "/devis", label: "Devis" },
-  { href: "/offres", label: "Offres" },
-  { href: "/contact", label: "Contact" },
+  { href: "/offres", label: "Nos offres" },
+  { href: "/projets", label: "Nos projets" },
 ];
 
 export function SiteHeader() {
