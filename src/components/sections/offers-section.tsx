@@ -1,9 +1,22 @@
 "use client";
 
-import { ReactNode, useState, useEffect } from "react";
+import { ReactNode, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaCalendarAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { 
+  FaCalendarAlt, 
+  FaGlobe, 
+  FaMobileAlt, 
+  FaRobot,
+  FaCheckCircle,
+  FaPlusCircle,
+  FaTools,
+  FaBug,
+  FaRedo,
+  FaDesktop,
+  FaShoppingCart,
+  FaCloud
+} from "react-icons/fa";
 
 type Offer = {
   id: string;
@@ -34,19 +47,13 @@ const offers: Offer[] = [
     ],
     accent: "from-emerald-400/35 via-indigo-500/25 to-purple-500/25",
     icon: (
-      <svg
-        viewBox="0 0 32 32"
-        className="h-10 w-10 text-white"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      >
-        <rect x="4.2" y="6.2" width="23.6" height="18.6" rx="2.8" />
-        <path d="M4.2 12.8h23.6" />
-        <circle cx="9.2" cy="9.5" r="0.9" fill="currentColor" stroke="none" />
-        <circle cx="13" cy="9.5" r="0.9" fill="currentColor" stroke="none" />
-        <path d="M10.7 17.1h10.6m-10.6 4.5h6.4" />
-      </svg>
+      <Image
+        src="/vitrine2.png"
+        alt="Site vitrine"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
     ),
     ctaHint: "en 60 s",
   },
@@ -56,7 +63,7 @@ const offers: Offer[] = [
     tagline: "Boost ventes en ligne",
     price: "À partir de 5 900 €",
     description:
-      "Vendez en ligne simplement avec un parcours d’achat fluide, des paiements sécurisés et des campagnes prêtes.",
+      "Vendez en ligne simplement avec un parcours d'achat fluide, des paiements sécurisés et des campagnes prêtes.",
     badge: "Lancement guidé",
     items: [
       "Catalogue modulable et fiches produits SEO",
@@ -65,18 +72,13 @@ const offers: Offer[] = [
     ],
     accent: "from-rose-500/30 via-orange-400/25 to-amber-400/20",
     icon: (
-      <svg
-        viewBox="0 0 32 32"
-        className="h-10 w-10 text-white"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      >
-        <path d="M6.5 8.5h21l-2 9.8a3 3 0 0 1-3 2.4H11.5a3 3 0 0 1-3-2.4l-2-9.8Z" />
-        <path d="M12.2 24.8h9.7" />
-        <circle cx="12.5" cy="26.5" r="1.7" fill="currentColor" stroke="none" />
-        <circle cx="22.5" cy="26.5" r="1.7" fill="currentColor" stroke="none" />
-      </svg>
+      <Image
+        src="/ecom2.png"
+        alt="E-commerce"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
     ),
     ctaHint: "coaching inclus",
   },
@@ -95,16 +97,13 @@ const offers: Offer[] = [
     ],
     accent: "from-indigo-400/35 via-blue-500/20 to-cyan-400/15",
     icon: (
-      <svg
-        viewBox="0 0 32 32"
-        className="h-10 w-10 text-white"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      >
-        <path d="M6.5 7h19a1.5 1.5 0 0 1 1.5 1.5V23a1.5 1.5 0 0 1-1.5 1.5H6.5A1.5 1.5 0 0 1 5 23V8.5A1.5 1.5 0 0 1 6.5 7Z" />
-        <path d="M10 11.5h12M10 16h12M10 20.5h7" />
-      </svg>
+      <Image
+        src="/refonte2.png"
+        alt="Refonte & optimisation"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
     ),
     ctaHint: "roadmap 48 h",
   },
@@ -123,17 +122,13 @@ const offers: Offer[] = [
     ],
     accent: "from-fuchsia-500/35 via-indigo-500/25 to-slate-500/20",
     icon: (
-      <svg
-        viewBox="0 0 32 32"
-        className="h-10 w-10 text-white"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      >
-        <rect x="5.5" y="6.5" width="21" height="19" rx="2.5" />
-        <path d="M9.5 11.5h13M9.5 16h7M9.5 20.5h5" />
-        <circle cx="23" cy="16" r="2.5" />
-      </svg>
+      <Image
+        src="/saas3.png"
+        alt="SaaS"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
     ),
     ctaHint: "atelier offert",
   },
@@ -152,57 +147,23 @@ const offers: Offer[] = [
     ],
     accent: "from-fuchsia-500/35 via-indigo-500/25 to-slate-500/20",
     icon: (
-      <svg
-        viewBox="0 0 32 32"
-        className="h-10 w-10 text-white"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      >
-        <rect x="8" y="4" width="16" height="24" rx="2" />
-        <path d="M12 8h8M12 24h8" />
-        <circle cx="16" cy="16" r="2" />
-      </svg>
+      <Image
+        src="/mobile2.png"
+        alt="Application Mobile"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
     ),
     ctaHint: "prototype offert",
   },
   {
-    id: "offres-seo",
-    name: "SEO & Google Ads",
-    tagline: "Visibilité durable",
-    price: "Pack mensuel dès 790 €",
-    description:
-      "Soyez visible sur vos mots-clés et transformez vos visites en opportunités avec un plan d’actions simple.",
-    badge: "Pilotage mensuel",
-    items: [
-      "Étude de mots-clés et contenu guidé",
-      "Optimisations techniques et netlinking",
-      "Rapports mensuels clairs et digestes",
-    ],
-    accent: "from-lime-400/35 via-emerald-400/20 to-teal-400/15",
-    icon: (
-      <svg
-        viewBox="0 0 32 32"
-        className="h-10 w-10 text-white"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      >
-        <path d="M7 23.5c2.4-5.4 6-8.1 13-8.1" />
-        <path d="M20.5 5.5v8h8" />
-        <path d="M20 10.7 26.5 5" />
-        <path d="M9 26.5h18" />
-      </svg>
-    ),
-    ctaHint: "tableau de bord",
-  },
-  {
     id: "offres-maintenance",
-    name: "Maintenance & bug fix",
+    name: "Maintenance",
     tagline: "Sérénité & support",
     price: "À partir de 190 €/mois",
     description:
-      "Sécurisez votre site, corrigez les bugs et bénéficiez d’un support réactif par un interlocuteur unique.",
+      "Sécurisez votre site, corrigez les bugs et bénéficiez d'un support réactif par un interlocuteur unique.",
     badge: "Support 24/7",
     items: [
       "Surveillance 24/7 et sauvegardes quotidiennes",
@@ -211,320 +172,515 @@ const offers: Offer[] = [
     ],
     accent: "from-slate-400/35 via-slate-500/20 to-indigo-500/20",
     icon: (
-      <svg
-        viewBox="0 0 32 32"
-        className="h-10 w-10 text-white"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      >
-        <path d="M6 12.5h20v6.5a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8v-6.5Z" />
-        <path d="M12 12.5V10a4 4 0 0 1 8 0v2.5" />
-        <path d="M16 19.5v3" />
-      </svg>
+      <Image
+        src="/maintenance.png"
+        alt="Maintenance"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
     ),
     ctaHint: "sans engagement",
   },
+  {
+    id: "offres-correctifs",
+    name: "Correction de bugs",
+    tagline: "Résolution rapide",
+    price: "À partir de 150 €",
+    description:
+      "Corrigez rapidement les bugs et problèmes techniques de votre site ou application avec un support réactif.",
+    badge: "Intervention rapide",
+    items: [
+      "Diagnostic et correction sous 48h",
+      "Corrections de bugs critiques prioritaires",
+      "Rapport détaillé des interventions",
+    ],
+    accent: "from-orange-400/35 via-red-500/25 to-pink-500/20",
+    icon: (
+      <Image
+        src="/bug.png"
+        alt="Correction de bugs"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
+    ),
+    ctaHint: "intervention rapide",
+  },
+  {
+    id: "offres-refonte-app-mobile",
+    name: "Refonte App Mobile",
+    tagline: "Modernisation iOS & Android",
+    price: "Sur devis",
+    description:
+      "Modernisez votre application mobile existante avec une nouvelle interface, de meilleures performances et les dernières fonctionnalités.",
+    badge: "Audit UX/UI offert",
+    items: [
+      "Audit complet de l'app existante",
+      "Refonte UI/UX moderne et intuitive",
+      "Optimisation des performances",
+    ],
+    accent: "from-purple-400/35 via-indigo-500/25 to-blue-500/20",
+    icon: (
+      <Image
+        src="/refonte2.png"
+        alt="Refonte App Mobile"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
+    ),
+    ctaHint: "audit offert",
+  },
+  {
+    id: "offres-automatisation",
+    name: "Automatisation",
+    tagline: "Gain de temps garanti",
+    price: "Sur devis",
+    description:
+      "Automatisez vos processus métier avec des workflows intelligents : devis, signature, facturation, notifications et rapports.",
+    badge: "Workflow documenté",
+    items: [
+      "Devis & signature instantanés",
+      "Onboarding client guidé",
+      "Suivi des performances automatisé",
+    ],
+    accent: "from-cyan-400/35 via-blue-500/25 to-indigo-500/20",
+    icon: (
+      <Image
+        src="/automatisation.png"
+        alt="Automatisation"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
+    ),
+    ctaHint: "discuter automatisations",
+  },
 ];
 
+type QuestionStep =
+  | "initial"
+  | "site-web-existing"
+  | "site-web-creation"
+  | "site-web-existing-type"
+  | "site-web-creation-type"
+  | "app-mobile-existing"
+  | "app-mobile-creation"
+  | "app-mobile-existing-type"
+  | "results";
+
 export function OffersSection() {
-  const cardsPerView = 3;
-  const [searchQuery, setSearchQuery] = useState("");
-  
-  // Fonction de recherche fuzzy avec tolérance d'erreur
-  const fuzzyMatch = (text: string, query: string): boolean => {
-    if (!query) return true;
-    
-    const normalizedText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ");
-    const normalizedQuery = query.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, " ");
-    
-    // Recherche exacte
-    if (normalizedText.includes(normalizedQuery)) return true;
-    
-    // Recherche par mots (si plusieurs mots)
-    const queryWords = normalizedQuery.split(" ").filter(w => w.length > 0);
-    if (queryWords.length > 1) {
-      return queryWords.every(word => normalizedText.includes(word));
+  const [currentStep, setCurrentStep] = useState<QuestionStep>("initial");
+  const [selectedOffers, setSelectedOffers] = useState<string[]>([]);
+
+  const handleInitialChoice = (choice: "site-web" | "app-mobile" | "automatisation") => {
+    if (choice === "automatisation") {
+      setSelectedOffers(["offres-automatisation"]);
+      setCurrentStep("results");
+    } else if (choice === "site-web") {
+      setCurrentStep("site-web-existing");
+    } else if (choice === "app-mobile") {
+      setCurrentStep("app-mobile-existing");
     }
-    
-    // Recherche avec tolérance d'erreur pour un seul mot
-    // Vérifier si les caractères du query sont présents dans l'ordre (avec tolérance)
-    let textIndex = 0;
-    let queryIndex = 0;
-    let skipped = 0;
-    const maxSkip = Math.ceil(normalizedQuery.length * 0.4); // 40% de tolérance
-    
-    while (textIndex < normalizedText.length && queryIndex < normalizedQuery.length) {
-      if (normalizedText[textIndex] === normalizedQuery[queryIndex]) {
-        queryIndex++;
-        skipped = 0; // Reset le compteur de skip quand on trouve une correspondance
-      } else {
-        skipped++;
-        if (skipped > maxSkip) {
-          // Trop de caractères sautés, pas de correspondance
-          return false;
-        }
-      }
-      textIndex++;
+  };
+
+  const handleSiteWebExisting = (hasSite: boolean) => {
+    if (hasSite) {
+      setCurrentStep("site-web-existing-type");
+    } else {
+      setCurrentStep("site-web-creation");
     }
-    
-    return queryIndex === normalizedQuery.length;
   };
-  
-  // Trouver l'index de l'offre correspondante à la recherche (priorité au titre)
-  const findMatchingOfferIndex = () => {
-    if (!searchQuery) return null;
-    
-    let titleMatchIndex = null;
-    let otherMatchIndex = null;
-    
-    for (let i = 0; i < offers.length; i++) {
-      const offer = offers[i];
-      
-      // Priorité 1 : Recherche dans le titre
-      if (fuzzyMatch(offer.name, searchQuery)) {
-        titleMatchIndex = i;
-        break; // On prend le premier match dans le titre
-      }
-      
-      // Priorité 2 : Recherche dans les autres champs (seulement si pas de match titre trouvé)
-      if (titleMatchIndex === null) {
-        const searchText = `${offer.description} ${offer.badge} ${offer.items.join(" ")}`;
-        if (fuzzyMatch(searchText, searchQuery)) {
-          if (otherMatchIndex === null) {
-            otherMatchIndex = i; // On garde le premier match dans les autres champs
-          }
-        }
-      }
+
+  const handleSiteWebExistingType = (type: "maintenance" | "correctifs" | "refonte") => {
+    if (type === "maintenance") {
+      setSelectedOffers(["offres-maintenance"]);
+    } else if (type === "correctifs") {
+      setSelectedOffers(["offres-correctifs"]);
+    } else if (type === "refonte") {
+      setSelectedOffers(["offres-refonte"]);
     }
-    
-    // Retourner le match titre en priorité, sinon le match autre
-    return titleMatchIndex !== null ? titleMatchIndex : otherMatchIndex;
+    setCurrentStep("results");
   };
-  
-  const matchingIndex = findMatchingOfferIndex();
-  
-  // Dupliquer les offres 3 fois pour l'effet infini (garder l'ordre original)
-  const duplicatedOffers = [...offers, ...offers, ...offers];
-  const startIndex = offers.length; // Commencer au milieu
-  
-  const [currentIndex, setCurrentIndex] = useState(startIndex);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  
-  // Repositionner le slider sur l'offre correspondante quand la recherche change
-  useEffect(() => {
-    if (matchingIndex !== null) {
-      // Positionner pour que l'offre correspondante soit au centre
-      // On veut que l'offre soit à la position 1 (milieu des 3 cartes)
-      const targetIndex = offers.length + matchingIndex - 1; // -1 pour centrer
-      setIsTransitioning(true);
-      setCurrentIndex(targetIndex);
-    } else if (!searchQuery) {
-      // Si pas de recherche, revenir au centre
-      setIsTransitioning(true);
-      setCurrentIndex(startIndex);
+
+  const handleSiteWebCreation = () => {
+    setCurrentStep("site-web-creation-type");
+  };
+
+  const handleSiteWebCreationType = (type: "vitrine" | "ecommerce" | "saas") => {
+    if (type === "vitrine") {
+      setSelectedOffers(["offres-site-vitrine"]);
+    } else if (type === "ecommerce") {
+      setSelectedOffers(["offres-ecommerce"]);
+    } else if (type === "saas") {
+      setSelectedOffers(["offres-saas"]);
     }
-  }, [searchQuery, matchingIndex, offers.length, startIndex]);
-  
-  const nextSlide = () => {
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => {
-      const next = prev + 1;
-      // Si on arrive à la fin de la deuxième série, on saute au début de la deuxième série (milieu) sans transition
-      if (next >= offers.length * 2) {
-        setTimeout(() => {
-          setIsTransitioning(false);
-          setCurrentIndex(offers.length);
-          setTimeout(() => setIsTransitioning(true), 50);
-        }, 500);
-        return next;
-      }
-      return next;
-    });
+    setCurrentStep("results");
   };
-  
-  const prevSlide = () => {
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => {
-      const next = prev - 1;
-      // Si on arrive au début de la première série, on saute à la fin de la deuxième série (milieu) sans transition
-      if (next < offers.length) {
-        setTimeout(() => {
-          setIsTransitioning(false);
-          setCurrentIndex(offers.length * 2 - 1);
-          setTimeout(() => setIsTransitioning(true), 50);
-        }, 500);
-        return next;
-      }
-      return next;
-    });
+
+  const handleAppMobileExisting = (hasApp: boolean) => {
+    if (hasApp) {
+      setCurrentStep("app-mobile-existing-type");
+    } else {
+      setSelectedOffers(["offres-application-mobile"]);
+      setCurrentStep("results");
+    }
   };
-  
-  const goToSlide = (index: number) => {
-    setIsTransitioning(true);
-    setCurrentIndex(offers.length + index);
+
+  const handleAppMobileExistingType = (type: "refonte" | "maintenance" | "correctifs") => {
+    if (type === "refonte") {
+      setSelectedOffers(["offres-refonte-app-mobile"]);
+    } else if (type === "maintenance") {
+      setSelectedOffers(["offres-maintenance"]);
+    } else if (type === "correctifs") {
+      setSelectedOffers(["offres-correctifs"]);
+    }
+    setCurrentStep("results");
   };
-  
+
+  const resetQuestionnaire = () => {
+    setCurrentStep("initial");
+    setSelectedOffers([]);
+  };
+
+  const renderQuestion = () => {
+    switch (currentStep) {
+      case "initial":
+        return (
+          <div className="space-y-6">
+            <h3 className="text-2xl font-extrabold text-[#71DDAE]">
+              Vos besoins concernent...
+            </h3>
+            <div className="flex flex-col gap-4">
+              <button
+                onClick={() => handleInitialChoice("site-web")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaGlobe className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-bold text-white transition-colors group-hover:text-[#71DDAE]">
+                  Un site web
+                </span>
+              </button>
+              <button
+                onClick={() => handleInitialChoice("app-mobile")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaMobileAlt className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-bold text-white transition-colors group-hover:text-[#71DDAE]">
+                  Une application mobile
+                </span>
+              </button>
+              <button
+                onClick={() => handleInitialChoice("automatisation")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaRobot className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-bold text-white transition-colors group-hover:text-[#71DDAE]">
+                  De l'automatisation
+                </span>
+              </button>
+            </div>
+          </div>
+        );
+
+      case "site-web-existing":
+        return (
+          <div className="space-y-6">
+            <h3 className="text-2xl font-extrabold text-[#71DDAE]">
+              Avez-vous déjà un site web ?
+            </h3>
+            <div className="flex flex-col gap-4">
+              <button
+                onClick={() => handleSiteWebExisting(true)}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaCheckCircle className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Oui, j'ai déjà un site</span>
+              </button>
+              <button
+                onClick={() => handleSiteWebExisting(false)}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaPlusCircle className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Non, je souhaite en créer un</span>
+              </button>
+            </div>
+            <button
+              onClick={resetQuestionnaire}
+              className="text-sm text-white/60 hover:text-white/80"
+            >
+              ← Retour
+            </button>
+          </div>
+        );
+
+      case "site-web-existing-type":
+        return (
+          <div className="space-y-6">
+            <h3 className="text-2xl font-extrabold text-[#71DDAE]">
+              Quelle prestation vous intéresse ?
+            </h3>
+            <div className="flex flex-col gap-4">
+              <button
+                onClick={() => handleSiteWebExistingType("maintenance")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaTools className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Maintenance</span>
+              </button>
+              <button
+                onClick={() => handleSiteWebExistingType("correctifs")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaBug className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Correction de bugs</span>
+              </button>
+              <button
+                onClick={() => handleSiteWebExistingType("refonte")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaRedo className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Refonte</span>
+              </button>
+            </div>
+            <button
+              onClick={() => setCurrentStep("site-web-existing")}
+              className="text-sm text-white/60 hover:text-white/80"
+            >
+              ← Retour
+            </button>
+          </div>
+        );
+
+      case "site-web-creation":
+        return (
+          <div className="space-y-6">
+            <h3 className="text-2xl font-extrabold text-[#71DDAE]">
+              Quel type de site souhaitez-vous créer ?
+            </h3>
+            <div className="flex flex-col gap-4">
+              <button
+                onClick={() => handleSiteWebCreationType("vitrine")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaDesktop className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Site vitrine</span>
+              </button>
+              <button
+                onClick={() => handleSiteWebCreationType("ecommerce")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaShoppingCart className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">E-commerce</span>
+              </button>
+              <button
+                onClick={() => handleSiteWebCreationType("saas")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaCloud className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">SaaS</span>
+              </button>
+            </div>
+            <button
+              onClick={() => setCurrentStep("site-web-existing")}
+              className="text-sm text-white/60 hover:text-white/80"
+            >
+              ← Retour
+            </button>
+          </div>
+        );
+
+      case "app-mobile-existing":
+        return (
+          <div className="space-y-6">
+            <h3 className="text-2xl font-extrabold text-[#71DDAE]">
+              Avez-vous déjà une application mobile ?
+            </h3>
+            <div className="flex flex-col gap-4">
+              <button
+                onClick={() => handleAppMobileExisting(true)}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaCheckCircle className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Oui, j'ai déjà une app</span>
+              </button>
+              <button
+                onClick={() => handleAppMobileExisting(false)}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaPlusCircle className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Non, je souhaite en créer une</span>
+              </button>
+            </div>
+            <button
+              onClick={resetQuestionnaire}
+              className="text-sm text-white/60 hover:text-white/80"
+            >
+              ← Retour
+            </button>
+          </div>
+        );
+
+      case "app-mobile-existing-type":
+        return (
+          <div className="space-y-6">
+            <h3 className="text-2xl font-extrabold text-[#71DDAE]">
+              Quelle prestation vous intéresse ?
+            </h3>
+            <div className="flex flex-col gap-4">
+              <button
+                onClick={() => handleAppMobileExistingType("refonte")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaRedo className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Refonte</span>
+              </button>
+              <button
+                onClick={() => handleAppMobileExistingType("maintenance")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaTools className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Maintenance</span>
+              </button>
+              <button
+                onClick={() => handleAppMobileExistingType("correctifs")}
+                className="group rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left transition-all hover:border-[#71DDAE] hover:bg-white/10 flex items-center gap-3"
+              >
+                <FaBug className="text-xl text-white transition-colors group-hover:text-[#71DDAE]" />
+                <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Correction de bugs</span>
+              </button>
+            </div>
+            <button
+              onClick={() => setCurrentStep("app-mobile-existing")}
+              className="text-sm text-white/60 hover:text-white/80"
+            >
+              ← Retour
+            </button>
+          </div>
+        );
+
+      case "results":
+        const offersToShow = offers.filter((offer) =>
+          selectedOffers.includes(offer.id)
+        );
+
+        return (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-2xl font-extrabold text-white">
+                Offre recommandée
+              </h3>
+              <button
+                onClick={resetQuestionnaire}
+                className="text-sm text-white/60 hover:text-white/80"
+              >
+                Recommencer
+              </button>
+            </div>
+            <div className="grid gap-6 md:grid-cols-1">
+              {offersToShow.map((offer) => {
+                return (
+                  <article
+                    key={offer.id}
+                    className="group relative flex flex-col gap-6 rounded-3xl p-8 transition-all duration-300 bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] shadow-[0_20px_60px_rgba(113,221,174,0.3)] hover:shadow-[0_25px_80px_rgba(113,221,174,0.4)]"
+                  >
+                    {/* Badge premium en haut à droite */}
+                    <div className="absolute top-6 right-6 flex items-center gap-2 rounded-full bg-[#1C1C1C] backdrop-blur-sm border border-white/50 px-4 py-1.5 shadow-lg">
+                      <span className="inline-flex h-2 w-2 rounded-full bg-[#71DDAE]"></span>
+                      <span className="text-xs font-semibold text-white">{offer.badge}</span>
+                    </div>
+
+                    {/* Header avec icône et titre */}
+                    <div className="rounded-2xl bg-white p-5 shadow-lg">
+                      <div className="flex items-center justify-start gap-5">
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#71DDAE]/20 backdrop-blur-md border-2 border-[#71DDAE]/40 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                          <div className="text-black scale-125">
+                            {offer.icon}
+                          </div>
+                        </div>
+                        <div className="flex flex-col gap-3">
+                          <h3 className="text-3xl font-extrabold text-black leading-tight text-left">
+                            {offer.name}
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Description accrocheuse */}
+                    <p className="text-base text-black/85 leading-relaxed font-medium -mt-2">
+                      {offer.description}
+                    </p>
+
+                    {/* Liste des bénéfices premium */}
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-bold text-black/60 uppercase tracking-wider">
+                        Ce qui est inclus
+                      </h4>
+                      <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 p-5 shadow-[0_8px_32px_rgba(0,0,0,0.1)]">
+                        <ul className="space-y-3">
+                          {offer.items.map((item) => (
+                            <li key={item} className="flex items-start gap-3">
+                              <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/40 border-2 border-white/60 shadow-md">
+                                <span className="text-[#2A9D7A] text-xs font-bold">✓</span>
+                              </div>
+                              <span className="text-base text-black font-medium leading-relaxed pt-0.5">
+                                {item}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* CTA premium */}
+                    <Link
+                      href="/devis"
+                      className="mt-4 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#1C1C1C] px-8 py-4 text-base font-bold text-white shadow-[0_8px_24px_rgba(28,28,28,0.4)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_32px_rgba(28,28,28,0.5)] active:scale-100"
+                    >
+                      <FaCalendarAlt className="text-xl" />
+                      <span>Réserver un appel gratuit</span>
+                      <span className="text-xl">→</span>
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
+
   return (
-    <section
-      id="offres"
-      className="border-t border-white/10 py-24"
-    >
-      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
+    <section id="offres" className="border-t border-white/10 py-24">
+      <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6">
         <div className="flex flex-col gap-6 text-center items-center">
           <h2 className="text-3xl font-semibold sm:text-4xl text-white">
-            Des offres adaptées à chaque besoin
+            Des <span className="text-[#71DDAE] text-4xl sm:text-5xl font-bold">offres</span> adaptées à chaque <span className="text-[#71DDAE] text-4xl sm:text-5xl font-bold">besoin</span>
           </h2>
-          
-          {/* Barre de recherche */}
-          <div className="flex justify-center w-full max-w-[600px]">
-            <div className="flex items-center gap-3 rounded-full border border-[#1C1C1C]/20 bg-[#FFFFFF] px-6 py-3 shadow-[0_18px_48px_rgba(0,0,0,0.32),0_0_20px_rgba(113,221,174,0.4),0_0_40px_rgba(113,221,174,0.2)] w-full">
-              <Image
-                src="/assets/main/fond-blanc/logo-sm.png"
-                alt="Web Difference loupe"
-                width={40}
-                height={40}
-                className="h-10 w-10 flex-shrink-0"
-              />
-              <input
-                type="search"
-                placeholder="Rechercher une offre..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="text-sm font-medium text-[#1C1C1C] bg-transparent border-none outline-none placeholder:text-[#1C1C1C]/60 flex-1"
-              />
-            </div>
+        </div>
+
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+          {/* Image à gauche */}
+          <div className="relative w-full h-full min-h-[500px] rounded-2xl overflow-hidden">
+            <Image
+              src="/conceptionweb.png"
+              alt="Conception web"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+
+          {/* Questions à droite */}
+          <div className="flex flex-col justify-center min-h-[500px]">
+            {renderQuestion()}
           </div>
         </div>
-        
-        <div className="relative">
-          {/* Boutons de navigation - plus espacés */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-20 flex h-14 w-14 items-center justify-center rounded-full bg-[#71DDAE]/20 border-2 border-[#71DDAE]/40 text-white backdrop-blur-md transition-all duration-300 hover:bg-[#71DDAE]/30 hover:scale-110 hover:border-[#71DDAE]/60 shadow-lg md:flex hidden"
-            aria-label="Précédent"
-          >
-            <FaChevronLeft className="text-2xl" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-20 flex h-14 w-14 items-center justify-center rounded-full bg-[#71DDAE]/20 border-2 border-[#71DDAE]/40 text-white backdrop-blur-md transition-all duration-300 hover:bg-[#71DDAE]/30 hover:scale-110 hover:border-[#71DDAE]/60 shadow-lg md:flex hidden"
-            aria-label="Suivant"
-          >
-            <FaChevronRight className="text-2xl" />
-          </button>
-          
-          {/* Container du slider */}
-          <div className="overflow-hidden rounded-2xl">
-            <div 
-              className="flex gap-4"
-              style={{ 
-                transform: `translateX(calc(-${currentIndex} * ((100% + 1rem) / ${cardsPerView})))`,
-                transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none'
-              }}
-            >
-              {duplicatedOffers.map((offer, index) => {
-                const isEcommerce = offer.id === "offres-ecommerce";
-                const originalIndex = index % offers.length;
-                const isMatching = matchingIndex !== null && originalIndex === matchingIndex;
-                
-                // Pour l'opacité, E-commerce plus visible
-                const baseOpacity = isEcommerce ? "bg-[#71DDAE]/25" : "bg-[#71DDAE]/15";
-                const hoverOpacity = isEcommerce ? "hover:bg-[#71DDAE]/35" : "hover:bg-[#71DDAE]/30";
-                
-                // Gradients alternés pour varier visuellement
-                const gradientDirection = originalIndex % 2 === 0 
-                  ? "bg-gradient-to-r from-[#2A9D7A] to-[#71DDAE]" 
-                  : "bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A]";
-                
-                const paddingClass = isEcommerce ? "p-5" : "p-4";
-                
-                // Style spécial pour la carte correspondante à la recherche
-                const matchingStyle = isMatching 
-                  ? "border-2 border-[#71DDAE] shadow-[0_0_30px_rgba(113,221,174,0.6)]" 
-                  : "border border-white/5";
-                
-                return (
-                <div
-                  key={`${offer.id}-${index}`}
-                  id={originalIndex === 0 ? offer.id : undefined}
-                  className="flex-shrink-0 w-full md:w-[calc((100%-2rem)/3)]"
-                >
-                  <div
-                    className={`group relative flex flex-col gap-3 rounded-2xl ${paddingClass} transition-all duration-300 ${baseOpacity} ${matchingStyle} backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-2 hover:border-[#71DDAE] z-10 h-full`}
-                  >
-              {/* Header avec gradient premium - taille uniforme */}
-              <div className={`relative overflow-hidden rounded-xl ${gradientDirection} p-4 shadow-[inset_0_2px_8px_rgba(0,0,0,0.2)] transition-all duration-500`}>
-                {/* Overlay avec pattern subtil */}
-                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[length:20px_20px]" />
-                
-                <div className="relative flex items-center justify-between">
-                  <div className="flex flex-col gap-1">
-                    <h3 className="text-xl font-extrabold text-white tracking-tight drop-shadow-lg">
-                      {offer.name}
-                    </h3>
-                  </div>
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/25 backdrop-blur-md border border-white/30 shadow-lg group-hover:bg-white/35 group-hover:scale-110 transition-all duration-500">
-                    <div className="text-white drop-shadow-md">
-                      {offer.icon}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex flex-col gap-2 relative z-10">
-                <p className="text-xs text-white/85 leading-snug line-clamp-2">{offer.description}</p>
-                <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-[#71DDAE]/50 bg-gradient-to-r from-[#2A9D7A]/80 to-[#2A9D7A]/60 px-2.5 py-1 text-[10px] font-semibold text-white shadow-lg backdrop-blur-sm">
-                  <span className="inline-block h-1 w-1 rounded-full bg-[#71DDAE] animate-pulse" />
-                  {offer.badge}
-                </span>
-              </div>
-              
-              <ul className="space-y-1.5 text-xs relative z-10">
-                {offer.items.slice(0, 3).map((item) => (
-                  <li key={item} className="flex items-start gap-2 group/item">
-                    <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded bg-gradient-to-br from-[#71DDAE] to-[#2A9D7A] text-[9px] font-bold text-[#1C1C1C] shadow-md group-hover/item:scale-110 transition-transform duration-300">
-                      ✓
-                    </span>
-                    <span className="text-white/90 leading-snug pt-0.5 line-clamp-1">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Link
-                href="/devis"
-                className="mt-auto relative z-10 inline-flex w-fit items-center justify-center gap-1.5 rounded-lg border-2 border-[#71DDAE]/60 bg-gradient-to-r from-[#2A9D7A]/70 to-[#2A9D7A]/50 px-4 py-2 text-xs font-bold text-white shadow-[0_4px_16px_rgba(42,157,122,0.4)] transition-all duration-300 hover:bg-gradient-to-r hover:from-[#2A9D7A] hover:to-[#2A9D7A] hover:border-[#71DDAE] hover:shadow-[0_6px_24px_rgba(113,221,174,0.5)] hover:scale-105 active:scale-100"
-              >
-                Réserver un appel gratuit
-                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </Link>
-                  </div>
-                </div>
-              );
-            })}
-            </div>
-          </div>
-          
-          {/* Indicateurs de pagination */}
-          <div className="flex justify-center gap-2 mt-8">
-            {offers.map((_, index) => {
-              const displayIndex = ((currentIndex % offers.length) + offers.length) % offers.length;
-              return (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    displayIndex === index 
-                      ? 'w-8 bg-[#71DDAE]' 
-                      : 'w-2 bg-white/20 hover:bg-white/40'
-                  }`}
-                  aria-label={`Aller à la slide ${index + 1}`}
-                />
-              );
-            })}
-          </div>
-        </div>
+
         <div className="flex justify-center">
           <Link
             href="/contact"

@@ -116,15 +116,15 @@ export function ExistingSiteSection() {
         </div>
 
         {/* Grande carte unique et compacte */}
-        <div className="rounded-2xl bg-gradient-to-br from-[#71DDAE]/15 to-[#2A9D7A]/15 border border-[#71DDAE]/30 backdrop-blur-sm shadow-lg p-6 md:p-8">
+        <div className="rounded-2xl bg-gradient-to-br from-[#E0ACBC]/15 to-[#D4A5C7]/15 border border-[#E0ACBC]/30 backdrop-blur-sm shadow-lg p-6 md:p-8">
           <div className="flex flex-col gap-6">
             {options.map((option, index) => (
               <div
                 key={option.id}
-                className={`flex flex-col md:flex-row gap-4 items-start ${index < options.length - 1 ? 'pb-6 border-b border-[#71DDAE]/20' : ''}`}
+                className={`flex flex-col md:flex-row gap-4 items-start ${index < options.length - 1 ? 'pb-6 border-b border-[#E0ACBC]/20' : ''}`}
               >
                 {/* Icône */}
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#71DDAE] to-[#2A9D7A] border border-white/20">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#E0ACBC] to-[#D4A5C7] border border-white/20">
                   <div className="text-white">
                     {option.icon}
                   </div>
@@ -136,7 +136,7 @@ export function ExistingSiteSection() {
                     <h3 className="text-lg font-bold text-white">
                       {option.title}
                     </h3>
-                    <span className="text-xs text-[#71DDAE] font-medium">
+                    <span className="text-xs text-[#E0ACBC] font-medium">
                       {option.proof}
                     </span>
                   </div>
@@ -148,7 +148,7 @@ export function ExistingSiteSection() {
                   <div className="flex flex-wrap gap-x-4 gap-y-2 mb-3">
                     {option.bullets.map((point) => (
                       <div key={point} className="flex items-center gap-1.5">
-                        <span className="text-[#71DDAE] text-xs">✓</span>
+                        <span className="text-[#E0ACBC] text-xs">✓</span>
                         <span className="text-xs text-white/80">{point}</span>
                       </div>
                     ))}
@@ -157,7 +157,7 @@ export function ExistingSiteSection() {
                   {/* CTA */}
                   <Link
                     href="/devis"
-                    className="inline-flex items-center gap-2 rounded-lg border border-[#71DDAE]/60 bg-gradient-to-r from-[#2A9D7A]/60 to-[#2A9D7A]/40 px-4 py-2 text-xs font-semibold text-white transition-all hover:border-[#71DDAE] hover:from-[#2A9D7A]/80 hover:to-[#2A9D7A]/60"
+                    className="inline-flex items-center gap-2 rounded-lg border border-[#E0ACBC]/60 bg-gradient-to-r from-[#D4A5C7]/60 to-[#D4A5C7]/40 px-4 py-2 text-xs font-semibold text-white transition-all hover:border-[#E0ACBC] hover:from-[#D4A5C7]/80 hover:to-[#D4A5C7]/60"
                   >
                     {option.ctaLabel}
                     <span className="text-[10px] text-white/70">
