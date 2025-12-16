@@ -6,6 +6,7 @@ const navigationLinks = [
   { label: "Accueil", href: "/" },
   { label: "L'Equipe de choc", href: "/equipe" },
   { label: "Nos Offres", href: "/offres" },
+  { label: "Guides", href: "/guides" },
 ];
 
 const legalLinks = [
