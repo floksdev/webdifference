@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-import { FaCheck } from "react-icons/fa";
+import { useEffect, useRef } from "react";
 
 declare global {
   interface Window {
@@ -15,112 +14,134 @@ declare global {
 }
 
 export function AppointmentSection() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
+  const calendlyRef = useRef<HTMLDivElement>(null);
 
-    script.onload = () => {
-      if (window.Calendly) {
+  useEffect(() => {
+    // Injecter du CSS pour forcer le texte en noir et corriger le positionnement
+    const style = document.createElement("style");
+    style.textContent = `
+      .calendly-inline-widget {
+        position: relative !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        height: 700px !important;
+        overflow: hidden !important;
+        left: 0 !important;
+        top: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+      }
+      .calendly-inline-widget iframe {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+        left: 0 !important;
+        top: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        color-scheme: light;
+      }
+      .calendly-inline-widget,
+      .calendly-inline-widget * {
+        color: #000000 !important;
+      }
+      .calendly-inline-widget h1,
+      .calendly-inline-widget h2,
+      .calendly-inline-widget h3,
+      .calendly-inline-widget h4,
+      .calendly-inline-widget p,
+      .calendly-inline-widget span,
+      .calendly-inline-widget div,
+      .calendly-inline-widget a {
+        color: #000000 !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Charger le script Calendly
+    let script = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]') as HTMLScriptElement;
+    
+    if (!script) {
+      script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+
+    const initCalendly = () => {
+      if (window.Calendly && calendlyRef.current) {
         window.Calendly.initInlineWidget({
-          url: "https://calendly.com/webdifference/nouvelle-reunion",
-          parentElement: document.getElementById("calendly-embed"),
+          url: "https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=cfcfcf&primary_color=1c1c1c&text_color=000000",
+          parentElement: calendlyRef.current,
         });
       }
     };
 
+    if (window.Calendly) {
+      initCalendly();
+    } else {
+      script.onload = initCalendly;
+    }
+
     return () => {
-      // Cleanup: remove script if component unmounts
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
+      if (document.head.contains(style)) {
+        document.head.removeChild(style);
       }
     };
   }, []);
 
   return (
     <section className="border-t border-white/10 py-16">
-        <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6 lg:flex-row lg:items-start">
-        {/* Colonne gauche */}
-        <div className="flex-1 space-y-8">
-          <div>
-            <h2 className="text-4xl font-bold text-white mb-2">
-              On discute de votre projet ? ☕
-            </h2>
-          </div>
-
-          {/* Étapes */}
-          <div className="space-y-6 relative">
-            {/* Ligne verticale */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#71DDAE] via-[#71DDAE]/50 to-transparent" />
-
-            {/* Étape 1 */}
-            <div className="relative flex items-start gap-4">
-              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#71DDAE] to-[#2A9D7A] border-2 border-[#1C1C1C] shadow-lg">
-                <FaCheck className="text-white text-sm" />
-              </div>
-              <div className="pt-2">
-                <p className="text-lg font-semibold text-white">
-                  Vous prenez rendez-vous
-                </p>
-              </div>
-            </div>
-
-            {/* Étape 2 */}
-            <div className="relative flex items-start gap-4">
-              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1C1C1C]/50 border-2 border-white/20">
-                <span className="text-white text-sm font-bold">02</span>
-              </div>
-              <div className="pt-2">
-                <p className="text-lg font-semibold text-white">
-                  On clarifie vos besoins
-                </p>
-              </div>
-            </div>
-
-            {/* Étape 3 */}
-            <div className="relative flex items-start gap-4">
-              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1C1C1C]/50 border-2 border-white/20">
-                <span className="text-white text-sm font-bold">03</span>
-              </div>
-              <div className="pt-2">
-                <p className="text-lg font-semibold text-white">
-                  Web Difference se met au boulot !
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Texte clients */}
-          <p className="text-base text-white/80 leading-relaxed">
-            300+ clients ont obtenu des résultats concrets en faisant appel à nos services, pourquoi pas vous ?
+      <div className="mx-auto max-w-7xl flex flex-col gap-12 px-6">
+        {/* Header premium */}
+        <div className="flex flex-col gap-3 text-center">
+          <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+            On discute de votre projet ?{' '}
+            <span className="text-[#71DDAE]">☕</span>
+          </h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Réservez un créneau et échangez directement avec notre équipe pour transformer vos idées en réalité digitale.
           </p>
-
-          {/* Logos clients */}
-          <div className="flex flex-wrap items-center gap-6 opacity-60">
-            <span className="text-2xl font-bold text-white">ENGIE</span>
-            <span className="text-2xl font-bold text-white">Vinted</span>
-            <span className="text-2xl font-bold text-white">CENTURY 21</span>
-            <span className="text-2xl font-bold text-white">RENAULT</span>
-          </div>
         </div>
 
-        {/* Colonne droite - Calendly Widget */}
-        <div className="flex-1 lg:max-w-md">
-          <p className="text-lg text-white/80 italic mb-4 text-center lg:text-left">
-            Soyez pas timides!
-            <span className="inline-block ml-2 text-[#71DDAE]">↓</span>
-          </p>
-
-          <div className="rounded-2xl bg-gradient-to-br from-[#1C1C1C]/80 to-[#1C1C1C]/60 border border-[#71DDAE]/30 backdrop-blur-sm shadow-lg overflow-hidden">
-            <div
-              id="calendly-embed"
-              style={{ minWidth: "320px", height: "700px" }}
-            />
-          </div>
+        {/* Wrapper premium avec dégradé argenté */}
+        <div 
+          className="relative rounded-3xl overflow-hidden"
+          style={{ 
+            background: "linear-gradient(135deg, #FAFAFA 0%, #E6E6E6 25%, #CFCFCF 50%, #B8B8B8 75%, #9E9E9E 100%)",
+            boxShadow: "0 20px 60px rgba(158, 158, 158, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.1)",
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+            position: "relative",
+            width: "100%"
+          }}
+        >
+          {/* Overlay brillant pour effet métallique */}
+          <div 
+            className="absolute inset-0 rounded-3xl pointer-events-none opacity-30"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%)',
+              zIndex: 1
+            }}
+          />
+          
+          {/* Contenu du widget */}
+          <div 
+            ref={calendlyRef}
+            className="calendly-inline-widget" 
+            style={{ 
+              position: "relative",
+              zIndex: 2,
+              width: "100%",
+              minWidth: "100%",
+              height: "700px"
+            }}
+          />
         </div>
-        </div>
-      </section>
+      </div>
+    </section>
   );
 }
 

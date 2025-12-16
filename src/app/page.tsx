@@ -28,8 +28,8 @@ export default function Home() {
       <ExistingSiteSection />
       <ReviewsRecommendationsSection />
       <FaqSection />
-      <ResourcesSection />
       <AppointmentSection />
+      <ResourcesSection />
     </>
   );
 }
