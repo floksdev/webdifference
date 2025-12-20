@@ -7,7 +7,7 @@ const benefits = [
     image: "/assets/main/suivientempsreel.png",
   },
   {
-    title: "Résultat garanti",
+    title: "Résultats garantis",
     description: "Engagement sur les objectifs fixés ou ajustement jusqu'à satisfaction complète.",
     image: "/assets/main/resultatgaranti.png",
   },

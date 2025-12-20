@@ -11,6 +11,43 @@ export function FaqSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const formatQuestion = (question: string, index: number) => {
+    switch (index) {
+      case 0: // "Combien coûte un site ou une refonte ?"
+        return (
+          <>
+            Combien coûte un <span className="text-[#71DDAE]">site</span> ou une <span className="text-[#71DDAE]">refonte</span> ?
+          </>
+        );
+      case 1: // "Quels sont les délais moyens ?"
+        return (
+          <>
+            Quels sont les <span className="text-[#71DDAE]">délais</span> moyens ?
+          </>
+        );
+      case 2: // "Pourrai-je gérer mon site facilement ?"
+        return (
+          <>
+            Pourrai-je <span className="text-[#71DDAE]">gérer</span> mon site <span className="text-[#71DDAE]">facilement</span> ?
+          </>
+        );
+      case 3: // "Quelles garanties proposez-vous ?"
+        return (
+          <>
+            Quelles <span className="text-[#71DDAE]">garanties</span> proposez-vous ?
+          </>
+        );
+      case 4: // "Travaillez-vous avec mon secteur d'activité ?"
+        return (
+          <>
+            Travaillez-vous avec mon <span className="text-[#71DDAE]">secteur d'activité</span> ?
+          </>
+        );
+      default:
+        return question;
+    }
+  };
+
   return (
     <section className="border-t border-white/10 py-16">
       <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6">
@@ -35,8 +72,8 @@ export function FaqSection() {
                   onClick={() => toggleQuestion(index)}
                   className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
                 >
-                  <h3 className="text-lg font-bold text-[#71DDAE] pr-8">
-                    {item.question}
+                  <h3 className="text-lg font-bold text-white pr-8">
+                    {formatQuestion(item.question, index)}
                   </h3>
                   <div
                     className={`flex-shrink-0 h-8 w-8 rounded-full bg-white/20 border border-white/30 flex items-center justify-center transition-transform duration-300 ${

@@ -10,7 +10,7 @@ export function AppointmentSection() {
         strategy="lazyOnload"
       />
       <section className="border-t border-white/10 py-16">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl px-6 flex flex-col">
           {/* Titre */}
           <div className="flex flex-col gap-3 text-center mb-2">
             <h2 className="text-3xl font-semibold text-white sm:text-4xl">
@@ -20,7 +20,7 @@ export function AppointmentSection() {
 
           {/* Widget Calendly */}
           <div 
-            className="calendly-inline-widget" 
+            className="calendly-inline-widget mt-4" 
             data-url="https://calendly.com/webdifference/nouvelle-reunion?background_color=71ddae&primary_color=000000&text_color=000000"
             style={{ 
               minWidth: "320px",

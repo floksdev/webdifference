@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { AppProviders } from "@/components/layout/app-providers";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { NewsletterSection } from "@/components/sections/newsletter-section";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -56,6 +57,7 @@ export default function RootLayout({
             <main className="flex-1 bg-[color:var(--color-background-strong)]">
               {children}
             </main>
+            <NewsletterSection />
             <SiteFooter />
           </div>
         </body>

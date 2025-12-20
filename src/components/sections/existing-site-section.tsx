@@ -46,7 +46,7 @@ export function ExistingSiteSection() {
             </h3>
             <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl flex items-baseline gap-2">
               <span>
-                {renderAlternatingText("pour être sauver", "Mais il a besoin de nous".length)}
+                {renderAlternatingText("pour être sauvé", "Mais il a besoin de nous".length)}
               </span>
               <Image
                 src="/bouée.png"

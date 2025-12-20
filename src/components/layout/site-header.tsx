@@ -13,8 +13,8 @@ import { FaPhone } from "react-icons/fa6";
 
 const links = [
   { href: "/", label: "Accueil" },
-  { href: "/offres", label: "Nos offres" },
-  { href: "/projets", label: "Nos projets" },
+  { href: "/offres", label: "Offres" },
+  { href: "/projets", label: "Projets" },
   { href: "/guides", label: "Guides" },
 ];
 
@@ -81,7 +81,9 @@ export function SiteHeader() {
           </button>
           <div className="flex items-center gap-2">
             <Link
-              href="/contact"
+              href="https://calendly.com/webdifference/nouvelle-reunion"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1C1C1C] px-5 text-xl font-extrabold tracking-wide text-white shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95"
               style={{
                 height: "56px",

@@ -40,7 +40,9 @@ export function HeroSection() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <div className="relative inline-flex">
               <Link
-                href="/contact"
+                href="https://calendly.com/webdifference/nouvelle-reunion"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] px-8 py-4 text-2xl font-extrabold tracking-wide text-[#1C1C1C] shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95"
                 style={{
                   height: "68px",
