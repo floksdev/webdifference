@@ -273,7 +273,7 @@ type QuestionStep =
 export function OffersSection() {
   const [currentStep, setCurrentStep] = useState<QuestionStep>("initial");
   const [selectedOffers, setSelectedOffers] = useState<string[]>([]);
-
+    
   const handleInitialChoice = (choice: "site-web" | "app-mobile" | "automatisation") => {
     if (choice === "automatisation") {
       setSelectedOffers(["offres-automatisation"]);
@@ -288,9 +288,9 @@ export function OffersSection() {
   const handleSiteWebExisting = (hasSite: boolean) => {
     if (hasSite) {
       setCurrentStep("site-web-existing-type");
-    } else {
+      } else {
       setCurrentStep("site-web-creation");
-    }
+        }
   };
 
   const handleSiteWebExistingType = (type: "maintenance" | "correctifs" | "refonte") => {
@@ -307,7 +307,7 @@ export function OffersSection() {
   const handleSiteWebCreation = () => {
     setCurrentStep("site-web-creation-type");
   };
-
+  
   const handleSiteWebCreationType = (type: "vitrine" | "ecommerce" | "saas") => {
     if (type === "vitrine") {
       setSelectedOffers(["offres-site-vitrine"]);
@@ -343,11 +343,11 @@ export function OffersSection() {
     setCurrentStep("initial");
     setSelectedOffers([]);
   };
-
+  
   const renderQuestion = () => {
     switch (currentStep) {
       case "initial":
-        return (
+  return (
           <div className="space-y-6">
             <h3 className="text-2xl font-extrabold text-[#71DDAE]">
               Vos besoins concernent...
@@ -412,7 +412,7 @@ export function OffersSection() {
             >
               ← Retour
             </button>
-          </div>
+        </div>
         );
 
       case "site-web-existing-type":
@@ -444,12 +444,12 @@ export function OffersSection() {
                 <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">Refonte</span>
               </button>
             </div>
-            <button
+          <button
               onClick={() => setCurrentStep("site-web-existing")}
               className="text-sm text-white/60 hover:text-white/80"
-            >
+          >
               ← Retour
-            </button>
+          </button>
           </div>
         );
 
@@ -482,12 +482,12 @@ export function OffersSection() {
                 <span className="text-lg font-semibold text-white transition-colors group-hover:text-[#71DDAE]">SaaS</span>
               </button>
             </div>
-            <button
+          <button
               onClick={() => setCurrentStep("site-web-existing")}
               className="text-sm text-white/60 hover:text-white/80"
-            >
+          >
               ← Retour
-            </button>
+          </button>
           </div>
         );
 
@@ -601,9 +601,9 @@ export function OffersSection() {
                         </div>
                         <div className="flex flex-col gap-3">
                           <h3 className="text-3xl font-extrabold text-black leading-tight text-left">
-                            {offer.name}
-                          </h3>
-                        </div>
+                      {offer.name}
+                    </h3>
+                  </div>
                       </div>
                     </div>
 
@@ -623,28 +623,28 @@ export function OffersSection() {
                             <li key={item} className="flex items-start gap-3">
                               <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/40 border-2 border-white/60 shadow-md">
                                 <span className="text-[#2A9D7A] text-xs font-bold">✓</span>
-                              </div>
+              </div>
                               <span className="text-base text-black font-medium leading-relaxed pt-0.5">
                                 {item}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
+                    </span>
+                  </li>
+                ))}
+              </ul>
                       </div>
                     </div>
-
+              
                     {/* CTA premium */}
-                    <Link
+              <Link
                       href="/contact"
                       className="mt-4 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#1C1C1C] px-8 py-4 text-base font-bold text-white shadow-[0_8px_24px_rgba(28,28,28,0.4)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_32px_rgba(28,28,28,0.5)] active:scale-100"
-                    >
+              >
                       <FaCalendarAlt className="text-xl" />
                       <span>Réserver un appel gratuit</span>
                       <span className="text-xl">→</span>
-                    </Link>
+              </Link>
                   </article>
-                );
-              })}
+              );
+            })}
             </div>
           </div>
         );
@@ -654,7 +654,7 @@ export function OffersSection() {
     }
   };
 
-  return (
+              return (
     <section id="offres" className="border-t border-white/10 py-24">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6">
         <div className="flex flex-col gap-6 text-center items-center">

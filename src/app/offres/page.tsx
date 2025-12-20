@@ -173,7 +173,7 @@ const allOffers = [
     name: "Refonte App Mobile",
     tagline: "Modernisation iOS & Android",
     price: "Sur devis",
-    description:
+  description:
       "Modernisez votre application mobile existante avec une nouvelle interface, de meilleures performances et les dernières fonctionnalités.",
     badge: "Audit UX/UI offert",
     items: [
@@ -228,11 +228,11 @@ export default function OffersPage() {
             <h2 className="text-3xl font-semibold sm:text-4xl text-white">
               Toutes nos <span className="text-[#71DDAE] text-4xl sm:text-5xl font-bold">offres</span>
             </h2>
-          </div>
+        </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {allOffers.map((offer) => (
-              <article
+          <article
                 key={offer.id}
                 className="group relative flex flex-col gap-6 rounded-3xl p-8 transition-all duration-300 bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] shadow-[0_20px_60px_rgba(113,221,174,0.3)] hover:shadow-[0_25px_80px_rgba(113,221,174,0.4)]"
               >
@@ -277,15 +277,15 @@ export default function OffersPage() {
                           </div>
                           <span className="text-base text-black font-medium leading-relaxed pt-0.5">
                             {item}
-                          </span>
+              </span>
                         </li>
-                      ))}
-                    </ul>
+              ))}
+            </ul>
                   </div>
                 </div>
 
                 {/* CTA premium */}
-                <Link
+            <Link
                   href="https://calendly.com/webdifference/nouvelle-reunion"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -294,9 +294,9 @@ export default function OffersPage() {
                   <FaCalendarAlt className="text-xl" />
                   <span>Réserver un appel gratuit</span>
                   <span className="text-xl">→</span>
-                </Link>
-              </article>
-            ))}
+            </Link>
+          </article>
+        ))}
           </div>
         </div>
       </section>

@@ -97,30 +97,30 @@ export default function ReviewsRecommendationsSection() {
                   <div className="flex items-center gap-3">
                     <div className="h-12 w-12 rounded-xl bg-[#1C1C1C] flex items-center justify-center shrink-0 shadow-lg">
                       <span className="text-white text-base font-bold">
-                        {testimonial.company.charAt(0).toUpperCase()}
-                      </span>
-                    </div>
+                    {testimonial.company.charAt(0).toUpperCase()}
+                  </span>
+                </div>
                     <div className="flex flex-col">
                       <h3 className="text-xl font-extrabold text-black leading-tight">
-                        {testimonial.company}
+                  {testimonial.company}
                       </h3>
                       <div className="flex items-center gap-1 mt-1">
-                        {Array.from({ length: 5 }).map((_, idx) => (
+                {Array.from({ length: 5 }).map((_, idx) => (
                           <span key={idx} className="text-black text-sm">★</span>
-                        ))}
-                      </div>
+                ))}
+              </div>
                     </div>
                   </div>
                   {/* Badge auteur en haut à droite */}
                   <div className="flex items-center gap-2 rounded-full bg-black/10 px-3 py-1.5">
                     <div className="h-6 w-6 rounded-full bg-[#1C1C1C] flex items-center justify-center shrink-0">
                       <span className="text-white text-[10px] font-bold">
-                        {testimonial.author.charAt(0).toUpperCase()}
-                      </span>
-                    </div>
+                    {testimonial.author.charAt(0).toUpperCase()}
+                  </span>
+                </div>
                     <span className="text-xs font-semibold text-black">
-                      {testimonial.author}
-                    </span>
+                    {testimonial.author}
+                  </span>
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export default function ReviewsRecommendationsSection() {
                 <p className="text-base text-black/90 leading-relaxed font-medium">
                   {testimonial.content}
                 </p>
-              </div>
+            </div>
             </article>
           ))}
         </div>

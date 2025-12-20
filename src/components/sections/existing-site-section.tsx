@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import Image from "next/image";
 
@@ -37,17 +37,17 @@ export function ExistingSiteSection() {
               height={200}
               className="w-auto h-auto max-w-[200px]"
             />
-          </div>
-
+                </div>
+                
           {/* Texte */}
           <div className="flex flex-col gap-4 text-center md:text-left">
             <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl">
               {renderAlternatingText("Mais il a besoin de nous", 0)}
-            </h3>
+                    </h3>
             <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl flex items-baseline gap-2">
               <span>
                 {renderAlternatingText("pour être sauvé", "Mais il a besoin de nous".length)}
-              </span>
+                    </span>
               <Image
                 src="/bouée.png"
                 alt=""

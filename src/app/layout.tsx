@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s · Web Difference",
   },
   description:
-    "Studio produit & automation qui conçoit des expériences digitales sur-mesure, propulsées par l’IA et les workflows automatisés.",
+    "Studio produit & automation qui conçoit des expériences digitales sur-mesure, propulsées par l'IA et les workflows automatisés.",
   keywords: [
     "agence digitale",
     "automatisation",
@@ -38,6 +38,20 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://webdifference.app",
     locale: "fr_FR",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+  other: {
+    "apple-mobile-web-app-title": "WebDifference",
   },
 };
 

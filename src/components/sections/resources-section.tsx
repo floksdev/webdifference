@@ -24,11 +24,11 @@ export function ResourcesSection() {
                 FAQ
               </span>
             </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
             {articles.slice(0, 3).map((post, index) => (
               <Link
-                key={post.slug}
+              key={post.slug}
                 href={`/guides/${post.slug}`}
                 className={`group relative flex flex-col rounded-3xl p-8 transition-all duration-300 h-[320px] overflow-hidden hover:scale-105 hover:shadow-2xl ${
                   post.category === "Guide agence" ? "md:mt-12" : ""
@@ -58,14 +58,14 @@ export function ResourcesSection() {
                       </div>
                       <div className="flex flex-col">
                         <h3 className="text-xl font-extrabold text-black leading-tight">
-                          {post.category}
+                {post.category}
                         </h3>
                         <p className="text-xs text-black/60 mt-1">
-                          {post.readTime} · {new Date(post.publishedAt).toLocaleDateString("fr-FR", {
-                            month: "short",
-                            day: "2-digit",
-                          })}
-                        </p>
+                {post.readTime} · {new Date(post.publishedAt).toLocaleDateString("fr-FR", {
+                  month: "short",
+                  day: "2-digit",
+                })}
+              </p>
                       </div>
                     </div>
                   </div>
@@ -81,12 +81,12 @@ export function ResourcesSection() {
                   </p>
                 </div>
               </Link>
-            ))}
-          </div>
+          ))}
+        </div>
           
           {/* Bouton "En voir +" */}
           <div className="flex justify-center mt-8">
-            <Link
+          <Link
               href="/guides"
               className="rounded-2xl px-8 py-4 font-bold text-lg transition-all hover:-translate-y-1 hover:scale-105 relative overflow-hidden text-black"
               style={{
@@ -103,10 +103,10 @@ export function ResourcesSection() {
                 }}
               />
               <span className="relative z-10"><span className="font-extrabold">En voir</span> davantage</span>
-            </Link>
-          </div>
+          </Link>
         </div>
-      </section>
+      </div>
+    </section>
     </>
   );
 }

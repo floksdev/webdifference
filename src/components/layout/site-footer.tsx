@@ -50,13 +50,13 @@ export function SiteFooter() {
               {links.map((link) => {
                 const isActive = pathname === link.href;
                 return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
+                <Link
+                  key={link.href}
+                  href={link.href}
                     className={`text-sm text-[#1C1C1C] transition-all ${isActive ? "underline decoration-2 underline-offset-4 decoration-[#1C1C1C]" : "hover:underline decoration-2 underline-offset-4"}`}
-                  >
-                    {link.label}
-                  </Link>
+                >
+                  {link.label}
+                </Link>
                 );
               })}
             </nav>
