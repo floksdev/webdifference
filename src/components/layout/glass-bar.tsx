@@ -30,13 +30,11 @@ export function GlassBar({
         className,
       ].join(" ")}
       style={{
-        // Optimisations pour le scroll fluide
+        // Optimisations pour le scroll fluide (sans contain qui peut cacher les enfants)
         willChange: "transform",
         transform: "translateZ(0)",
         backfaceVisibility: "hidden",
         WebkitBackfaceVisibility: "hidden",
-        // Isolation du rendu pour améliorer les performances
-        contain: "layout style paint",
       }}
     >
       {children}
