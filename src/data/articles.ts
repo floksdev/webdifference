@@ -49,4 +49,24 @@ export const articles: ArticleSummary[] = [
     readTime: "5 min",
     publishedAt: "2024-12-20",
   },
+  {
+    slug: "automatiser-processus-metier",
+    title: "Automatiser vos processus métier : gagner du temps et réduire les erreurs",
+    summary:
+      "Comment identifier les tâches répétitives à automatiser et les workflows qui feront gagner des heures chaque semaine.",
+    category: "Automatisation",
+    tags: ["Automatisation", "Productivité", "Workflow"],
+    readTime: "8 min",
+    publishedAt: "2025-02-10",
+  },
+  {
+    slug: "creer-site-ecommerce-reussi",
+    title: "Créer un site e-commerce réussi : les 7 étapes essentielles",
+    summary:
+      "De la préparation à la mise en ligne, découvrez comment lancer votre boutique en ligne avec succès et éviter les pièges courants.",
+    category: "E-commerce",
+    tags: ["E-commerce", "Création site", "Vente en ligne"],
+    readTime: "9 min",
+    publishedAt: "2025-02-15",
+  },
 ];
