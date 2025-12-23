@@ -14,9 +14,7 @@ const nextConfig: NextConfig = {
   
   // Configuration SWC pour éviter les polyfills inutiles
   // Cibler uniquement les navigateurs modernes qui supportent ES6+ nativement
-  swcMinify: true,
-  
-  // Configuration de la transpilation SWC pour les navigateurs modernes
+  // Note: swcMinify n'existe plus dans Next.js 16, SWC est utilisé par défaut
   // Les fonctionnalités Baseline (Array.at, Object.fromEntries, etc.) sont supportées nativement
   // Pas besoin de polyfills pour les navigateurs modernes
   // Next.js utilisera automatiquement .browserslistrc pour déterminer les cibles de transpilation
