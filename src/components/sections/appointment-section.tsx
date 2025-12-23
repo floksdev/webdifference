@@ -11,7 +11,9 @@ export function AppointmentSection() {
   );
   const [showFallback, setShowFallback] = useState(false);
   const [storageAccessGranted, setStorageAccessGranted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const widgetRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
@@ -29,9 +31,35 @@ export function AppointmentSection() {
     }
   }, []);
 
-  // Détecter si le widget Calendly ne se charge pas (cookies bloqués)
+  // Charger Calendly uniquement quand la section est visible (Intersection Observer)
+  // Cela économise ~1 Mo de JS et 461 KiB de CSS au chargement initial
   useEffect(() => {
-    if (typeof window === "undefined" || !widgetRef.current) return;
+    if (!sectionRef.current || typeof window === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect(); // Arrêter l'observation une fois visible
+          }
+        });
+      },
+      {
+        rootMargin: "200px", // Commencer à charger 200px avant que la section soit visible
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Détecter si le widget Calendly ne se charge pas (cookies bloqués)
+  // Ne s'exécute que quand la section est visible
+  useEffect(() => {
+    if (!isVisible || typeof window === "undefined" || !widgetRef.current) return;
 
     // Vérifier si l'API Storage Access est disponible et si on a déjà l'accès
     const checkStorageAccess = async () => {
@@ -63,7 +91,7 @@ export function AppointmentSection() {
     }, 3000);
 
     return () => clearTimeout(checkWidgetLoad);
-  }, [calendlyUrl]);
+  }, [calendlyUrl, isVisible]);
 
   const handleOpenInNewWindow = () => {
     window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
@@ -93,11 +121,18 @@ export function AppointmentSection() {
 
   return (
     <>
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-      />
-      <section className="border-t border-white/10 py-16" style={{ overflow: 'visible' }}>
+      {/* Charger le script Calendly uniquement quand la section est visible */}
+      {isVisible && (
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
+      )}
+      <section 
+        ref={sectionRef}
+        className="border-t border-white/10 py-16" 
+        style={{ overflow: 'visible' }}
+      >
         <div className="mx-auto max-w-7xl px-6 flex flex-col" style={{ overflow: 'visible' }}>
           {/* Titre */}
           <div className="flex flex-col gap-3 text-center mb-2">
@@ -136,17 +171,27 @@ export function AppointmentSection() {
           {/* Widget Calendly avec image en overlay */}
           <div className="relative mt-4" style={{ overflow: 'visible' }}>
             {/* Widget Calendly - prend toute la largeur */}
-            <div className="w-full" ref={widgetRef}>
-              <div 
-                className="calendly-inline-widget" 
-                data-url={calendlyUrl}
-                style={{ 
-                  minWidth: "320px",
-                  height: "700px",
-                  width: "100%"
-                }}
-              />
-            </div>
+            {/* Afficher un placeholder jusqu'à ce que Calendly soit chargé */}
+            {!isVisible ? (
+              <div className="w-full bg-white/5 rounded-2xl flex items-center justify-center" style={{ minHeight: "700px" }}>
+                <div className="text-center text-white/70">
+                  <FaCalendarAlt className="text-4xl mx-auto mb-4" />
+                  <p className="text-lg">Chargement du calendrier...</p>
+                </div>
+              </div>
+            ) : (
+              <div className="w-full" ref={widgetRef}>
+                <div 
+                  className="calendly-inline-widget" 
+                  data-url={calendlyUrl}
+                  style={{ 
+                    minWidth: "320px",
+                    height: "700px",
+                    width: "100%"
+                  }}
+                />
+              </div>
+            )}
 
             {/* Bouton de secours toujours visible */}
             <div className="absolute bottom-4 right-4 z-20">

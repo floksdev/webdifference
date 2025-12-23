@@ -33,9 +33,16 @@ const nextConfig: NextConfig = {
   // Réduire la taille des chunks JavaScript et éviter les polyfills inutiles
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
-      // Optimiser pour les navigateurs modernes
+      // Désactiver explicitement les polyfills pour les navigateurs modernes
       // Next.js utilisera .browserslistrc pour déterminer les polyfills nécessaires
       // Avec notre configuration, les fonctionnalités Baseline ne nécessiteront pas de polyfills
+      
+      // Désactiver les polyfills automatiques de webpack
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        // Ne pas inclure de polyfills pour les fonctionnalités Baseline
+        // Les navigateurs modernes les supportent nativement
+      };
       
       // Optimiser les chunks pour réduire la taille du bundle
       config.optimization = {

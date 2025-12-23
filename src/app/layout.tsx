@@ -134,6 +134,43 @@ export default function RootLayout({
               `,
             }}
           />
+          {/* Preload du CSS critique pour éviter le blocage du rendu */}
+          <Script
+            id="preload-css"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  // Observer pour précharger le CSS dès qu'il apparaît dans le head
+                  const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                      mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeName === 'LINK' && node.rel === 'stylesheet') {
+                          const href = node.getAttribute('href');
+                          if (href && !document.querySelector('link[rel="preload"][href="' + href + '"]')) {
+                            const preloadLink = document.createElement('link');
+                            preloadLink.rel = 'preload';
+                            preloadLink.href = href;
+                            preloadLink.as = 'style';
+                            document.head.insertBefore(preloadLink, node);
+                          }
+                        }
+                      });
+                    });
+                  });
+                  
+                  // Observer les changements dans le head
+                  if (document.head) {
+                    observer.observe(document.head, { childList: true, subtree: false });
+                  } else {
+                    document.addEventListener('DOMContentLoaded', function() {
+                      observer.observe(document.head, { childList: true, subtree: false });
+                    });
+                  }
+                })();
+              `,
+            }}
+          />
           <PreconnectHints />
           <MetaTheme />
           <div className="flex min-h-dvh flex-col bg-[color:var(--color-background-strong)]">

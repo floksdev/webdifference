@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FaCalendarAlt } from "react-icons/fa";
@@ -13,12 +12,8 @@ export function HeroSection() {
       <div className="mx-auto flex max-w-6xl flex-col gap-14 px-4 py-12 sm:px-6 sm:py-16 md:py-24">
         <div className="flex flex-col items-center gap-6 text-center">
           {/* Badge avec animation légère */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-4 inline-block w-full sm:w-auto"
-          >
+          {/* Suppression de l'animation initiale pour éviter les erreurs d'hydratation */}
+          <div className="mb-4 inline-block w-full sm:w-auto">
             <div className="relative flex items-center gap-2 rounded-full border border-[#1C1C1C]/20 bg-[#FFFFFF] px-3 py-2.5 shadow-[0_18px_48px_rgba(0,0,0,0.32),0_0_20px_rgba(113,221,174,0.4),0_0_40px_rgba(113,221,174,0.2)] overflow-hidden sm:gap-4 sm:px-6 sm:py-3 sm:overflow-visible md:px-8 md:py-4">
               <Image
                 src="/assets/main/fond-blanc/logo-sm.png"
@@ -32,28 +27,18 @@ export function HeroSection() {
                 Créer un site web <span className="underline decoration-3 underline-offset-4 decoration-[#1C1C1C]">vraiment</span> unique
               </p>
             </div>
-          </motion.div>
+          </div>
           {/* H1 critique pour LCP - visible immédiatement, pas d'animation */}
           {/* Le h1 est rendu immédiatement sans attendre l'animation JavaScript */}
           <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
             Votre <span className="text-[#71DDAE]">site</span> doit <span className="text-[#71DDAE]">donner envie</span> de <span className="text-[#71DDAE]">rester</span>, pas de <span className="line-through decoration-[#1C1C1C]"><span className="text-[#71DDAE]">revenir</span> <span className="text-white">en</span> <span className="text-[#71DDAE]">arrière</span></span>.
           </h1>
-          {/* Paragraphe avec animation légère */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="max-w-lg text-base font-medium text-white/80 sm:max-w-2xl sm:text-lg md:text-xl"
-          >
+          {/* Paragraphe - animation supprimée pour éviter les erreurs d'hydratation */}
+          <p className="max-w-lg text-base font-medium text-white/80 sm:max-w-2xl sm:text-lg md:text-xl">
             Design moderne,<br className="sm:hidden" /> SEO solide, Suivi complet :<br /> on construit un site qui retient vos visiteurs et vous apporte des résultats.
-          </motion.p>
-          {/* CTA avec animation légère */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:items-start"
-          >
+          </p>
+          {/* CTA - animation supprimée pour éviter les erreurs d'hydratation */}
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:items-start">
             <div className="relative w-full sm:w-auto sm:inline-flex">
               <Link
                 href="https://calendly.com/webdifference/nouvelle-reunion"
@@ -81,19 +66,15 @@ export function HeroSection() {
               Découvrir nos projets
               <FaArrowDown className="text-xl" color="#71DDAE" />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      <motion.div
-        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 1.2 }}
-      >
+      {/* Effets de fond - animation supprimée pour éviter les erreurs d'hydratation */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:rgba(113,221,174,0.25)] blur-[120px] sm:h-[400px] sm:w-[400px] sm:blur-[160px] md:h-[520px] md:w-[520px] md:blur-[220px]" />
         <div className="absolute left-1/4 top-1/4 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:rgba(255,255,255,0.18)] blur-[100px] sm:h-[280px] sm:w-[280px] sm:blur-[140px] md:h-[360px] md:w-[360px] md:blur-[200px]" />
-      </motion.div>
+      </div>
     </section>
   );
 }

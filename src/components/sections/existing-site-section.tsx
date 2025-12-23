@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo } from "react";
+import React from "react";
 
 export function ExistingSiteSection() {
   // Fonction helper pour compter les caractères non-espaces
@@ -18,9 +19,10 @@ export function ExistingSiteSection() {
       const uniqueKey = `${prefix}-${text}-${index}`;
       
       if (char === " ") {
-        // Utiliser un espace normal au lieu de \u00A0 pour éviter les problèmes d'hydratation
+        // Utiliser un span avec un espace pour cohérence serveur/client
+        // Le span est nécessaire pour maintenir la structure du DOM identique
         return (
-          <span key={uniqueKey}>
+          <span key={uniqueKey} className="inline-block w-[0.25em]">
             {" "}
           </span>
         );
