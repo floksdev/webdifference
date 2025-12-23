@@ -20,7 +20,8 @@ export function GlassBar({
         pos,
         "z-50",
         // Le "matériau" Liquid Glass avec fond vert solide
-        "backdrop-blur-xl backdrop-saturate-150",
+        // Réduit le blur pour améliorer les performances au scroll
+        "backdrop-blur-md backdrop-saturate-150",
         "bg-[#71DDAE]",
         // Hairline + highlight
         position === "top"
@@ -28,6 +29,15 @@ export function GlassBar({
           : "border-t border-white/15",
         className,
       ].join(" ")}
+      style={{
+        // Optimisations pour le scroll fluide
+        willChange: "transform",
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+        WebkitBackfaceVisibility: "hidden",
+        // Isolation du rendu pour améliorer les performances
+        contain: "layout style paint",
+      }}
     >
       {children}
     </div>
