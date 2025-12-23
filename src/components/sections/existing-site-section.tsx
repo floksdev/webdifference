@@ -1,15 +1,21 @@
  "use client";
 
 import Image from "next/image";
+import { useMemo } from "react";
 
 export function ExistingSiteSection() {
+  // Fonction helper pour compter les caractères non-espaces
+  const countNonSpaceChars = (text: string) => {
+    return text.split("").filter((char) => char !== " ").length;
+  };
+
   // Fonction pour alterner les couleurs lettre par lettre (espaces ignorés)
   const renderAlternatingText = (text: string, startIndex: number = 0) => {
     let charIndex = startIndex;
     return text.split("").map((char, index) => {
       if (char === " ") {
         return (
-          <span key={index}>
+          <span key={`${text}-${index}`}>
             {"\u00A0"}
           </span>
         );
@@ -18,7 +24,7 @@ export function ExistingSiteSection() {
       charIndex++;
       return (
         <span
-          key={index}
+          key={`${text}-${index}`}
           className={isEven ? "text-[#FFB3E0]" : "text-white"}
         >
           {char}
@@ -26,6 +32,17 @@ export function ExistingSiteSection() {
       );
     });
   };
+
+  // Calculer les indices de départ pour éviter les erreurs d'hydratation
+  const desktopText1 = "Mais il a besoin de nous";
+  const desktopText2 = "pour être sauvé";
+  const mobileText1 = "Mais il a besoin de";
+  const mobileText2 = "nous pour être";
+  const mobileText3 = "sauvé";
+
+  const desktopStartIndex2 = useMemo(() => countNonSpaceChars(desktopText1), []);
+  const mobileStartIndex2 = useMemo(() => countNonSpaceChars(mobileText1), []);
+  const mobileStartIndex3 = useMemo(() => countNonSpaceChars(mobileText1) + countNonSpaceChars(mobileText2), []);
 
   return (
     <section className="border-t border-white/10 py-16">
@@ -52,17 +69,17 @@ export function ExistingSiteSection() {
           <div className="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
             {/* Version PC */}
             <h3 className="hidden md:block text-3xl font-bold sm:text-4xl md:text-5xl">
-              {renderAlternatingText("Mais il a besoin de nous", 0)}
+              {renderAlternatingText(desktopText1, 0)}
               <br />
-              {renderAlternatingText("pour être sauvé", "Mais il a besoin de nous".length)}.
+              {renderAlternatingText(desktopText2, desktopStartIndex2)}.
             </h3>
             {/* Version Mobile */}
             <h3 className="md:hidden text-3xl font-bold sm:text-4xl md:text-5xl">
-              {renderAlternatingText("Mais il a besoin de", 0)}
+              {renderAlternatingText(mobileText1, 0)}
               <br />
-              {renderAlternatingText("nous pour être", "Mais il a besoin de".length)}
+              {renderAlternatingText(mobileText2, mobileStartIndex2)}
               <br />
-              {renderAlternatingText("sauvé", "Mais il a besoin de nous pour être".length)}.
+              {renderAlternatingText(mobileText3, mobileStartIndex3)}.
             </h3>
           </div>
         </div>

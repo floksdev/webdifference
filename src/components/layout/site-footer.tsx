@@ -95,12 +95,12 @@ export function SiteFooter() {
           {/* Mentions légales */}
           <div className="space-y-3">
             <h3 className="text-base font-extrabold text-[#1C1C1C]">Légal</h3>
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-3">
               {legalLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-xs text-[#1C1C1C] transition-all hover:underline decoration-2 underline-offset-4 leading-tight"
+                  className="text-sm text-[#1C1C1C] transition-all hover:underline decoration-2 underline-offset-4 leading-relaxed py-2 min-h-[44px] flex items-center"
                 >
                   {link.label}
                 </Link>

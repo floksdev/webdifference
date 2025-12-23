@@ -32,6 +32,18 @@ export function MetaTheme() {
     setMetaTag("msapplication-navbutton-color", "#71DDAE");
     setMetaTag("msapplication-TileColor", "#71DDAE");
     
+    // Permissions policy pour éviter les violations
+    const setHttpEquivTag = (equiv: string, content: string) => {
+      let meta = document.querySelector(`meta[http-equiv="${equiv}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute("http-equiv", equiv);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", content);
+    };
+    setHttpEquivTag("Permissions-Policy", "payment=(self)");
+    
     // Fonction pour s'assurer que les deux barres restent toujours vertes
     const ensureBarsGreen = () => {
       // Status bar

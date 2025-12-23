@@ -116,9 +116,10 @@ export function SiteHeader() {
           href="https://calendly.com/webdifference/nouvelle-reunion"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Prendre rendez-vous"
           className="absolute right-6 md:hidden inline-flex items-center justify-center rounded-xl bg-[#1C1C1C] h-12 w-12 shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95"
         >
-          <FaCalendarAlt className="text-xl" color="#FFFFFF" />
+          <FaCalendarAlt className="text-xl" color="#FFFFFF" aria-hidden="true" />
         </Link>
 
         {/* Navigation desktop */}

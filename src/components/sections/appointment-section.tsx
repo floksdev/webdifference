@@ -2,8 +2,95 @@
 
 import Script from "next/script";
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
+import { FaCalendarAlt, FaExternalLinkAlt } from "react-icons/fa";
 
 export function AppointmentSection() {
+  const [calendlyUrl, setCalendlyUrl] = useState<string>(
+    "https://calendly.com/webdifference/nouvelle-reunion?background_color=71ddae&primary_color=000000&text_color=000000"
+  );
+  const [showFallback, setShowFallback] = useState(false);
+  const [storageAccessGranted, setStorageAccessGranted] = useState(false);
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  useEffect(() => {
+    // Ajouter le paramètre embed_domain pour résoudre les problèmes de cookies
+    if (typeof window !== "undefined") {
+      const embedDomain = window.location.hostname;
+      const baseUrl = "https://calendly.com/webdifference/nouvelle-reunion";
+      const params = new URLSearchParams({
+        background_color: "71ddae",
+        primary_color: "000000",
+        text_color: "000000",
+        embed_domain: embedDomain,
+      });
+      setCalendlyUrl(`${baseUrl}?${params.toString()}`);
+    }
+  }, []);
+
+  // Détecter si le widget Calendly ne se charge pas (cookies bloqués)
+  useEffect(() => {
+    if (typeof window === "undefined" || !widgetRef.current) return;
+
+    // Vérifier si l'API Storage Access est disponible et si on a déjà l'accès
+    const checkStorageAccess = async () => {
+      if ("hasStorageAccess" in document) {
+        try {
+          const hasAccess = await (document as any).hasStorageAccess();
+          if (hasAccess) {
+            setStorageAccessGranted(true);
+          }
+        } catch (err) {
+          // Ignorer les erreurs silencieusement
+        }
+      }
+    };
+
+    checkStorageAccess();
+
+    // Détecter si le widget Calendly ne se charge pas après un délai
+    const checkWidgetLoad = setTimeout(() => {
+      if (widgetRef.current) {
+        const iframe = widgetRef.current.querySelector('iframe[src*="calendly.com"]') as HTMLIFrameElement;
+        if (!iframe || (iframe && iframe.contentWindow === null)) {
+          setShowFallback(true);
+        }
+      } else {
+        // Si le widget n'existe toujours pas après 3 secondes, proposer l'alternative
+        setShowFallback(true);
+      }
+    }, 3000);
+
+    return () => clearTimeout(checkWidgetLoad);
+  }, [calendlyUrl]);
+
+  const handleOpenInNewWindow = () => {
+    window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleRequestStorageAccess = async () => {
+    if ("requestStorageAccess" in document) {
+      try {
+        await (document as any).requestStorageAccess();
+        setStorageAccessGranted(true);
+        setShowFallback(false);
+        // Recharger le widget
+        if (widgetRef.current) {
+          const widget = widgetRef.current.querySelector('.calendly-inline-widget');
+          if (widget && (window as any).Calendly) {
+            (window as any).Calendly.initInlineWidget({
+              url: calendlyUrl,
+              parentElement: widget,
+            });
+          }
+        }
+      } catch (err) {
+        console.log("Accès au stockage refusé:", err);
+      }
+    }
+  };
+
   return (
     <>
       <Script
@@ -19,19 +106,58 @@ export function AppointmentSection() {
             </h2>
           </div>
 
+          {/* Message informatif si les cookies sont bloqués */}
+          {showFallback && !storageAccessGranted && (
+            <div className="mb-4 p-4 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
+              <p className="text-white/90 text-sm mb-3">
+                Pour utiliser le calendrier intégré, nous avons besoin d'accéder aux cookies de Calendly. 
+                Cela nous permet de vous offrir une meilleure expérience de prise de rendez-vous.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2">
+                {"requestStorageAccess" in document && (
+                  <button
+                    onClick={handleRequestStorageAccess}
+                    className="px-4 py-2 rounded-lg bg-[#71DDAE] text-[#1C1C1C] font-semibold hover:bg-[#5FC89A] transition-colors text-sm"
+                  >
+                    Autoriser l'accès
+                  </button>
+                )}
+                <button
+                  onClick={handleOpenInNewWindow}
+                  className="px-4 py-2 rounded-lg bg-[#1C1C1C] text-white font-semibold hover:bg-[#2C2C2C] transition-colors text-sm flex items-center justify-center gap-2"
+                >
+                  <FaExternalLinkAlt />
+                  Ouvrir dans une nouvelle fenêtre
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Widget Calendly avec image en overlay */}
           <div className="relative mt-4" style={{ overflow: 'visible' }}>
             {/* Widget Calendly - prend toute la largeur */}
-            <div className="w-full">
+            <div className="w-full" ref={widgetRef}>
               <div 
                 className="calendly-inline-widget" 
-                data-url="https://calendly.com/webdifference/nouvelle-reunion?background_color=71ddae&primary_color=000000&text_color=000000"
+                data-url={calendlyUrl}
                 style={{ 
                   minWidth: "320px",
                   height: "700px",
                   width: "100%"
                 }}
               />
+            </div>
+
+            {/* Bouton de secours toujours visible */}
+            <div className="absolute bottom-4 right-4 z-20">
+              <button
+                onClick={handleOpenInNewWindow}
+                className="px-4 py-2 rounded-lg bg-[#1C1C1C] text-white font-semibold hover:bg-[#2C2C2C] transition-colors text-sm flex items-center gap-2 shadow-lg"
+                title="Ouvrir dans une nouvelle fenêtre"
+              >
+                <FaExternalLinkAlt />
+                <span className="hidden sm:inline">Nouvelle fenêtre</span>
+              </button>
             </div>
 
             {/* Image en overlay à droite */}

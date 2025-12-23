@@ -216,9 +216,9 @@ export function NewsletterSection() {
           </div>
         )}
         
-        <p className="text-xs text-white/50 text-center mt-4 max-w-xs sm:max-w-full mx-auto">
+        <p className="text-sm text-white/50 text-center mt-4 max-w-xs sm:max-w-full mx-auto">
           En vous inscrivant, vous acceptez notre{' '}
-          <Link href="/politique-de-confidentialite" className="underline hover:text-white/70 transition">
+          <Link href="/politique-de-confidentialite" className="underline hover:text-white/70 transition inline-block py-2 px-1 min-h-[44px]">
             politique de confidentialité
           </Link>
           .

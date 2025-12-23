@@ -63,13 +63,15 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-status-bar-style": "black-translucent",
     "apple-mobile-web-app-capable": "yes",
     "theme-color": "#71DDAE",
+    "permissions-policy": "payment=(self)",
   },
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  // maximumScale: retiré pour permettre le zoom jusqu'à 5x (requis pour l'accessibilité)
+  // Les utilisateurs malvoyants doivent pouvoir zoomer jusqu'à 5x minimum
   // Pour iOS : permet d'utiliser toute la surface écran + safe areas
   viewportFit: "cover",
 };
