@@ -10,24 +10,24 @@ export default function ProjetsPage() {
       
       {/* Section "Besoin d'un boost de visibilité ?" */}
       <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
-        <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:gap-12 px-6">
           <div className="flex flex-col gap-6 text-center items-center">
             <h2 className="text-3xl font-semibold sm:text-4xl text-white">
               Besoin d'un <span className="text-[#71DDAE] text-4xl sm:text-5xl font-bold underline">boost</span> de <span className="text-[#71DDAE] text-4xl sm:text-5xl font-bold">visibilité</span> ?
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 lg:items-start mt-12">
+          <div className="grid lg:grid-cols-2 lg:items-start mt-4 sm:mt-12">
             {/* Image à gauche */}
             <div className="relative w-full flex items-center justify-center">
-              <div className="relative w-full max-w-xs h-auto">
+              <div className="relative w-full max-w-[60%] sm:max-w-xs h-auto">
                 <Image
                   src="/misenavant4.png"
                   alt="Mise en avant"
                   width={320}
                   height={240}
                   className="object-contain rounded-2xl"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 640px) 60vw, (max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -35,7 +35,7 @@ export default function ProjetsPage() {
             {/* Carte recommandée à droite */}
             <div className="flex flex-col justify-center">
               <div className="space-y-6">
-                <article className="group relative flex flex-col gap-6 rounded-3xl p-8 transition-all duration-300 bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] shadow-[0_20px_60px_rgba(113,221,174,0.3)] hover:shadow-[0_25px_80px_rgba(113,221,174,0.4)]">
+                <article className="group relative flex flex-col gap-6 rounded-3xl p-4 sm:p-8 transition-all duration-300 bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] shadow-[0_20px_60px_rgba(113,221,174,0.3)] hover:shadow-[0_25px_80px_rgba(113,221,174,0.4)]">
 
                   <div className="relative z-10">
                     {/* Image du site en gros */}
@@ -53,7 +53,7 @@ export default function ProjetsPage() {
                     
                     {/* Titre */}
                     <div className="text-center mb-4">
-                      <h3 className="text-4xl font-extrabold text-black mb-3">
+                      <h3 className="text-3xl sm:text-4xl font-extrabold text-black mb-3">
                         Votre projet est mis en avant !
                       </h3>
                     </div>
