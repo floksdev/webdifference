@@ -88,7 +88,7 @@ export default function RootLayout({
           <MetaTheme />
           <div className="flex min-h-dvh flex-col bg-[color:var(--color-background-strong)]">
             <SiteHeader />
-            <main className="flex-1 bg-[color:var(--color-background-strong)]">
+            <main className="flex-1 bg-[color:var(--color-background-strong)]" style={{ paddingTop: 'calc(5rem + env(safe-area-inset-top))' }}>
               {children}
             </main>
             <NewsletterSection />

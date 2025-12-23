@@ -11,17 +11,15 @@ export function GlassBar({
 }) {
   const pos =
     position === "top"
-      ? "sticky top-0 safe-top"
-      : "sticky bottom-0 safe-bottom";
+      ? "fixed top-0 left-0 right-0 safe-top"
+      : "fixed bottom-0 left-0 right-0 safe-bottom";
 
   return (
     <div
       className={[
         pos,
         "z-50",
-        // Le "matériau" Liquid Glass avec fond vert solide
-        // Réduit le blur pour améliorer les performances au scroll
-        "backdrop-blur-md backdrop-saturate-150",
+        // Fond vert solide sans blur pour performance maximale
         "bg-[#71DDAE]",
         // Hairline + highlight
         position === "top"
@@ -30,11 +28,16 @@ export function GlassBar({
         className,
       ].join(" ")}
       style={{
-        // Optimisations pour le scroll fluide (sans contain qui peut cacher les enfants)
-        willChange: "transform",
-        transform: "translateZ(0)",
+        // Optimisations maximales pour scroll fluide sur mobile
+        willChange: "auto",
+        transform: "translate3d(0, 0, 0)",
+        WebkitTransform: "translate3d(0, 0, 0)",
         backfaceVisibility: "hidden",
         WebkitBackfaceVisibility: "hidden",
+        perspective: "1000px",
+        WebkitPerspective: "1000px",
+        // Force le GPU et évite les reflows
+        isolation: "isolate",
       }}
     >
       {children}
