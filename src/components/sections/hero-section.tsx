@@ -11,13 +11,14 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto flex max-w-6xl flex-col gap-14 px-4 py-12 sm:px-6 sm:py-16 md:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col items-center gap-6 text-center"
-        >
-          <div className="mb-4 inline-block w-full sm:w-auto">
+        <div className="flex flex-col items-center gap-6 text-center">
+          {/* Badge avec animation légère */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-4 inline-block w-full sm:w-auto"
+          >
             <div className="relative flex items-center gap-2 rounded-full border border-[#1C1C1C]/20 bg-[#FFFFFF] px-3 py-2.5 shadow-[0_18px_48px_rgba(0,0,0,0.32),0_0_20px_rgba(113,221,174,0.4),0_0_40px_rgba(113,221,174,0.2)] overflow-hidden sm:gap-4 sm:px-6 sm:py-3 sm:overflow-visible md:px-8 md:py-4">
               <Image
                 src="/assets/main/fond-blanc/logo-sm.png"
@@ -31,14 +32,28 @@ export function HeroSection() {
                 Créer un site web <span className="underline decoration-3 underline-offset-4 decoration-[#1C1C1C]">vraiment</span> unique
               </p>
             </div>
-          </div>
+          </motion.div>
+          {/* H1 critique pour LCP - visible immédiatement, pas d'animation */}
+          {/* Le h1 est rendu immédiatement sans attendre l'animation JavaScript */}
           <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
             Votre <span className="text-[#71DDAE]">site</span> doit <span className="text-[#71DDAE]">donner envie</span> de <span className="text-[#71DDAE]">rester</span>, pas de <span className="line-through decoration-[#1C1C1C]"><span className="text-[#71DDAE]">revenir</span> <span className="text-white">en</span> <span className="text-[#71DDAE]">arrière</span></span>.
           </h1>
-          <p className="max-w-lg text-base font-medium text-white/80 sm:max-w-2xl sm:text-lg md:text-xl">
+          {/* Paragraphe avec animation légère */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="max-w-lg text-base font-medium text-white/80 sm:max-w-2xl sm:text-lg md:text-xl"
+          >
             Design moderne,<br className="sm:hidden" /> SEO solide, Suivi complet :<br /> on construit un site qui retient vos visiteurs et vous apporte des résultats.
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:items-start">
+          </motion.p>
+          {/* CTA avec animation légère */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:items-start"
+          >
             <div className="relative w-full sm:w-auto sm:inline-flex">
               <Link
                 href="https://calendly.com/webdifference/nouvelle-reunion"
@@ -66,9 +81,8 @@ export function HeroSection() {
               Découvrir nos projets
               <FaArrowDown className="text-xl" color="#71DDAE" />
             </Link>
-          </div>
-        </motion.div>
-
+          </motion.div>
+        </div>
       </div>
 
       <motion.div

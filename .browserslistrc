@@ -1,0 +1,20 @@
+# Cibler uniquement les navigateurs modernes qui supportent ES6+ nativement
+# Cela évite les polyfills inutiles et réduit la taille du bundle
+
+# Navigateurs modernes avec support ES6+ natif
+# Baseline 2024 : Chrome 120+, Firefox 120+, Safari 17+, Edge 120+
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Safari versions
+last 2 Edge versions
+
+# Support iOS moderne (Safari sur iOS)
+iOS >= 17
+
+# Support Android moderne
+Android >= 13
+
+# Pas de support pour IE11 et navigateurs très anciens
+not dead
+not IE 11
+

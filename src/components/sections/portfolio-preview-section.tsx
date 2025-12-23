@@ -74,10 +74,10 @@ export function PortfolioPreviewSection() {
                     alt={project.title}
                     width={800}
                     height={600}
-                    quality={100}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={80}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                     className="h-auto w-full"
-                    unoptimized
+                    loading="lazy"
                   />
                 )}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover:bg-[#71DDAE]/10">

@@ -5,6 +5,7 @@ export function middleware(request: NextRequest) {
   const response = NextResponse.next();
 
   // Content Security Policy (CSP) stricte pour protéger contre les attaques XSS
+  // Optimisée pour Next.js, Calendly, Clerk et Supabase
   const cspHeader = [
     // Default: refuser tout par défaut
     "default-src 'self'",
@@ -12,16 +13,19 @@ export function middleware(request: NextRequest) {
     // Scripts: autoriser uniquement les scripts de confiance
     // 'unsafe-eval' nécessaire pour Next.js en développement et certains scripts
     // 'unsafe-inline' nécessaire pour les scripts inline générés par Next.js
-    "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://assets.calendly.com https://*.calendly.com",
+    // Calendly nécessite plusieurs domaines pour ses scripts
+    "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://assets.calendly.com https://*.calendly.com https://calendly.com https://*.clerk.accounts.dev https://*.clerk.com",
     
     // Styles: autoriser les styles inline (nécessaire pour Tailwind et styles dynamiques)
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    // Calendly nécessite des styles depuis ses domaines
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com https://*.calendly.com https://calendly.com",
     
     // Images: autoriser les images depuis différentes sources
+    // Calendly charge des images depuis ses CDN
     "img-src 'self' data: https: blob:",
     
-    // Fonts: autoriser les fonts Google
-    "font-src 'self' https://fonts.gstatic.com data:",
+    // Fonts: autoriser les fonts Google et Calendly
+    "font-src 'self' https://fonts.gstatic.com https://assets.calendly.com https://*.calendly.com data:",
     
     // Connect: autoriser les connexions vers Calendly, Supabase, Clerk, les APIs et WebSockets
     "connect-src 'self' https://*.calendly.com https://calendly.com https://assets.calendly.com https://*.supabase.co https://*.supabase.in https://*.clerk.accounts.dev https://*.clerk.com wss://*.calendly.com ws://localhost:* wss://localhost:*",
@@ -29,9 +33,17 @@ export function middleware(request: NextRequest) {
     // Frame: autoriser les iframes Calendly et Clerk uniquement
     "frame-src 'self' https://*.calendly.com https://calendly.com https://*.clerk.accounts.dev https://*.clerk.com",
     
+    // Worker: autoriser les workers pour Calendly et Next.js
+    "worker-src 'self' blob: https://assets.calendly.com https://*.calendly.com",
+    
+    // Manifest: autoriser le manifest web app
+    "manifest-src 'self'",
+    
+    // Media: autoriser les médias (audio/video) si nécessaire
+    "media-src 'self' https://assets.calendly.com https://*.calendly.com",
+    
     // Frame ancestors: empêcher l'embedding dans d'autres sites (protection clickjacking)
     // 'self' permet l'embedding uniquement depuis le même domaine
-    // Pour une protection maximale, utilisez 'none' (mais cela empêche aussi l'embedding depuis votre propre domaine)
     "frame-ancestors 'self'",
     
     // Object: désactiver les plugins
@@ -41,16 +53,17 @@ export function middleware(request: NextRequest) {
     "base-uri 'self'",
     
     // Form action: limiter où les formulaires peuvent être soumis
-    "form-action 'self'",
+    // Calendly nécessite que les formulaires puissent être soumis vers ses domaines
+    "form-action 'self' https://calendly.com https://*.calendly.com",
     
     // Upgrade insecure requests: forcer HTTPS
     "upgrade-insecure-requests",
     
-    // Trusted Types: atténuer les attaques XSS basées sur le DOM
-    // 'script' : contrôle les données transmises aux fonctions de récepteur XSS basées sur le DOM
-    // Cela protège contre les attaques XSS via innerHTML, eval(), Function(), etc.
-    // Note: React gère dangerouslySetInnerHTML de manière sécurisée, mais Trusted Types ajoute une couche supplémentaire
-    "require-trusted-types-for 'script'",
+    // Trusted Types: désactivé car incompatible avec Next.js et les scripts tiers (Calendly)
+    // Next.js génère des scripts dynamiquement et Calendly nécessite des scripts externes
+    // L'implémentation complète de Trusted Types nécessiterait une configuration complexe
+    // qui pourrait casser des fonctionnalités. La CSP stricte ci-dessus offre déjà une bonne protection.
+    // "require-trusted-types-for 'script'",
     
     // Report URI: optionnel, pour recevoir les rapports de violation (décommentez si vous avez un endpoint)
     // "report-uri /api/csp-report",

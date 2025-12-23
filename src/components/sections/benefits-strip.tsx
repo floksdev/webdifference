@@ -34,7 +34,10 @@ export function BenefitsStrip() {
               alt="Mais où est la différence ?"
               width={450}
               height={300}
+              quality={80}
+              sizes="(max-width: 640px) 280px, (max-width: 1024px) 360px, 450px"
               className="w-auto h-auto max-w-[450px]"
+              loading="lazy"
             />
           </div>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">

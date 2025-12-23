@@ -10,13 +10,18 @@ export function ExistingSiteSection() {
   };
 
   // Fonction pour alterner les couleurs lettre par lettre (espaces ignorés)
-  const renderAlternatingText = (text: string, startIndex: number = 0) => {
+  // Utilisation d'un préfixe unique pour éviter les conflits de clés entre desktop et mobile
+  const renderAlternatingText = (text: string, startIndex: number = 0, prefix: string = "") => {
     let charIndex = startIndex;
     return text.split("").map((char, index) => {
+      // Clé unique avec préfixe pour éviter les conflits d'hydratation
+      const uniqueKey = `${prefix}-${text}-${index}`;
+      
       if (char === " ") {
+        // Utiliser un espace normal au lieu de \u00A0 pour éviter les problèmes d'hydratation
         return (
-          <span key={`${text}-${index}`}>
-            {"\u00A0"}
+          <span key={uniqueKey}>
+            {" "}
           </span>
         );
       }
@@ -24,7 +29,7 @@ export function ExistingSiteSection() {
       charIndex++;
       return (
         <span
-          key={`${text}-${index}`}
+          key={uniqueKey}
           className={isEven ? "text-[#FFB3E0]" : "text-white"}
         >
           {char}
@@ -61,7 +66,10 @@ export function ExistingSiteSection() {
               alt="Bouée de sauvetage"
               width={200}
               height={200}
+              quality={75}
+              sizes="(max-width: 768px) 150px, 200px"
               className="w-auto h-auto max-w-[200px]"
+              loading="lazy"
             />
                 </div>
                 
@@ -69,17 +77,17 @@ export function ExistingSiteSection() {
           <div className="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
             {/* Version PC */}
             <h3 className="hidden md:block text-3xl font-bold sm:text-4xl md:text-5xl">
-              {renderAlternatingText(desktopText1, 0)}
+              {renderAlternatingText(desktopText1, 0, "desktop")}
               <br />
-              {renderAlternatingText(desktopText2, desktopStartIndex2)}.
+              {renderAlternatingText(desktopText2, desktopStartIndex2, "desktop")}.
             </h3>
             {/* Version Mobile */}
             <h3 className="md:hidden text-3xl font-bold sm:text-4xl md:text-5xl">
-              {renderAlternatingText(mobileText1, 0)}
+              {renderAlternatingText(mobileText1, 0, "mobile")}
               <br />
-              {renderAlternatingText(mobileText2, mobileStartIndex2)}
+              {renderAlternatingText(mobileText2, mobileStartIndex2, "mobile")}
               <br />
-              {renderAlternatingText(mobileText3, mobileStartIndex3)}.
+              {renderAlternatingText(mobileText3, mobileStartIndex3, "mobile")}.
             </h3>
           </div>
         </div>

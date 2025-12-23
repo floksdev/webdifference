@@ -45,9 +45,9 @@ export default function ProjetsPage() {
                         alt="Votre projet mis en avant"
                         fill
                         className="object-cover"
-                        quality={100}
+                        quality={80}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 768px"
-                        unoptimized
+                        loading="lazy"
                       />
                     </div>
                     

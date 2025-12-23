@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { AppProviders } from "@/components/layout/app-providers";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { NewsletterSection } from "@/components/sections/newsletter-section";
 import { MetaTheme } from "@/components/meta-theme";
+import { PreconnectHints } from "@/components/preconnect-hints";
 import "./globals.css";
 
+// Optimisation des polices pour LCP : preload et display swap
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap", // Affiche le texte immédiatement avec une police de secours
+  preload: true, // Précharge la police pour améliorer le LCP
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -65,6 +72,9 @@ export const metadata: Metadata = {
     "theme-color": "#71DDAE",
     "permissions-policy": "payment=(self)",
   },
+  // Préconnexions pour améliorer les performances
+  // Note: Next.js n'a pas de support direct pour preconnect dans metadata,
+  // donc on utilise un script beforeInteractive en complément
 };
 
 export const viewport = {
@@ -84,9 +94,74 @@ export default function RootLayout({
   return (
     <AppProviders>
       <html lang="fr" suppressHydrationWarning>
+        {/* Préconnexions et optimisation CSS critiques pour améliorer les performances */}
+        <Script
+          id="preconnect-hints"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                // Préconnexions
+                const preconnects = [
+                  { href: 'https://calendly.com', crossorigin: false },
+                  { href: 'https://assets.calendly.com', crossorigin: false },
+                  { href: 'https://fonts.googleapis.com', crossorigin: false },
+                  { href: 'https://fonts.gstatic.com', crossorigin: true }
+                ];
+                const dnsPrefetches = [
+                  'https://calendly.com',
+                  'https://assets.calendly.com',
+                  'https://fonts.googleapis.com',
+                  'https://fonts.gstatic.com'
+                ];
+                preconnects.forEach(({ href, crossorigin }) => {
+                  const link = document.createElement('link');
+                  link.rel = 'preconnect';
+                  link.href = href;
+                  if (crossorigin) link.crossOrigin = 'anonymous';
+                  document.head.appendChild(link);
+                });
+                dnsPrefetches.forEach((href) => {
+                  const link = document.createElement('link');
+                  link.rel = 'dns-prefetch';
+                  link.href = href;
+                  document.head.appendChild(link);
+                });
+                
+                // Observer pour précharger le CSS dès qu'il apparaît dans le head
+                const observer = new MutationObserver(function(mutations) {
+                  mutations.forEach(function(mutation) {
+                    mutation.addedNodes.forEach(function(node) {
+                      if (node.nodeName === 'LINK' && node.rel === 'stylesheet') {
+                        const href = node.getAttribute('href');
+                        if (href && !document.querySelector('link[rel="preload"][href="' + href + '"]')) {
+                          const preloadLink = document.createElement('link');
+                          preloadLink.rel = 'preload';
+                          preloadLink.href = href;
+                          preloadLink.as = 'style';
+                          document.head.insertBefore(preloadLink, node);
+                        }
+                      }
+                    });
+                  });
+                });
+                
+                // Observer les changements dans le head
+                if (document.head) {
+                  observer.observe(document.head, { childList: true, subtree: false });
+                } else {
+                  document.addEventListener('DOMContentLoaded', function() {
+                    observer.observe(document.head, { childList: true, subtree: false });
+                  });
+                }
+              })();
+            `,
+          }}
+        />
         <body
           className={`${geistSans.variable} ${geistMono.variable} min-h-dvh text-foreground antialiased`}
         >
+          <PreconnectHints />
           <MetaTheme />
           <div className="flex min-h-dvh flex-col bg-[color:var(--color-background-strong)]">
             <SiteHeader />
