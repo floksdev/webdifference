@@ -1,11 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
   --color-background-strong: #1C1C1C;
   --color-surface: #71DDAE;
   --color-primary: #71DDAE;
   --color-secondary: #FFFFFF;
+  
+  /* Fond "stable" pour Liquid Glass - Safari vitrifie mieux */
+  --app-bg: radial-gradient(120% 90% at 50% 0%,
+    rgba(113, 221, 174, 0.95),
+    rgba(28, 28, 28, 0.98)
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-bg: radial-gradient(120% 90% at 50% 0%,
+      rgba(113, 221, 174, 0.92),
+      rgba(28, 28, 28, 1)
+    );
+  }
 }
 
 @theme inline {
@@ -20,17 +34,34 @@
     @apply border-white/10;
   }
 
+  html {
+    background: #71DDAE;
+  }
+  
   body {
-    min-height: 100vh;
-    background: var(--color-background-strong);
-    color: #FFFFFF;
     font-feature-settings: "liga" 1, "kern" 1;
     -webkit-font-smoothing: antialiased;
+    /* Background-color du body contrôle la navigation bar (barre du bas) */
+    /* Par défaut transparent pour ne pas voir de rectangle vert */
+    background-color: transparent;
   }
-}
-
-* {
-  color-scheme: only light;
+  
+  .bg-app {
+    background: var(--color-background-strong);
+  }
+  
+  .text-foreground {
+    color: #FFFFFF;
+  }
+  
+  /* Safe areas (top/bottom) */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 @keyframes glow {

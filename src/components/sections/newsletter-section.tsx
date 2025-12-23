@@ -107,7 +107,7 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="border-t border-white/10 py-24 relative overflow-hidden">
+    <section className="border-t border-white/10 py-12 sm:py-24 relative overflow-hidden">
       {/* Fond avec dégradé métallique et brillance */}
       <div 
         className="absolute inset-0"
@@ -125,11 +125,11 @@ export function NewsletterSection() {
         }}
       />
       
-      <div className="mx-auto flex max-w-5xl flex-col gap-12 px-6 relative z-10">
+      <div className="mx-auto flex max-w-5xl flex-col gap-6 sm:gap-12 px-6 relative z-10">
         {/* Titre premium avec effet métallique */}
         <div className="flex flex-col gap-6 text-center">
           <h2 
-            className="text-5xl sm:text-6xl font-extrabold relative"
+            className="text-3xl sm:text-5xl md:text-6xl font-extrabold relative"
             style={{
               background: 'linear-gradient(135deg, #FAFAFA 0%, #E6E6E6 25%, #CFCFCF 50%, #B8B8B8 75%, #9E9E9E 100%)',
               WebkitBackgroundClip: 'text',
@@ -140,14 +140,14 @@ export function NewsletterSection() {
           >
             Restons en contact
           </h2>
-          <p className="text-lg text-white/80 font-medium">
+          <p className="text-base sm:text-lg text-white/80 font-medium">
             Recevez nos guides, astuces et actualités directement dans votre boîte mail.
           </p>
         </div>
         
         {/* Formulaire premium dans un conteneur brillant */}
         <div 
-          className="relative rounded-3xl p-8 md:p-12"
+          className="relative rounded-3xl p-4 sm:p-8 md:p-12"
           style={{
             background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
             backdropFilter: 'blur(20px)',
@@ -173,7 +173,7 @@ export function NewsletterSection() {
                   onKeyDown={handleKeyDown}
                   placeholder="Votre adresse email"
                   disabled={isLoading}
-                  className="w-full rounded-2xl border-2 border-white/30 bg-white/10 backdrop-blur-md px-6 py-5 text-white placeholder:text-white/60 focus:outline-none focus:border-[#71DDAE] focus:ring-4 focus:ring-[#71DDAE]/30 focus:bg-white/15 transition-all text-lg font-medium shadow-[0_8px_32px_rgba(0,0,0,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full rounded-2xl border-2 border-white/30 bg-white/10 backdrop-blur-md px-4 sm:px-6 py-3 sm:py-5 text-white placeholder:text-white/60 focus:outline-none focus:border-[#71DDAE] focus:ring-4 focus:ring-[#71DDAE]/30 focus:bg-white/15 transition-all text-base sm:text-lg font-medium shadow-[0_8px_32px_rgba(0,0,0,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
                     boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 20px rgba(113, 221, 174, 0.1)',
                   }}
@@ -182,7 +182,7 @@ export function NewsletterSection() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="rounded-2xl bg-gradient-to-r from-[#71DDAE] via-[#5BCA9D] to-[#2A9D7A] px-10 py-5 font-bold text-2xl transition-all shadow-[0_8px_32px_rgba(113,221,174,0.4)] hover:shadow-[0_12px_40px_rgba(113,221,174,0.6)] hover:-translate-y-1 hover:scale-105 relative overflow-hidden self-start disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:-translate-y-0"
+                className="rounded-2xl bg-gradient-to-r from-[#71DDAE] via-[#5BCA9D] to-[#2A9D7A] px-6 sm:px-10 py-3 sm:py-5 font-bold text-lg sm:text-2xl transition-all shadow-[0_8px_32px_rgba(113,221,174,0.4)] hover:shadow-[0_12px_40px_rgba(113,221,174,0.6)] hover:-translate-y-1 hover:scale-105 relative overflow-hidden w-full sm:w-auto self-start disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:-translate-y-0"
                 style={{
                   boxShadow: '0 8px 32px rgba(113, 221, 174, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
                   color: '#1C1C1C',
@@ -216,7 +216,7 @@ export function NewsletterSection() {
           </div>
         )}
         
-        <p className="text-xs text-white/50 text-center mt-4">
+        <p className="text-xs text-white/50 text-center mt-4 max-w-xs sm:max-w-full mx-auto">
           En vous inscrivant, vous acceptez notre{' '}
           <Link href="/politique-de-confidentialite" className="underline hover:text-white/70 transition">
             politique de confidentialité

@@ -156,12 +156,12 @@ export function PortfolioPreviewSection() {
             href="https://calendly.com/webdifference/nouvelle-reunion"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] px-8 py-4 text-2xl font-extrabold tracking-wide text-[#1C1C1C] shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95"
+            className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] px-6 py-4 text-lg font-extrabold tracking-wide text-[#1C1C1C] shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95 whitespace-nowrap sm:px-8 sm:py-4 sm:text-xl md:px-8 md:py-9 md:text-2xl md:h-[68px]"
             style={{
-              height: "68px",
+              height: "56px",
             }}
           >
-            <FaCalendarAlt className="text-2xl" />
+            <FaCalendarAlt className="text-xl sm:text-xl md:text-2xl" />
             Prendre un RDV →
           </Link>
         </div>

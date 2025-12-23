@@ -4,6 +4,7 @@ import { AppProviders } from "@/components/layout/app-providers";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { NewsletterSection } from "@/components/sections/newsletter-section";
+import { MetaTheme } from "@/components/meta-theme";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -50,9 +51,27 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+  // Important: aide Safari à choisir une UI cohérente
+  colorScheme: "light dark",
+  // Next supporte plusieurs theme colors via media queries
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#71DDAE" },
+    { media: "(prefers-color-scheme: dark)", color: "#71DDAE" },
+  ],
   other: {
     "apple-mobile-web-app-title": "WebDifference",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "apple-mobile-web-app-capable": "yes",
+    "theme-color": "#71DDAE",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  // Pour iOS : permet d'utiliser toute la surface écran + safe areas
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -62,11 +81,12 @@ export default function RootLayout({
 }>) {
   return (
     <AppProviders>
-      <html lang="fr">
+      <html lang="fr" suppressHydrationWarning>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-[color:var(--color-background-strong)] text-white antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} min-h-dvh text-foreground antialiased`}
         >
-          <div className="flex min-h-screen flex-col">
+          <MetaTheme />
+          <div className="flex min-h-dvh flex-col bg-[color:var(--color-background-strong)]">
             <SiteHeader />
             <main className="flex-1 bg-[color:var(--color-background-strong)]">
               {children}

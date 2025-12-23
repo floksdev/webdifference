@@ -566,41 +566,55 @@ export function OffersSection() {
         );
 
         return (
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <h3 className="text-2xl font-extrabold text-white">
+          <div className="space-y-4 sm:space-y-6 w-full overflow-x-hidden">
+            {/* Image en premier sur mobile uniquement */}
+            <div className="relative w-full h-[120px] sm:hidden rounded-2xl overflow-hidden order-1 mt-16 mb-6">
+              <Image
+                src="/conceptionweb.png"
+                alt="Conception web"
+                fill
+                className="object-cover object-top"
+                sizes="100vw"
+              />
+            </div>
+            
+            {/* Titre et bouton Recommencer */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 relative z-20 order-2">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white">
                 Offre recommandée
               </h3>
               <button
                 onClick={resetQuestionnaire}
-                className="text-sm text-white/60 hover:text-white/80"
+                className="text-sm text-white/60 hover:text-white/80 underline sm:no-underline relative z-20"
               >
                 Recommencer
               </button>
             </div>
-            <div className="grid gap-6 md:grid-cols-1">
+            
+            {/* Carte */}
+            <div className="grid gap-6 md:grid-cols-1 w-full max-w-full sm:max-w-2xl mx-auto order-3">
               {offersToShow.map((offer) => {
                 return (
                   <article
                     key={offer.id}
-                    className="group relative flex flex-col gap-6 rounded-3xl p-8 transition-all duration-300 bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] shadow-[0_20px_60px_rgba(113,221,174,0.3)] hover:shadow-[0_25px_80px_rgba(113,221,174,0.4)]"
+                    className="group relative flex flex-col gap-4 sm:gap-6 rounded-3xl p-4 sm:p-8 transition-all duration-300 bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] shadow-[0_4px_12px_rgba(113,221,174,0.15)] sm:shadow-[0_8px_24px_rgba(113,221,174,0.2)] hover:shadow-[0_6px_16px_rgba(113,221,174,0.2)] sm:hover:shadow-[0_12px_32px_rgba(113,221,174,0.3)] w-full max-w-full overflow-hidden"
                   >
                     {/* Badge premium en haut à droite */}
-                    <div className="absolute top-6 right-6 flex items-center gap-2 rounded-full bg-[#1C1C1C] backdrop-blur-sm border border-white/50 px-4 py-1.5 shadow-lg">
-                      <span className="inline-flex h-2 w-2 rounded-full bg-[#71DDAE]"></span>
-                      <span className="text-xs font-semibold text-white">{offer.badge}</span>
+                    <div className="absolute top-3 right-3 sm:top-6 sm:right-6 flex items-center gap-2 rounded-full bg-[#1C1C1C] backdrop-blur-sm border border-white/50 px-3 py-1 sm:px-4 sm:py-1.5 shadow-lg">
+                      <span className="inline-flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#71DDAE]"></span>
+                      <span className="text-[10px] sm:text-xs font-semibold text-white">{offer.badge}</span>
                     </div>
 
                     {/* Header avec icône et titre */}
-                    <div className="rounded-2xl bg-white p-5 shadow-lg">
-                      <div className="flex items-center justify-start gap-5">
-                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#71DDAE]/20 backdrop-blur-md border-2 border-[#71DDAE]/40 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                    <div className="rounded-2xl bg-white p-3 sm:p-5 shadow-lg">
+                      <div className="flex items-center justify-start gap-3 sm:gap-5">
+                        <div className="flex h-12 w-12 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl bg-[#71DDAE]/20 backdrop-blur-md border-2 border-[#71DDAE]/40 shadow-xl group-hover:scale-110 transition-transform duration-300">
                           <div className="text-black scale-125">
                             {offer.icon}
                           </div>
                         </div>
-                        <div className="flex flex-col gap-3">
-                          <h3 className="text-3xl font-extrabold text-black leading-tight text-left">
+                        <div className="flex flex-col gap-2 sm:gap-3">
+                          <h3 className="text-xl sm:text-3xl font-extrabold text-black leading-tight text-left">
                       {offer.name}
                     </h3>
                   </div>
@@ -608,23 +622,23 @@ export function OffersSection() {
                     </div>
 
                     {/* Description accrocheuse */}
-                    <p className="text-base text-black/85 leading-relaxed font-medium -mt-2">
+                    <p className="text-sm sm:text-base text-black/85 leading-relaxed font-medium -mt-2">
                       {offer.description}
                     </p>
 
                     {/* Liste des bénéfices premium */}
-                    <div className="space-y-3">
-                      <h4 className="text-sm font-bold text-black/60 uppercase tracking-wider">
+                    <div className="space-y-2 sm:space-y-3">
+                      <h4 className="text-xs sm:text-sm font-bold text-black/60 uppercase tracking-wider">
                         Ce qui est inclus
                       </h4>
-                      <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 p-5 shadow-[0_8px_32px_rgba(0,0,0,0.1)]">
-                        <ul className="space-y-3">
+                      <div className="rounded-2xl bg-white/20 backdrop-blur-lg border border-white/30 p-3 sm:p-5 shadow-[0_8px_32px_rgba(0,0,0,0.1)]">
+                        <ul className="space-y-2 sm:space-y-3">
                           {offer.items.map((item) => (
-                            <li key={item} className="flex items-start gap-3">
-                              <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/40 border-2 border-white/60 shadow-md">
-                                <span className="text-[#2A9D7A] text-xs font-bold">✓</span>
+                            <li key={item} className="flex items-start gap-2 sm:gap-3">
+                              <div className="mt-0.5 flex h-5 w-5 sm:h-6 sm:w-6 shrink-0 items-center justify-center rounded-full bg-white/40 border-2 border-white/60 shadow-md">
+                                <span className="text-[#2A9D7A] text-[10px] sm:text-xs font-bold">✓</span>
               </div>
-                              <span className="text-base text-black font-medium leading-relaxed pt-0.5">
+                              <span className="text-sm sm:text-base text-black font-medium leading-relaxed pt-0.5">
                                 {item}
                     </span>
                   </li>
@@ -635,12 +649,14 @@ export function OffersSection() {
               
                     {/* CTA premium */}
               <Link
-                      href="/contact"
-                      className="mt-4 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#1C1C1C] px-8 py-4 text-base font-bold text-white shadow-[0_8px_24px_rgba(28,28,28,0.4)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_32px_rgba(28,28,28,0.5)] active:scale-100"
+                      href="https://calendly.com/webdifference/nouvelle-reunion"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 sm:mt-4 inline-flex w-full items-center justify-center gap-2 sm:gap-3 rounded-2xl bg-[#1C1C1C] px-4 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-[0_8px_24px_rgba(28,28,28,0.4)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_32px_rgba(28,28,28,0.5)] active:scale-100"
               >
-                      <FaCalendarAlt className="text-xl" />
+                      <FaCalendarAlt className="text-lg sm:text-xl" />
                       <span>Réserver un appel gratuit</span>
-                      <span className="text-xl">→</span>
+                      <span className="text-lg sm:text-xl">→</span>
               </Link>
                   </article>
               );
@@ -655,33 +671,33 @@ export function OffersSection() {
   };
 
               return (
-    <section id="offres" className="border-t border-white/10 py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6">
+    <section id="offres" className="border-t border-white/10 py-24 overflow-x-hidden">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:gap-12 px-6 w-full">
         <div className="flex flex-col gap-6 text-center items-center">
           <h2 className="text-3xl font-semibold sm:text-4xl text-white">
             Des <span className="text-[#71DDAE] text-4xl sm:text-5xl font-bold">offres</span> adaptées à chaque <span className="text-[#71DDAE] text-4xl sm:text-5xl font-bold">besoin</span>
           </h2>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          {/* Image à gauche */}
-          <div className="relative w-full h-full min-h-[500px] rounded-2xl overflow-hidden">
+        <div className="grid gap-0 sm:gap-8 lg:gap-12 lg:grid-cols-2 lg:items-start">
+          {/* Image à gauche - cachée sur mobile si results */}
+          <div className={`relative w-full h-full min-h-[250px] sm:min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden ${currentStep === "results" ? "hidden sm:block" : ""}`}>
             <Image
               src="/conceptionweb.png"
               alt="Conception web"
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
           {/* Questions à droite */}
-          <div className="flex flex-col justify-center min-h-[500px]">
+          <div className="flex flex-col justify-center min-h-[500px] -mt-16 sm:mt-0">
             {renderQuestion()}
           </div>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center -mt-24 sm:mt-0">
           <Link
             href="https://calendly.com/webdifference/nouvelle-reunion"
             target="_blank"

@@ -3,16 +3,25 @@
 import Image from "next/image";
 
 export function ExistingSiteSection() {
-  // Fonction pour alterner les couleurs lettre par lettre
+  // Fonction pour alterner les couleurs lettre par lettre (espaces ignorés)
   const renderAlternatingText = (text: string, startIndex: number = 0) => {
+    let charIndex = startIndex;
     return text.split("").map((char, index) => {
-      const isEven = (index + startIndex) % 2 === 0;
+      if (char === " ") {
+        return (
+          <span key={index}>
+            {"\u00A0"}
+          </span>
+        );
+      }
+      const isEven = charIndex % 2 === 0;
+      charIndex++;
       return (
         <span
           key={index}
-          className={isEven ? "text-[#E1B3C3]" : "text-white"}
+          className={isEven ? "text-[#FFB3E0]" : "text-white"}
         >
-          {char === " " ? "\u00A0" : char}
+          {char}
         </span>
       );
     });
@@ -23,7 +32,7 @@ export function ExistingSiteSection() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6">
         <div className="flex flex-col gap-3 text-center">
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-            Votre <span className="text-[#E1B3C3] text-4xl sm:text-5xl font-bold">site</span> n'est pas passé entre <span className="text-[#E1B3C3] text-4xl sm:text-5xl font-bold">nos mains</span> ?
+            Votre <span className="text-[#FFB3E0] text-4xl sm:text-5xl font-bold">site</span> n'est pas passé entre <span className="text-[#FFB3E0] text-4xl sm:text-5xl font-bold">nos mains</span> ?
           </h2>
         </div>
 
@@ -40,21 +49,20 @@ export function ExistingSiteSection() {
                 </div>
                 
           {/* Texte */}
-          <div className="flex flex-col gap-4 text-center md:text-left">
-            <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl">
+          <div className="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
+            {/* Version PC */}
+            <h3 className="hidden md:block text-3xl font-bold sm:text-4xl md:text-5xl">
               {renderAlternatingText("Mais il a besoin de nous", 0)}
-                    </h3>
-            <h3 className="text-3xl font-bold sm:text-4xl md:text-5xl flex items-baseline gap-2">
-              <span>
-                {renderAlternatingText("pour être sauvé", "Mais il a besoin de nous".length)}
-                    </span>
-              <Image
-                src="/bouée.png"
-                alt=""
-                width={16}
-                height={16}
-                className="inline-block w-4 h-4 self-end mb-1"
-              />
+              <br />
+              {renderAlternatingText("pour être sauvé", "Mais il a besoin de nous".length)}.
+            </h3>
+            {/* Version Mobile */}
+            <h3 className="md:hidden text-3xl font-bold sm:text-4xl md:text-5xl">
+              {renderAlternatingText("Mais il a besoin de", 0)}
+              <br />
+              {renderAlternatingText("nous pour être", "Mais il a besoin de".length)}
+              <br />
+              {renderAlternatingText("sauvé", "Mais il a besoin de nous pour être".length)}.
             </h3>
           </div>
         </div>

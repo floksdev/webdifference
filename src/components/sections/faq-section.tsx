@@ -60,7 +60,7 @@ export function FaqSection() {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqItems.map((item, index) => {
             const isOpen = openIndex === index;
             return (
@@ -70,23 +70,23 @@ export function FaqSection() {
               >
                 <button
                   onClick={() => toggleQuestion(index)}
-                  className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+                  className="w-full flex items-center justify-between gap-3 sm:gap-4 p-4 sm:p-6 text-left cursor-pointer"
                 >
-                  <h3 className="text-lg font-bold text-white pr-8">
+                  <h3 className="text-base sm:text-lg font-bold text-white pr-2 sm:pr-8 flex-1 min-w-0">
                     {formatQuestion(item.question, index)}
                   </h3>
                   <div
-                    className={`flex-shrink-0 h-8 w-8 rounded-full bg-white/20 border border-white/30 flex items-center justify-center transition-transform duration-300 ${
+                    className={`flex-shrink-0 h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-white/20 border border-white/30 flex items-center justify-center transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   >
-                    <FaChevronDown className="text-[#71DDAE] text-xs" />
+                    <FaChevronDown className="text-[#71DDAE] text-[10px] sm:text-xs" />
                   </div>
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6">
-                    <div className="pt-4 border-t border-white/10">
-                      <p className="text-sm text-white/80 leading-relaxed">
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                    <div className="pt-3 sm:pt-4 border-t border-white/10">
+                      <p className="text-sm sm:text-base text-white/80 leading-relaxed">
                         {item.answer}
                       </p>
                     </div>
