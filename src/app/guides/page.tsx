@@ -168,7 +168,7 @@ export default function GuidesPage() {
             alt="Guides"
             width={120}
             height={60}
-            className="w-auto h-auto rounded-2xl"
+            className="w-auto h-auto rounded-2xl max-w-[80px] sm:max-w-none"
           />
         </div>
         
@@ -207,7 +207,7 @@ export default function GuidesPage() {
               placeholder="Rechercher un guide, un sujet, une question..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-16 pr-6 py-4 rounded-3xl text-black placeholder:text-black/50 focus:outline-none transition-all text-lg font-medium relative"
+              className="w-full pl-16 pr-6 py-4 rounded-3xl text-black placeholder:text-black/50 focus:outline-none transition-all text-sm sm:text-lg font-medium relative"
               style={{
                 background: 'linear-gradient(135deg, #FAFAFA 0%, #E6E6E6 25%, #CFCFCF 50%, #B8B8B8 75%, #9E9E9E 100%)',
                 boxShadow: '0 20px 60px rgba(158, 158, 158, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.1)',
