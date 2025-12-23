@@ -173,7 +173,7 @@ export default function GuidesPage() {
         </div>
         
         {/* Titre */}
-        <div className="flex flex-col gap-3 text-center mb-4">
+        <div className="flex flex-col gap-3 text-center mb-1 sm:mb-4">
           <h2 className="text-4xl sm:text-5xl font-bold">
             <span 
               className="inline-block"
