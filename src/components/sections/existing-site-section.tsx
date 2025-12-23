@@ -22,7 +22,7 @@ export function ExistingSiteSection() {
         // Utiliser un span avec un espace pour cohérence serveur/client
         // Le span est nécessaire pour maintenir la structure du DOM identique
         return (
-          <span key={uniqueKey} className="inline-block w-[0.25em]">
+          <span key={uniqueKey} className="inline-block w-[0.25em]" aria-hidden="true">
             {" "}
           </span>
         );

@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   
+  // Générer les source maps en production pour le debugging
+  productionBrowserSourceMaps: true,
+  
   // Optimisation des images (déjà activée par défaut dans Next.js)
   images: {
     formats: ["image/avif", "image/webp"],
@@ -43,6 +46,25 @@ const nextConfig: NextConfig = {
         // Ne pas inclure de polyfills pour les fonctionnalités Baseline
         // Les navigateurs modernes les supportent nativement
       };
+      
+      // Désactiver Babel si utilisé (peut ajouter des polyfills)
+      // Next.js utilise SWC par défaut, mais certaines dépendances peuvent utiliser Babel
+      if (config.module && config.module.rules) {
+        config.module.rules.forEach((rule: any) => {
+          if (rule.use && Array.isArray(rule.use)) {
+            rule.use.forEach((use: any) => {
+              if (use.loader && use.loader.includes('babel')) {
+                // Désactiver les transformations de classes et autres polyfills
+                if (use.options && use.options.plugins) {
+                  use.options.plugins = use.options.plugins.filter(
+                    (plugin: any) => !plugin.includes('transform-classes')
+                  );
+                }
+              }
+            });
+          }
+        });
+      }
       
       // Optimiser les chunks pour réduire la taille du bundle
       config.optimization = {

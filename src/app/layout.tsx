@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { NewsletterSection } from "@/components/sections/newsletter-section";
 import { MetaTheme } from "@/components/meta-theme";
 import { PreconnectHints } from "@/components/preconnect-hints";
+import { HeadOptimizations } from "@/components/head-optimizations";
 import "./globals.css";
 
 // Optimisation des polices pour LCP : preload et display swap
@@ -171,6 +172,7 @@ export default function RootLayout({
               `,
             }}
           />
+          <HeadOptimizations />
           <PreconnectHints />
           <MetaTheme />
           <div className="flex min-h-dvh flex-col bg-[color:var(--color-background-strong)]">
