@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60,
+    // Qualités supportées pour les images
+    qualities: [75, 80],
   },
   
   // Configuration SWC pour éviter les polyfills inutiles

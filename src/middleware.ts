@@ -30,8 +30,8 @@ export function middleware(request: NextRequest) {
     // Connect: autoriser les connexions vers Calendly, Supabase, Clerk, les APIs et WebSockets
     "connect-src 'self' https://*.calendly.com https://calendly.com https://assets.calendly.com https://*.supabase.co https://*.supabase.in https://*.clerk.accounts.dev https://*.clerk.com wss://*.calendly.com ws://localhost:* wss://localhost:*",
     
-    // Frame: autoriser les iframes Calendly et Clerk uniquement
-    "frame-src 'self' https://*.calendly.com https://calendly.com https://*.clerk.accounts.dev https://*.clerk.com",
+    // Frame: autoriser les iframes Calendly, Clerk et les projets
+    "frame-src 'self' https://*.calendly.com https://calendly.com https://*.clerk.accounts.dev https://*.clerk.com https://*.jwl-marketing.fr https://*.greenbeamcraft.com https://*.tristan-wehrle.com",
     
     // Worker: autoriser les workers pour Calendly et Next.js
     "worker-src 'self' blob: https://assets.calendly.com https://*.calendly.com",

@@ -74,7 +74,7 @@ export function PortfolioPreviewSection() {
                     alt={project.title}
                     width={800}
                     height={600}
-                    quality={80}
+                    quality={75}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                     className="h-auto w-full"
                     loading="lazy"

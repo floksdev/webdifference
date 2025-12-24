@@ -58,18 +58,10 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
-  // Important: aide Safari à choisir une UI cohérente
-  colorScheme: "light dark",
-  // Next supporte plusieurs theme colors via media queries
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#71DDAE" },
-    { media: "(prefers-color-scheme: dark)", color: "#71DDAE" },
-  ],
   other: {
     "apple-mobile-web-app-title": "WebDifference",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
     "apple-mobile-web-app-capable": "yes",
-    "theme-color": "#71DDAE",
     "permissions-policy": "payment=(self)",
   },
   // Préconnexions pour améliorer les performances
@@ -84,6 +76,13 @@ export const viewport = {
   // Les utilisateurs malvoyants doivent pouvoir zoomer jusqu'à 5x minimum
   // Pour iOS : permet d'utiliser toute la surface écran + safe areas
   viewportFit: "cover",
+  // Important: aide Safari à choisir une UI cohérente
+  colorScheme: "light dark",
+  // Next supporte plusieurs theme colors via media queries
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#71DDAE" },
+    { media: "(prefers-color-scheme: dark)", color: "#71DDAE" },
+  ],
 };
 
 export default function RootLayout({
@@ -107,13 +106,11 @@ export default function RootLayout({
                   // Préconnexions
                   const preconnects = [
                     { href: 'https://calendly.com', crossorigin: false },
-                    { href: 'https://assets.calendly.com', crossorigin: false },
                     { href: 'https://fonts.googleapis.com', crossorigin: false },
                     { href: 'https://fonts.gstatic.com', crossorigin: true }
                   ];
                   const dnsPrefetches = [
                     'https://calendly.com',
-                    'https://assets.calendly.com',
                     'https://fonts.googleapis.com',
                     'https://fonts.gstatic.com'
                   ];

@@ -12,33 +12,39 @@ export function ExistingSiteSection() {
 
   // Fonction pour alterner les couleurs lettre par lettre (espaces ignorés)
   // Utilisation d'un préfixe unique pour éviter les conflits de clés entre desktop et mobile
-  const renderAlternatingText = (text: string, startIndex: number = 0, prefix: string = "") => {
-    let charIndex = startIndex;
-    return text.split("").map((char, index) => {
-      // Clé unique avec préfixe pour éviter les conflits d'hydratation
-      const uniqueKey = `${prefix}-${text}-${index}`;
+  // Utilisation de useMemo pour garantir la cohérence serveur/client
+  const renderAlternatingText = useMemo(() => {
+    return (text: string, startIndex: number = 0, prefix: string = "") => {
+      let charIndex = startIndex;
+      const result: React.ReactNode[] = [];
       
-      if (char === " ") {
-        // Utiliser un span avec un espace pour cohérence serveur/client
-        // Le span est nécessaire pour maintenir la structure du DOM identique
-        return (
-          <span key={uniqueKey} className="inline-block w-[0.25em]">
-            {" "}
-          </span>
-        );
-      }
-      const isEven = charIndex % 2 === 0;
-      charIndex++;
-      return (
-        <span
-          key={uniqueKey}
-          className={isEven ? "text-[#FFB3E0]" : "text-white"}
-        >
-          {char}
-        </span>
-      );
-    });
-  };
+      text.split("").forEach((char, index) => {
+        const uniqueKey = `${prefix}-${text}-${index}`;
+        
+        if (char === " ") {
+          // Utiliser un espace insécable (non-breaking space) pour garantir la cohérence
+          result.push(
+            <span key={uniqueKey} className="inline-block w-[0.25em]">
+              {"\u00A0"}
+            </span>
+          );
+        } else {
+          const isEven = charIndex % 2 === 0;
+          charIndex++;
+          result.push(
+            <span
+              key={uniqueKey}
+              className={isEven ? "text-[#FFB3E0]" : "text-white"}
+            >
+              {char}
+            </span>
+          );
+        }
+      });
+      
+      return result;
+    };
+  }, []);
 
   // Calculer les indices de départ pour éviter les erreurs d'hydratation
   const desktopText1 = "Mais il a besoin de nous";

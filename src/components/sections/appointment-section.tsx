@@ -221,7 +221,3 @@ export function AppointmentSection() {
     </>
   );
 }
-
-
-
-

@@ -90,3 +90,42 @@
 nextjs-portal {
   left: -2px;
 }
+
+/* Styles pour le widget Calendly - triche pour masquer le fond blanc */
+.calendly-wrapper {
+  position: relative;
+}
+
+.calendly-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 50% 0%, rgba(113, 221, 174, 0.95), rgba(28, 28, 28, 0.98));
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.calendly-widget-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Alternative : utiliser un overlay avec un effet de masquage sélectif */
+.calendly-overlay {
+  background: radial-gradient(120% 90% at 50% 0%, rgba(113, 221, 174, 0.95), rgba(28, 28, 28, 0.98));
+  mix-blend-mode: screen;
+  opacity: 0.8;
+}
+
+/* Si screen ne fonctionne pas, essayer multiply ou overlay */
+.calendly-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 50% 0%, rgba(113, 221, 174, 0.95), rgba(28, 28, 28, 0.98));
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}

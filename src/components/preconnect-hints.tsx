@@ -8,14 +8,12 @@ export function PreconnectHints() {
     // Ce composant s'exécute côté client pour garantir que les liens sont injectés
     const preconnects = [
       { href: "https://calendly.com", crossorigin: false },
-      { href: "https://assets.calendly.com", crossorigin: false },
       { href: "https://fonts.googleapis.com", crossorigin: false },
       { href: "https://fonts.gstatic.com", crossorigin: true },
     ];
 
     const dnsPrefetches = [
       "https://calendly.com",
-      "https://assets.calendly.com",
       "https://fonts.googleapis.com",
       "https://fonts.gstatic.com",
     ];

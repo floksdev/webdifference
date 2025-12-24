@@ -63,9 +63,9 @@ export function SiteFooter() {
           </div>
 
           {/* Contact */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             <h3 className="text-base font-extrabold text-[#1C1C1C]">Contact</h3>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
               <Link
                 href="https://calendly.com/webdifference/nouvelle-reunion"
                 target="_blank"
@@ -93,14 +93,14 @@ export function SiteFooter() {
           </div>
 
           {/* Mentions légales */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             <h3 className="text-base font-extrabold text-[#1C1C1C]">Légal</h3>
-            <nav className="flex flex-col gap-3">
+            <nav className="flex flex-col gap-2">
               {legalLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-[#1C1C1C] transition-all hover:underline decoration-2 underline-offset-4 leading-relaxed py-2 min-h-[44px] flex items-center"
+                  className="text-sm text-[#1C1C1C] transition-all hover:underline decoration-2 underline-offset-4 leading-tight flex items-center"
                 >
                   {link.label}
                 </Link>

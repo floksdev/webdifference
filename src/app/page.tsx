@@ -29,11 +29,9 @@ const FaqSection = dynamic(
   { ssr: true }
 );
 
-// AppointmentSection contient Calendly, chargé en lazy loading
-// Le composant est déjà "use client", donc Calendly se chargera côté client même avec SSR activé
 const AppointmentSection = dynamic(
   () => import("@/components/sections/appointment-section").then((mod) => ({ default: mod.AppointmentSection })),
-  { ssr: true } // SSR activé pour le SEO, Calendly se chargera côté client
+  { ssr: true }
 );
 
 const ResourcesSection = dynamic(

@@ -8,7 +8,7 @@ import { FaArrowDown } from "react-icons/fa";
 export function HeroSection() {
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" suppressHydrationWarning>
       <div className="mx-auto flex max-w-6xl flex-col gap-14 px-4 py-12 sm:px-6 sm:py-16 md:py-24">
         <div className="flex flex-col items-center gap-6 text-center">
           {/* Badge avec animation légère */}
@@ -71,7 +71,7 @@ export function HeroSection() {
       </div>
 
       {/* Effets de fond - animation supprimée pour éviter les erreurs d'hydratation */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" suppressHydrationWarning>
         <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:rgba(113,221,174,0.25)] blur-[120px] sm:h-[400px] sm:w-[400px] sm:blur-[160px] md:h-[520px] md:w-[520px] md:blur-[220px]" />
         <div className="absolute left-1/4 top-1/4 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:rgba(255,255,255,0.18)] blur-[100px] sm:h-[280px] sm:w-[280px] sm:blur-[140px] md:h-[360px] md:w-[360px] md:blur-[200px]" />
       </div>
