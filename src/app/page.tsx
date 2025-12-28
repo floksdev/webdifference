@@ -27,8 +27,8 @@ export default function Home() {
       <OffersSection />
       <ExistingSiteSection />
       <ReviewsRecommendationsSection />
-      <FaqSection />
       <AppointmentSection />
+      <FaqSection />
       <ResourcesSection />
     </>
   );
