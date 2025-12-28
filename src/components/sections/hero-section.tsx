@@ -8,22 +8,22 @@ import { FaArrowDown } from "react-icons/fa";
 export function HeroSection() {
 
   return (
-    <section className="relative overflow-hidden" suppressHydrationWarning>
-      <div className="mx-auto flex max-w-6xl flex-col gap-14 px-4 py-12 sm:px-6 sm:py-16 md:py-24">
+    <section className="relative overflow-hidden">
+      <div className="mx-auto flex max-w-6xl flex-col gap-14 px-4 pt-8 pb-12 sm:px-6 sm:pt-12 sm:pb-16 md:pt-16 md:pb-24" suppressHydrationWarning>
         <div className="flex flex-col items-center gap-6 text-center">
           {/* Badge avec animation légère */}
           {/* Suppression de l'animation initiale pour éviter les erreurs d'hydratation */}
           <div className="mb-4 inline-block w-full sm:w-auto">
-            <div className="relative flex items-center gap-2 rounded-full border border-[#1C1C1C]/20 bg-[#FFFFFF] px-3 py-2.5 shadow-[0_18px_48px_rgba(0,0,0,0.32),0_0_20px_rgba(113,221,174,0.4),0_0_40px_rgba(113,221,174,0.2)] overflow-hidden sm:gap-4 sm:px-6 sm:py-3 sm:overflow-visible md:px-8 md:py-4">
+            <div className="relative flex items-center gap-3 rounded-full border border-[#1C1C1C]/20 bg-[#FFFFFF] px-4 py-3 shadow-[0_18px_48px_rgba(0,0,0,0.32),0_0_20px_rgba(113,221,174,0.4),0_0_40px_rgba(113,221,174,0.2)] overflow-hidden sm:gap-5 sm:px-8 sm:py-4 sm:overflow-visible md:px-10 md:py-5">
               <Image
                 src="/assets/main/fond-blanc/logo-sm.png"
                 alt="Web Difference loupe"
                 width={48}
                 height={48}
-                className="h-8 w-8 flex-shrink-0 sm:h-10 sm:w-10 md:h-12 md:w-12"
+                className="h-10 w-10 flex-shrink-0 sm:h-12 sm:w-12 md:h-14 md:w-14"
                 priority
               />
-              <p className="text-xs font-extrabold text-[#1C1C1C] overflow-hidden text-ellipsis whitespace-nowrap sm:text-base sm:overflow-visible sm:whitespace-nowrap md:text-lg lg:text-xl xl:text-2xl uppercase">
+              <p className="text-sm font-extrabold text-[#1C1C1C] overflow-hidden text-ellipsis whitespace-nowrap sm:text-lg sm:overflow-visible sm:whitespace-nowrap md:text-xl lg:text-2xl xl:text-3xl uppercase">
                 Créer un site web <span className="underline decoration-3 underline-offset-4 decoration-[#1C1C1C]">vraiment</span> unique
               </p>
             </div>
@@ -71,7 +71,7 @@ export function HeroSection() {
       </div>
 
       {/* Effets de fond - animation supprimée pour éviter les erreurs d'hydratation */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" suppressHydrationWarning>
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:rgba(113,221,174,0.25)] blur-[120px] sm:h-[400px] sm:w-[400px] sm:blur-[160px] md:h-[520px] md:w-[520px] md:blur-[220px]" />
         <div className="absolute left-1/4 top-1/4 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:rgba(255,255,255,0.18)] blur-[100px] sm:h-[280px] sm:w-[280px] sm:blur-[140px] md:h-[360px] md:w-[360px] md:blur-[200px]" />
       </div>
