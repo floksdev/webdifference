@@ -38,7 +38,7 @@ export function SiteFooter() {
                 className="h-auto w-[120px] md:w-[140px]"
               />
             </Link>
-            <p className="text-sm text-[#1C1C1C]">
+            <p className="text-sm text-[#1C1C1C]" suppressHydrationWarning>
               Des sites web qui donnent envie de rester
             </p>
           </div>
@@ -111,7 +111,7 @@ export function SiteFooter() {
 
         {/* Copyright */}
         <div className="mt-8 border-t border-slate-900/10 pt-8 text-center">
-          <p className="text-sm text-[#1C1C1C]">
+          <p className="text-sm text-[#1C1C1C]" suppressHydrationWarning>
             © {new Date().getFullYear()} Web Difference. Tous droits réservés.
           </p>
         </div>
