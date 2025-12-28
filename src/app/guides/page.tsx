@@ -333,6 +333,31 @@ export default function GuidesPage() {
             </div>
           </>
         )}
+
+        {/* Message "Plus à venir" */}
+        <div className="mt-16 text-center">
+          <div 
+            className="inline-block px-8 py-4 rounded-2xl relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(135deg, #FAFAFA 0%, #E6E6E6 25%, #CFCFCF 50%, #B8B8B8 75%, #9E9E9E 100%)',
+              boxShadow: '0 20px 60px rgba(158, 158, 158, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.3)'
+            }}
+          >
+            {/* Overlay brillant pour effet métallique */}
+            <div 
+              className="absolute inset-0 rounded-2xl pointer-events-none opacity-30"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%)'
+              }}
+            />
+            <p className="text-base sm:text-lg text-[#1C1C1C] font-semibold relative z-10">
+              <span className="font-bold">Nouveau guide chaque semaine</span>
+              <span className="mx-2">·</span>
+              <span className="text-[#1C1C1C]/70">D'autres contenus arrivent bientôt</span>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

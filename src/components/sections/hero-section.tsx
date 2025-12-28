@@ -6,6 +6,20 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 
 export function HeroSection() {
+  const handleScrollToPortfolio = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const portfolioSection = document.getElementById('portfolio');
+    if (portfolioSection) {
+      const headerOffset = 150; // Offset pour le header fixe
+      const elementPosition = portfolioSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <section className="relative overflow-hidden">
@@ -61,6 +75,7 @@ export function HeroSection() {
             </div>
             <Link
               href="#portfolio"
+              onClick={handleScrollToPortfolio}
               className="inline-flex w-full items-center justify-center gap-3 rounded-xl border border-[#71DDAE] bg-[#1C1C1C]/50 backdrop-blur px-6 py-3 text-base font-extrabold tracking-wide text-[#71DDAE] transition-all duration-200 hover:bg-[#1C1C1C]/70 h-12 sm:w-auto sm:px-8 sm:py-4 sm:text-lg md:h-[68px]"
             >
               Découvrir nos projets

@@ -39,7 +39,7 @@ export function SiteFooter() {
               />
             </Link>
             <p className="text-sm text-[#1C1C1C]">
-              Construisons votre avantage digital durable.
+              Des sites web qui donnent envie de rester
             </p>
           </div>
 

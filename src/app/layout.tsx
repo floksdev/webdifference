@@ -25,26 +25,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://webdifference.app"),
+  metadataBase: new URL("https://www.webdifference.fr"),
   title: {
-    default: "Web Difference · Agence digitale différenciante",
+    default: "Agence Web - Créer un site web vraiment unique",
     template: "%s · Web Difference",
   },
   description:
-    "Studio produit & automation qui conçoit des expériences digitales sur-mesure, propulsées par l'IA et les workflows automatisés.",
+    "Création de sites web qui retiennent vos visiteurs et vous apportent des résultats. Design moderne, SEO solide, suivi complet. Devis instantané et automatisations no-code.",
   keywords: [
-    "agence digitale",
+    "création de sites web",
+    "agence web",
+    "sites web performants",
+    "design web",
+    "SEO",
     "automatisation",
     "Next.js",
     "SaaS",
-    "design produit",
   ],
   openGraph: {
-    title: "Web Difference",
+    title: "Agence Web - Créer un site web vraiment unique",
     description:
-      "Votre différence débute ici : devis instantané, automatisations no-code & expériences digitales haut de gamme.",
+      "Création de sites web qui retiennent vos visiteurs et vous apportent des résultats. Design moderne, SEO solide, suivi complet. Devis instantané et automatisations no-code.",
     type: "website",
-    url: "https://webdifference.app",
+    url: "https://www.webdifference.fr",
     locale: "fr_FR",
   },
   icons: {

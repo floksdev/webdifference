@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { articles } from "@/data/articles";
+import { FaArrowRight } from "react-icons/fa";
 
 export function ResourcesSection() {
 
@@ -102,7 +103,10 @@ export function ResourcesSection() {
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%)'
                 }}
               />
-              <span className="relative z-10"><span className="font-extrabold">En voir</span> davantage</span>
+              <span className="relative z-10 flex items-center gap-2">
+                Voir tous les guides
+                <FaArrowRight className="text-sm" />
+              </span>
           </Link>
         </div>
       </div>

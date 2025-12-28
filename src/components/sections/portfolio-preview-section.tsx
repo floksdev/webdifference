@@ -37,7 +37,7 @@ export function PortfolioPreviewSection() {
   const currentProject = projects.find((p) => p.slug === selectedProject);
 
   return (
-    <section className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
+    <section id="portfolio" className="border-t border-white/10 bg-[color:var(--color-background-strong)] py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
         <div className="text-center">
           <div className="flex justify-center mb-6">
