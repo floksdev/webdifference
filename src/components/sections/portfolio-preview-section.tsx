@@ -153,7 +153,7 @@ export function PortfolioPreviewSection() {
         </div>
         <div className="flex justify-center">
           <Link
-            href="https://calendly.com/webdifference/nouvelle-reunion"
+            href="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] px-6 py-4 text-lg font-extrabold tracking-wide text-[#1C1C1C] shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95 whitespace-nowrap sm:px-8 sm:py-4 sm:text-xl md:px-8 md:py-9 md:text-2xl md:h-[68px]"

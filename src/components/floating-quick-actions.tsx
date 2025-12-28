@@ -10,7 +10,7 @@ const quickReplies = [
     label: "Demander un devis express",
   },
   {
-    href: "https://cal.com/",
+    href: "https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12",
     label: "Planifier un rendez-vous",
   },
   {

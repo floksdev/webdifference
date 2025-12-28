@@ -46,7 +46,7 @@ export function AboutSection() {
                 Demander un échange rapide
               </Link>
               <Link
-                href="https://cal.com"
+                href="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
                 className="inline-flex items-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/80 transition hover:border-[color:var(--color-secondary)] hover:text-white"
               >
                 Choisir un créneau visio

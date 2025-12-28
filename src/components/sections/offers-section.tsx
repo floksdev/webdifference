@@ -649,7 +649,7 @@ export function OffersSection() {
               
                     {/* CTA premium */}
               <Link
-                      href="https://calendly.com/webdifference/nouvelle-reunion"
+                      href="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-2 sm:mt-4 inline-flex w-full items-center justify-center gap-2 sm:gap-3 rounded-2xl bg-[#1C1C1C] px-4 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-[0_8px_24px_rgba(28,28,28,0.4)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_32px_rgba(28,28,28,0.5)] active:scale-100"
@@ -699,7 +699,7 @@ export function OffersSection() {
 
         <div className="flex justify-center -mt-24 sm:mt-0">
           <Link
-            href="https://calendly.com/webdifference/nouvelle-reunion"
+            href="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] px-8 py-4 text-2xl font-extrabold tracking-wide text-[#1C1C1C] shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95"

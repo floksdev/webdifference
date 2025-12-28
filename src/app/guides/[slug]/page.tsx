@@ -213,7 +213,7 @@ export default async function ArticlePage({
               Discutons de votre projet et trouvons ensemble la meilleure solution.
             </p>
             <Link
-              href="https://calendly.com/webdifference/nouvelle-reunion"
+              href="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#1C1C1C] text-white font-extrabold rounded-xl hover:scale-105 transition-transform relative z-10 text-xl"

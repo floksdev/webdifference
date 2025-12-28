@@ -30,7 +30,7 @@ export function AppointmentSection() {
             if (!hasIframe && typeof window !== 'undefined' && (window as any).Calendly) {
               // Nettoyer et recréer le widget
               widget.innerHTML = '';
-              widget.setAttribute('data-url', 'https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae');
+              widget.setAttribute('data-url', 'https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12');
               
               // Forcer Calendly à détecter le widget
               setTimeout(() => {
@@ -39,7 +39,7 @@ export function AppointmentSection() {
                 if ((window as any).Calendly && (window as any).Calendly.initInlineWidget) {
                   try {
                     (window as any).Calendly.initInlineWidget({
-                      url: "https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae",
+                      url: "https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12",
                       parentElement: widget,
                     });
                   } catch (e) {
@@ -74,7 +74,7 @@ export function AppointmentSection() {
         <div
           ref={widgetRef}
           className="calendly-inline-widget"
-          data-url="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae"
+          data-url="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
           style={{ minWidth: "320px", height: "700px", minHeight: "700px", width: "100%" }}
           suppressHydrationWarning
         />
