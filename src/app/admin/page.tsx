@@ -181,71 +181,63 @@ export default function AdminPage() {
     );
 
   return (
-    <main className="w-full px-6 py-10 text-white">
-      <header className="mb-10 flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 px-6 py-6 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-white/60">
-            Portail administrateur
-          </p>
-          <h1 className="mt-2 text-3xl font-semibold">
-            Tableau de bord Web Difference
-          </h1>
-          <p className="text-sm text-white/70">
-            Connecté en tant que {adminEmail}.
-          </p>
+    <main className="w-full px-6 py-6 text-white">
+      <header className="mb-6 flex justify-end">
+        <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1.5">
+          <span className="text-xs font-medium text-white/80">Admin</span>
+          <button
+            onClick={() => {
+              logoutAdmin();
+              router.push("/");
+            }}
+            className="text-xs font-medium text-white/60 transition hover:text-white/80"
+          >
+            Déconnexion
+          </button>
         </div>
-        <button
-          onClick={() => {
-            logoutAdmin();
-            router.push("/");
-          }}
-          className="rounded-full border border-white/20 px-5 py-2 text-sm hover:border-white/40 hover:bg-white/10"
-        >
-          Se déconnecter
-        </button>
       </header>
 
       {!isCreatingQuote && (
         <section className="mb-10">
-          <div className="grid gap-4 sm:grid-cols-2 lg:w-1/2">
-            <button
-              onClick={startNewQuote}
-              className="rounded-2xl border border-white/20 bg-white/5 px-6 py-4 text-left text-sm font-semibold text-white transition hover:border-sky-400/40 hover:bg-sky-500/5"
-            >
-              Nouveau devis
-            </button>
-          </div>
+          <button
+            onClick={startNewQuote}
+            className="w-full max-w-md mx-auto rounded-2xl border border-white/20 bg-white/5 p-8 text-center transition hover:border-[#71DDAE]/40 hover:bg-[#71DDAE]/10 hover:shadow-lg hover:shadow-[rgba(113,221,174,0.15)]"
+          >
+            <div className="text-2xl font-bold text-white mb-2">Nouveau devis</div>
+            <div className="text-sm text-white/60">Créer un nouveau devis PDF</div>
+          </button>
         </section>
       )}
 
       {isCreatingQuote ? (
-        <section className="grid gap-8 xl:grid-cols-[1.1fr_0.9fr]">
+        <section className="grid gap-6 xl:grid-cols-[0.75fr_1.25fr] max-w-7xl mx-auto">
           {/* --- FORM --- */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
               generateQuotePdf();
             }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            <div className="flex justify-end">
-              <button
-                type="button"
-                onClick={cancelQuoteCreation}
-                className="rounded-full border border-[#1C1C1C]/20 bg-white/90 px-4 py-1 text-xs uppercase tracking-wide text-[#1C1C1C] hover:border-[#1C1C1C]/40 hover:bg-white"
-              >
-                Fermer
-              </button>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#C0C0C0] via-[#A8A8A8] to-[#808080] p-6 space-y-4" style={{ boxShadow: '0 8px 32px rgba(192, 192, 192, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)' }}>
-              <h2 className="text-xl font-semibold text-[#1C1C1C]">Client & projet</h2>
+            <button
+              type="button"
+              onClick={cancelQuoteCreation}
+              className="w-full rounded-2xl bg-gradient-to-r from-red-500 via-red-600 to-red-700 px-4 py-2.5 text-xs font-bold text-white transition-all shadow-[0_8px_32px_rgba(239,68,68,0.4)] hover:shadow-[0_12px_40px_rgba(239,68,68,0.6)] hover:-translate-y-1 hover:scale-105 active:scale-95"
+              style={{
+                boxShadow: '0 8px 32px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+              }}
+            >
+              Fermer
+            </button>
+            <div className="rounded-xl border border-gray-200 bg-white p-4 space-y-3 shadow-sm">
+              <h2 className="text-sm font-semibold text-gray-900 mb-3">Client & projet</h2>
             <input
               placeholder="Nom complet du client"
               value={quote.clientName}
               onChange={(e) =>
                 setQuote((p) => ({ ...p, clientName: e.target.value }))
               }
-              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+              className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
             />
             <input
               placeholder="Entreprise du client"
@@ -253,7 +245,7 @@ export default function AdminPage() {
               onChange={(e) =>
                 setQuote((p) => ({ ...p, clientCompany: e.target.value }))
               }
-              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+              className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
             />
             <textarea
               placeholder="Adresse du client"
@@ -262,25 +254,25 @@ export default function AdminPage() {
               onChange={(e) =>
                 setQuote((p) => ({ ...p, clientAddress: e.target.value }))
               }
-              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+              className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400 resize-none"
             />
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-2 grid-cols-2">
               <input
-                placeholder="Téléphone du client"
+                placeholder="Téléphone"
                 value={quote.clientPhone}
                 onChange={(e) =>
                   setQuote((p) => ({ ...p, clientPhone: e.target.value }))
                 }
-                className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+                className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
               />
               <input
                 type="email"
-                placeholder="Email du client"
+                placeholder="Email"
                 value={quote.clientEmail}
                 onChange={(e) =>
                   setQuote((p) => ({ ...p, clientEmail: e.target.value }))
                 }
-                className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+                className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
               />
             </div>
             <input
@@ -289,10 +281,10 @@ export default function AdminPage() {
               onChange={(e) =>
                 setQuote((p) => ({ ...p, dueDate: e.target.value }))
               }
-              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+              className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
             />
             <textarea
-              rows={3}
+              rows={2}
               placeholder="Résumé du projet"
               value={quote.executiveSummary}
               onChange={(e) =>
@@ -301,35 +293,35 @@ export default function AdminPage() {
                   executiveSummary: e.target.value,
                 }))
               }
-              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+              className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400 resize-none"
             />
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#C0C0C0] via-[#A8A8A8] to-[#808080] p-6 space-y-4" style={{ boxShadow: '0 8px 32px rgba(192, 192, 192, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)' }}>
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold text-[#1C1C1C]">Prestations</h2>
+          <div className="rounded-xl border border-gray-200 bg-white p-4 space-y-3 shadow-sm">
+            <div className="flex items-center justify-between mb-2">
+              <h2 className="text-sm font-semibold text-gray-900">Prestations</h2>
               <button
                 type="button"
                 onClick={addItem}
-                className="rounded-full border border-[#1C1C1C]/20 bg-white/90 px-3 py-1 text-sm text-[#1C1C1C] hover:border-[#1C1C1C]/40 hover:bg-white"
+                className="rounded-lg border border-gray-300 bg-white px-2.5 py-1 text-xs font-medium text-gray-700 transition hover:bg-gray-50"
               >
-                Ajouter une ligne
+                + Ajouter
               </button>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-2">
               {quote.items.map((item, index) => {
                 const itemKey = item.id || `line-${index}`;
                 return (
                   <div
                     key={itemKey}
-                    className="rounded-xl border border-[#1C1C1C]/20 bg-white/80 p-4 space-y-3"
+                    className="rounded-lg border border-gray-200 bg-gray-50 p-3 space-y-2"
                   >
-                    <div className="flex items-center justify-between text-xs text-[#1C1C1C]/60">
-                      <span>Ligne {index + 1}</span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-medium text-gray-500">Ligne {index + 1}</span>
                       <button
                         type="button"
                         onClick={() => removeItem(index)}
-                        className="rounded-full border border-[#1C1C1C]/20 px-2 py-1 text-[11px] uppercase tracking-wide text-[#1C1C1C]/70 hover:border-rose-400 hover:text-rose-600 disabled:opacity-40"
+                        className="text-[10px] font-medium text-red-600 hover:text-red-700 transition disabled:opacity-40 disabled:cursor-not-allowed"
                         disabled={quote.items.length === 1}
                       >
                         Supprimer
@@ -341,13 +333,13 @@ export default function AdminPage() {
                       onChange={(e) =>
                         updateItem(index, { description: e.target.value })
                       }
-                      className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+                      className="w-full rounded-lg border border-gray-300 bg-white px-2.5 py-1.5 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
                     />
-                    <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="grid gap-2 grid-cols-2">
                       <input
                         type="number"
                         min={1}
-                        placeholder="Quantité"
+                        placeholder="Qté"
                         value={item.quantity}
                         onChange={(e) =>
                           updateItem(index, {
@@ -357,13 +349,13 @@ export default function AdminPage() {
                             ),
                           })
                         }
-                        className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+                        className="w-full rounded-lg border border-gray-300 bg-white px-2.5 py-1.5 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
                       />
                       <input
                         type="number"
                         min={0}
                         step="0.01"
-                        placeholder="Prix unitaire (€)"
+                        placeholder="Prix (€)"
                         value={item.unitPrice}
                         onChange={(e) =>
                           updateItem(index, {
@@ -373,7 +365,7 @@ export default function AdminPage() {
                             ),
                           })
                         }
-                        className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+                        className="w-full rounded-lg border border-gray-300 bg-white px-2.5 py-1.5 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
                       />
                     </div>
                   </div>
@@ -382,25 +374,25 @@ export default function AdminPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#C0C0C0] via-[#A8A8A8] to-[#808080] p-6 space-y-4" style={{ boxShadow: '0 8px 32px rgba(192, 192, 192, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)' }}>
-            <h2 className="text-xl font-semibold text-[#1C1C1C]">Conditions</h2>
+          <div className="rounded-xl border border-gray-200 bg-white p-4 space-y-3 shadow-sm">
+            <h2 className="text-sm font-semibold text-gray-900 mb-2">Conditions</h2>
             <textarea
-              rows={3}
+              rows={9}
               placeholder="Conditions de paiement"
               value={quote.paymentTerms}
               onChange={(e) =>
                 setQuote((p) => ({ ...p, paymentTerms: e.target.value }))
               }
-              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
+              className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-gray-400 focus:ring-1 focus:ring-gray-400 resize-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={isExporting}
-            className="w-full rounded-xl bg-gradient-to-r from-[#C0C0C0] via-[#A8A8A8] to-[#808080] px-5 py-3 text-sm font-extrabold text-[#1C1C1C] shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95 disabled:opacity-60 disabled:hover:scale-100"
+            className="w-full rounded-2xl bg-gradient-to-r from-[#71DDAE] via-[#5BCA9D] to-[#2A9D7A] px-4 py-2.5 text-xs font-bold text-[#1C1C1C] transition-all shadow-[0_8px_32px_rgba(113,221,174,0.4)] hover:shadow-[0_12px_40px_rgba(113,221,174,0.6)] hover:-translate-y-1 hover:scale-105 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:-translate-y-0"
             style={{
-              boxShadow: '0 8px 32px rgba(192, 192, 192, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+              boxShadow: '0 8px 32px rgba(113, 221, 174, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
             }}
           >
             {isExporting ? "Génération…" : "Télécharger le devis PDF"}
@@ -411,166 +403,144 @@ export default function AdminPage() {
         </form>
 
         {/* --- LIVE PREVIEW --- */}
-        <div
-          ref={previewRef}
-          className="mx-auto max-w-[794px] rounded-[32px] border border-white/20 bg-[#0b0f1c] p-10 shadow-[0_25px_80px_rgba(0,0,0,0.45)] print:bg-transparent"
-        >
-          <header className="rounded-3xl bg-gradient-to-br from-white/90 to-white/60 px-8 py-6 text-slate-900 shadow-inner relative overflow-hidden">
-            <div className="flex flex-col gap-3">
-              <div className="flex items-start justify-between gap-4">
-                <div className="text-sm text-slate-500">
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-2">Devis</h2>
-                  <p className="font-semibold text-slate-700">
-                    N° {quoteNumber}
-                  </p>
-                  <p>Date : {formatDate(new Date())}</p>
-                  <p>Validité : {formatDisplayDate(quote.dueDate)}</p>
-                </div>
-                {logoDataUrl ? (
-                  <img
-                    src={logoDataUrl}
-                    alt="Logo Web Difference"
-                    className="h-16 w-auto"
-                  />
-                ) : (
-                  <h2 className="text-lg font-semibold uppercase tracking-[0.2em]">
-                    WEB DIFFERENCE
-                  </h2>
-                )}
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
-                    À l’intention de
-                  </p>
-                  <p className="text-base font-semibold text-slate-900">
-                    {quote.clientName || "Nom du client"}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
-                    Total estimé
-                  </p>
-                  <p className="text-3xl font-semibold text-slate-900">
-                    {subtotal.toFixed(2)} €
-                  </p>
-                </div>
-              </div>
+        <div className="space-y-4">
+          <div
+            ref={previewRef}
+            className="sticky top-6 h-fit w-full max-w-[210mm] mx-auto rounded-lg border border-gray-200 bg-[#f9fafb] p-10 shadow-lg print:bg-transparent"
+          >
+          {/* HEADER */}
+          <div className="flex items-start justify-between mb-5">
+            <div className="text-sm">
+              <h2 className="text-xl font-bold text-slate-900 mb-1">Devis</h2>
+              <p className="text-xs font-semibold text-slate-700 mb-0.5">
+                N° {quoteNumber}
+              </p>
+              <p className="text-xs text-gray-500">Date : {formatDate(new Date())}</p>
+              <p className="text-xs text-gray-500">Validité : {formatDisplayDate(quote.dueDate)}</p>
             </div>
-          </header>
+            {logoDataUrl ? (
+              <img
+                src={logoDataUrl}
+                alt="Logo Web Difference"
+                className="h-[60px] w-auto -mt-2.5"
+              />
+            ) : (
+              <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                WEB DIFFERENCE
+              </h2>
+            )}
+          </div>
 
-          <section className="mt-8 grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-sm text-white backdrop-blur md:grid-cols-2">
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-                Émetteur
-              </p>
-              <p className="mt-3 text-base font-semibold">
-                {providerInfo.company}
-              </p>
-              <p>{providerInfo.address}</p>
-              <p>{providerInfo.phone}</p>
-              <p>{providerInfo.email}</p>
-              <p>{providerInfo.website}</p>
-              <p className="text-xs uppercase tracking-[0.2em] text-white/50">
-                SIRET {providerInfo.siret}
-              </p>
+          {/* INFOS CLIENT / ÉMETTEUR */}
+          <div className="flex gap-2.5 mb-3">
+            <div className="flex-1 rounded-xl bg-white border border-gray-200 p-4">
+              <p className="text-[9px] uppercase tracking-wider text-gray-400 mb-1.5">Émetteur</p>
+              <p className="text-xs font-semibold text-slate-900 mb-0.5">{providerInfo.company}</p>
+              <p className="text-[10px] text-gray-600 mb-0.5">{providerInfo.address}</p>
+              <p className="text-[10px] text-gray-600 mb-0.5">{providerInfo.phone}</p>
+              <p className="text-[10px] text-gray-600 mb-0.5">{providerInfo.email}</p>
+              <p className="text-[10px] text-gray-600 mb-0.5">{providerInfo.website}</p>
+              <p className="text-[9px] text-gray-400 mt-1">SIRET {providerInfo.siret}</p>
             </div>
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-                À l’intention de
-              </p>
-              <p className="mt-3 text-base font-semibold">
+            <div className="flex-1 rounded-xl bg-white border border-gray-200 p-4">
+              <p className="text-[9px] uppercase tracking-wider text-gray-400 mb-1.5">À l'intention de</p>
+              <p className="text-xs font-semibold text-slate-900 mb-0.5">
                 {quote.clientName || "Nom du client"}
               </p>
-              <p>{quote.clientCompany || "Entreprise non renseignée"}</p>
-              <p>{quote.clientAddress || "Adresse à préciser"}</p>
-              <p>{quote.clientPhone || "Téléphone à préciser"}</p>
-              <p>{quote.clientEmail || "Email à préciser"}</p>
+              <p className="text-[10px] text-gray-600 mb-0.5">
+                {quote.clientCompany || "Entreprise non renseignée"}
+              </p>
+              <p className="text-[10px] text-gray-600 mb-0.5">
+                {quote.clientAddress || "Adresse à préciser"}
+              </p>
+              <p className="text-[10px] text-gray-600 mb-0.5">
+                {quote.clientPhone || "Téléphone à préciser"}
+              </p>
+              <p className="text-[10px] text-gray-600 mb-0.5">
+                {quote.clientEmail || "Email à préciser"}
+              </p>
             </div>
-          </section>
+          </div>
 
-          <section className="mt-8 rounded-3xl border border-white/5 bg-white/5 p-8 text-sm text-slate-200 backdrop-blur">
-            <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">
-              Résumé
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-white">
+          {/* RÉSUMÉ */}
+          <div className="rounded-xl bg-white border border-gray-200 p-4 mb-3">
+            <p className="text-[9px] uppercase tracking-wider text-gray-400 mb-1.5">Résumé du projet</p>
+            <p className="text-[10px] leading-relaxed text-gray-700">
               {quote.executiveSummary || "Aucun résumé pour le moment."}
             </p>
-          </section>
+          </div>
 
-          <section className="mt-8 rounded-3xl border border-white/5 bg-white/[0.02] p-8 backdrop-blur">
-            <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/50">
-              <p>Prestations</p>
-              <p>Montant</p>
+          {/* PRESTATIONS */}
+          <div className="rounded-xl bg-white border border-gray-200 p-4 mb-3">
+            <div className="flex justify-between mb-2">
+              <p className="text-[9px] uppercase tracking-wider text-gray-400">Prestations</p>
+              <p className="text-[9px] uppercase tracking-wider text-gray-400">Montant</p>
             </div>
-            <div className="mt-6 space-y-4">
+            <div className="space-y-2">
               {quote.items.map((item, index) => {
                 const itemKey = item.id || `preview-${index}`;
                 const lineTotal = item.quantity * item.unitPrice;
                 return (
                   <div
                     key={itemKey}
-                    className="flex items-center justify-between rounded-2xl bg-white/[0.04] px-5 py-4 text-white"
+                    className="flex items-start justify-between"
                   >
-                    <div>
-                      <p className="text-sm font-semibold">
+                    <div className="flex-1">
+                      <p className="text-[10px] font-medium text-slate-900">
                         {item.description}
                       </p>
-                      <p className="text-xs text-white/60">
+                      <p className="text-[10px] text-gray-600">
                         {item.quantity} × {item.unitPrice.toFixed(2)} €
                       </p>
                     </div>
-                    <p className="text-base font-semibold">
+                    <p className="text-[10px] font-medium text-slate-900">
                       {lineTotal.toFixed(2)} €
                     </p>
                   </div>
                 );
               })}
             </div>
-          </section>
+          </div>
 
-          <section className="mt-8 rounded-3xl border border-white/5 bg-white px-8 py-6 text-slate-900 shadow-inner">
-            <div className="flex items-center justify-between text-sm text-slate-500">
+          {/* TOTAUX */}
+          <div className="rounded-xl bg-white border border-gray-200 p-4 mb-3">
+            <div className="flex justify-between text-[10px] text-gray-600 mb-1">
               <p>Sous-total</p>
               <p>{subtotal.toFixed(2)} €</p>
             </div>
-            <div className="flex items-center justify-between text-xs text-slate-400">
+            <div className="flex justify-between text-[10px] text-gray-600 mb-2">
               <p>TVA</p>
               <p>Non applicable (art. 293 B CGI)</p>
             </div>
-            <div className="mt-4 flex items-center justify-between rounded-2xl bg-slate-900/5 px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
+            <div className="flex justify-between pt-2 border-t border-gray-200">
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-700">
                 Total à régler
               </p>
-              <p className="text-2xl font-semibold text-slate-900">
+              <p className="text-base font-semibold text-slate-900">
                 {subtotal.toFixed(2)} €
               </p>
             </div>
-          </section>
+          </div>
 
-          <section className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-8 text-white/80">
-            <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">
-              Conditions
-            </h3>
-            <div className="mt-3 text-xs leading-relaxed text-white/80">
-              <p className="text-white/60 text-xs uppercase tracking-[0.2em]">
-                Conditions de paiement
-              </p>
-              <p>{quote.paymentTerms || "À définir avec le client."}</p>
-            </div>
-          </section>
-
-          <section className="mt-8 flex flex-col gap-3 rounded-3xl border border-dashed border-white/20 p-8 text-sm text-white/70">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/40">
-              Signature
+          {/* CONDITIONS */}
+          <div className="rounded-xl bg-white border border-gray-200 p-4 mb-3">
+            <p className="text-[9px] uppercase tracking-wider text-gray-400 mb-1.5">Conditions de paiement</p>
+            <p className="text-[10px] text-gray-700">
+              {quote.paymentTerms || "À définir avec le client."}
             </p>
-            <div className="h-12 border-b border-white/20" />
-            <p>Signature du client</p>
-          </section>
+          </div>
 
-          <p className="text-center text-sm text-white/40 mt-14">
+          {/* SIGNATURE */}
+          <div className="flex flex-col gap-2 mb-8">
+            <p className="text-[9px] uppercase tracking-wider text-gray-400">Signature</p>
+            <div className="h-8 border-b border-gray-300" />
+            <p className="text-[10px] text-gray-600">Signature du client</p>
+          </div>
+
+          <p className="text-center text-[10px] text-gray-500">
             Merci pour votre confiance.
           </p>
+          </div>
         </div>
       </section>
       ) : null}
@@ -605,8 +575,8 @@ const providerInfo = {
   company: "Web Difference",
   address: "7 rue Valette, 75005 Paris",
   phone: "06 38 72 30 38",
-  email: "tristanwehrle1@gmail.com",
-  website: "tristan-wehrle.com",
+  email: "contact@webdifference.fr",
+  website: "webdifference.fr",
   siret: "939 093 068 00012",
 };
 
