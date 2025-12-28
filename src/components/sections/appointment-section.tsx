@@ -6,11 +6,28 @@ import { useEffect, useState } from "react";
 export function AppointmentSection() {
   const [isMounted, setIsMounted] = useState(false);
   const [widgetKey, setWidgetKey] = useState(0);
+  const [scriptKey, setScriptKey] = useState(0);
 
   useEffect(() => {
     setIsMounted(true);
-    // Changer la clé à chaque montage pour forcer le rechargement
+    // Incrémenter les clés à chaque montage pour forcer React à recréer complètement
     setWidgetKey(prev => prev + 1);
+    setScriptKey(prev => prev + 1);
+    
+    // Nettoyer les iframes Calendly existantes
+    const existingIframes = document.querySelectorAll('.calendly-inline-widget iframe');
+    existingIframes.forEach(iframe => iframe.remove());
+    
+    // Supprimer l'ancien script Calendly s'il existe
+    const existingScript = document.querySelector('script[src*="calendly.com/assets/external/widget.js"]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+    
+    // Supprimer l'objet Calendly global pour forcer le rechargement
+    if (typeof window !== 'undefined') {
+      delete (window as any).Calendly;
+    }
   }, []);
 
   return (
@@ -31,6 +48,7 @@ export function AppointmentSection() {
               suppressHydrationWarning
             />
             <Script
+              key={`calendly-script-${scriptKey}`}
               src="https://assets.calendly.com/assets/external/widget.js"
               strategy="afterInteractive"
             />
