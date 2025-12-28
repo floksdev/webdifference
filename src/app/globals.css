@@ -33,7 +33,7 @@
   *::after {
     @apply border-white/10;
   }
-  
+
   /* Exclure le widget Calendly de la règle de bordure globale */
   .calendly-inline-widget,
   .calendly-inline-widget *,

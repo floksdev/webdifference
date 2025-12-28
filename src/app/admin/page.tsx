@@ -6,7 +6,6 @@ import {
   logoutAdmin,
   onAuthStateChange,
 } from "@/lib/admin-auth";
-import { ClientCrmSection } from "@/components/admin/client-crm-section";
 import { useRouter } from "next/navigation";
 import {
   Document,
@@ -55,7 +54,7 @@ export default function AdminPage() {
 
   // --- Logo ---
   useEffect(() => {
-    fetch("/assets/main/logo-sm.png")
+    fetch("/assets/main/fond-vert/logo-full.png")
       .then((r) => r.blob())
       .then((blob) => {
         const reader = new FileReader();
@@ -233,20 +232,20 @@ export default function AdminPage() {
               <button
                 type="button"
                 onClick={cancelQuoteCreation}
-                className="rounded-full border border-white/20 px-4 py-1 text-xs uppercase tracking-wide text-white/70 hover:border-white/40"
+                className="rounded-full border border-[#1C1C1C]/20 bg-white/90 px-4 py-1 text-xs uppercase tracking-wide text-[#1C1C1C] hover:border-[#1C1C1C]/40 hover:bg-white"
               >
                 Fermer
               </button>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-[#060913] p-6 space-y-4">
-              <h2 className="text-xl font-semibold">Client & projet</h2>
+            <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#C0C0C0] via-[#A8A8A8] to-[#808080] p-6 space-y-4" style={{ boxShadow: '0 8px 32px rgba(192, 192, 192, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)' }}>
+              <h2 className="text-xl font-semibold text-[#1C1C1C]">Client & projet</h2>
             <input
               placeholder="Nom complet du client"
               value={quote.clientName}
               onChange={(e) =>
                 setQuote((p) => ({ ...p, clientName: e.target.value }))
               }
-              className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
             />
             <input
               placeholder="Entreprise du client"
@@ -254,7 +253,7 @@ export default function AdminPage() {
               onChange={(e) =>
                 setQuote((p) => ({ ...p, clientCompany: e.target.value }))
               }
-              className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
             />
             <textarea
               placeholder="Adresse du client"
@@ -263,7 +262,7 @@ export default function AdminPage() {
               onChange={(e) =>
                 setQuote((p) => ({ ...p, clientAddress: e.target.value }))
               }
-              className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
             />
             <div className="grid gap-3 sm:grid-cols-2">
               <input
@@ -272,7 +271,7 @@ export default function AdminPage() {
                 onChange={(e) =>
                   setQuote((p) => ({ ...p, clientPhone: e.target.value }))
                 }
-                className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+                className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
               />
               <input
                 type="email"
@@ -281,7 +280,7 @@ export default function AdminPage() {
                 onChange={(e) =>
                   setQuote((p) => ({ ...p, clientEmail: e.target.value }))
                 }
-                className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+                className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
               />
             </div>
             <input
@@ -290,7 +289,7 @@ export default function AdminPage() {
               onChange={(e) =>
                 setQuote((p) => ({ ...p, dueDate: e.target.value }))
               }
-              className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
             />
             <textarea
               rows={3}
@@ -302,17 +301,17 @@ export default function AdminPage() {
                   executiveSummary: e.target.value,
                 }))
               }
-              className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
             />
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#060913] p-6 space-y-4">
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#C0C0C0] via-[#A8A8A8] to-[#808080] p-6 space-y-4" style={{ boxShadow: '0 8px 32px rgba(192, 192, 192, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)' }}>
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold">Prestations</h2>
+              <h2 className="text-xl font-semibold text-[#1C1C1C]">Prestations</h2>
               <button
                 type="button"
                 onClick={addItem}
-                className="rounded-full border border-white/15 px-3 py-1 text-sm text-white hover:border-white/40"
+                className="rounded-full border border-[#1C1C1C]/20 bg-white/90 px-3 py-1 text-sm text-[#1C1C1C] hover:border-[#1C1C1C]/40 hover:bg-white"
               >
                 Ajouter une ligne
               </button>
@@ -323,14 +322,14 @@ export default function AdminPage() {
                 return (
                   <div
                     key={itemKey}
-                    className="rounded-xl border border-white/10 bg-[#0b1120] p-4 space-y-3"
+                    className="rounded-xl border border-[#1C1C1C]/20 bg-white/80 p-4 space-y-3"
                   >
-                    <div className="flex items-center justify-between text-xs text-white/40">
+                    <div className="flex items-center justify-between text-xs text-[#1C1C1C]/60">
                       <span>Ligne {index + 1}</span>
                       <button
                         type="button"
                         onClick={() => removeItem(index)}
-                        className="rounded-full border border-white/10 px-2 py-1 text-[11px] uppercase tracking-wide hover:border-rose-400 hover:text-rose-300 disabled:opacity-40"
+                        className="rounded-full border border-[#1C1C1C]/20 px-2 py-1 text-[11px] uppercase tracking-wide text-[#1C1C1C]/70 hover:border-rose-400 hover:text-rose-600 disabled:opacity-40"
                         disabled={quote.items.length === 1}
                       >
                         Supprimer
@@ -342,7 +341,7 @@ export default function AdminPage() {
                       onChange={(e) =>
                         updateItem(index, { description: e.target.value })
                       }
-                      className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+                      className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
                     />
                     <div className="grid gap-3 sm:grid-cols-2">
                       <input
@@ -358,7 +357,7 @@ export default function AdminPage() {
                             ),
                           })
                         }
-                        className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+                        className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
                       />
                       <input
                         type="number"
@@ -374,7 +373,7 @@ export default function AdminPage() {
                             ),
                           })
                         }
-                        className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+                        className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
                       />
                     </div>
                   </div>
@@ -383,8 +382,8 @@ export default function AdminPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#060913] p-6 space-y-4">
-            <h2 className="text-xl font-semibold">Conditions</h2>
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#C0C0C0] via-[#A8A8A8] to-[#808080] p-6 space-y-4" style={{ boxShadow: '0 8px 32px rgba(192, 192, 192, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)' }}>
+            <h2 className="text-xl font-semibold text-[#1C1C1C]">Conditions</h2>
             <textarea
               rows={3}
               placeholder="Conditions de paiement"
@@ -392,14 +391,17 @@ export default function AdminPage() {
               onChange={(e) =>
                 setQuote((p) => ({ ...p, paymentTerms: e.target.value }))
               }
-              className="w-full rounded-xl border border-white/15 bg-[#0f172a]/70 px-4 py-3 text-sm text-white outline-none focus:border-white/40"
+              className="w-full rounded-xl border border-[#1C1C1C]/20 bg-white/90 px-4 py-3 text-sm text-[#1C1C1C] outline-none focus:border-[#1C1C1C]/40"
             />
           </div>
 
           <button
             type="submit"
             disabled={isExporting}
-            className="w-full rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-700 disabled:opacity-60"
+            className="w-full rounded-xl bg-gradient-to-r from-[#C0C0C0] via-[#A8A8A8] to-[#808080] px-5 py-3 text-sm font-extrabold text-[#1C1C1C] shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95 disabled:opacity-60 disabled:hover:scale-100"
+            style={{
+              boxShadow: '0 8px 32px rgba(192, 192, 192, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+            }}
           >
             {isExporting ? "Génération…" : "Télécharger le devis PDF"}
           </button>
@@ -415,25 +417,26 @@ export default function AdminPage() {
         >
           <header className="rounded-3xl bg-gradient-to-br from-white/90 to-white/60 px-8 py-6 text-slate-900 shadow-inner relative overflow-hidden">
             <div className="flex flex-col gap-3">
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex items-start justify-between gap-4">
+                <div className="text-sm text-slate-500">
+                  <h2 className="text-2xl font-semibold text-slate-900 mb-2">Devis</h2>
+                  <p className="font-semibold text-slate-700">
+                    N° {quoteNumber}
+                  </p>
+                  <p>Date : {formatDate(new Date())}</p>
+                  <p>Validité : {formatDisplayDate(quote.dueDate)}</p>
+                </div>
                 {logoDataUrl ? (
                   <img
                     src={logoDataUrl}
                     alt="Logo Web Difference"
-                    className="h-10 w-auto"
+                    className="h-16 w-auto"
                   />
                 ) : (
                   <h2 className="text-lg font-semibold uppercase tracking-[0.2em]">
                     WEB DIFFERENCE
                   </h2>
                 )}
-                <div className="text-sm text-slate-500">
-                  <p className="font-semibold text-slate-700">
-                    Devis n° {quoteNumber}
-                  </p>
-                  <p>Date : {formatDate(new Date())}</p>
-                  <p>Validité : {formatDisplayDate(quote.dueDate)}</p>
-                </div>
               </div>
               <div className="flex items-center justify-between">
                 <div>
@@ -462,9 +465,8 @@ export default function AdminPage() {
                 Émetteur
               </p>
               <p className="mt-3 text-base font-semibold">
-                {providerInfo.name}
+                {providerInfo.company}
               </p>
-              <p>{providerInfo.company}</p>
               <p>{providerInfo.address}</p>
               <p>{providerInfo.phone}</p>
               <p>{providerInfo.email}</p>
@@ -572,8 +574,6 @@ export default function AdminPage() {
         </div>
       </section>
       ) : null}
-
-      <ClientCrmSection />
     </main>
   );
 }
@@ -601,7 +601,7 @@ type QuoteForm = {
 };
 
 const providerInfo = {
-  name: "Mr Tristan Wehrle",
+  name: "webdifference",
   company: "Web Difference",
   address: "7 rue Valette, 75005 Paris",
   phone: "06 38 72 30 38",
@@ -682,28 +682,25 @@ function QuotePdfDocument({
       <Page size="A4" style={pdfStyles.page}>
         {/* HEADER */}
         <View style={pdfStyles.header}>
-          {/* Titre à gauche */}
+          {/* Infos à gauche */}
           <View>
             <Text style={pdfStyles.quoteTitle}>Devis</Text>
-            <Text style={pdfStyles.quoteTitle}>WebDifference</Text>
+            <Text style={pdfStyles.headerDevis}>N° {quoteNumber}</Text>
+            <Text style={pdfStyles.metaLine}>
+              Date : {formatDate(new Date())}
+            </Text>
+            <Text style={pdfStyles.metaLine}>
+              Validité : {formatDisplayDate(quote.dueDate)}
+            </Text>
           </View>
 
-          {/* Bloc logo + infos à droite */}
+          {/* Logo à droite (plus gros) */}
           <View style={pdfStyles.headerRight}>
             {logoDataUrl ? (
-              <PdfImage src={logoDataUrl} style={pdfStyles.logo} />
+              <PdfImage src={logoDataUrl} style={pdfStyles.logoLarge} />
             ) : (
               <Text style={pdfStyles.brandFallback}>WEB DIFFERENCE</Text>
             )}
-            <View style={pdfStyles.headerRightText}>
-              <Text style={pdfStyles.headerDevis}>Devis n° {quoteNumber}</Text>
-              <Text style={pdfStyles.metaLine}>
-                Date : {formatDate(new Date())}
-              </Text>
-              <Text style={pdfStyles.metaLine}>
-                Validité : {formatDisplayDate(quote.dueDate)}
-              </Text>
-            </View>
           </View>
         </View>
 
@@ -711,8 +708,7 @@ function QuotePdfDocument({
         <View style={pdfStyles.infoGrid}>
           <View style={[pdfStyles.card, pdfStyles.infoCard, { marginRight: 10 }]}>
             <Text style={pdfStyles.cardLabel}>Émetteur</Text>
-            <Text style={pdfStyles.cardTitle}>{providerInfo.name}</Text>
-            <Text style={pdfStyles.cardText}>{providerInfo.company}</Text>
+            <Text style={pdfStyles.cardTitle}>{providerInfo.company}</Text>
             <Text style={pdfStyles.cardText}>{providerInfo.address}</Text>
             <Text style={pdfStyles.cardText}>{providerInfo.phone}</Text>
             <Text style={pdfStyles.cardText}>{providerInfo.email}</Text>
@@ -843,11 +839,16 @@ const pdfStyles = StyleSheet.create({
   },
   headerRight: {
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "flex-start",
+    marginTop: -10,
   },
   logo: {
     height: 26, // ratio respecté
     marginRight: 8,
+  },
+  logoLarge: {
+    height: 60, // logo plus gros
+    width: "auto",
   },
   brandFallback: {
     fontSize: 10,
