@@ -7,6 +7,7 @@ import {
   onAuthStateChange,
 } from "@/lib/admin-auth";
 import { useRouter } from "next/navigation";
+import { NewsletterListSection } from "./components/newsletter-list-section";
 import {
   Document,
   Image as PdfImage,
@@ -28,6 +29,7 @@ export default function AdminPage() {
   const [quoteError, setQuoteError] = useState<string | null>(null);
   const [quote, setQuote] = useState<QuoteForm>(createQuoteState());
   const [isCreatingQuote, setIsCreatingQuote] = useState(false);
+  const [activeSection, setActiveSection] = useState<"quotes" | "newsletter">("quotes");
   const previewRef = useRef<HTMLDivElement | null>(null);
   const [quoteIndex, setQuoteIndex] = useState(6);
   const quoteNumber = useMemo(
@@ -181,36 +183,65 @@ export default function AdminPage() {
     );
 
   return (
-    <main className="w-full px-6 py-6 text-white">
-      <header className="mb-6 flex justify-end">
-        <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1.5">
-          <span className="text-xs font-medium text-white/80">Admin</span>
+    <main className="flex min-h-screen text-white">
+      {/* Sidebar fixe à gauche */}
+      <aside className="fixed left-0 top-20 h-[calc(100vh-5rem)] w-64 border-r border-white/10 bg-[color:var(--color-background-strong)] px-6 pt-6 pb-6 flex flex-col z-40">
+        <div className="mb-6">
+          <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1.5">
+            <span className="text-xs font-medium text-white/80">Admin</span>
+            <button
+              onClick={() => {
+                logoutAdmin();
+                router.push("/");
+              }}
+              className="text-xs font-medium text-white/60 hover:text-white/80 transition"
+            >
+              Déconnexion
+            </button>
+          </div>
+        </div>
+
+        <nav className="flex-1 space-y-2">
           <button
             onClick={() => {
-              logoutAdmin();
-              router.push("/");
+              setActiveSection("quotes");
+              startNewQuote();
             }}
-            className="text-xs font-medium text-white/60 transition hover:text-white/80"
+            className={`w-full rounded-xl border p-4 text-left transition ${
+              activeSection === "quotes" && isCreatingQuote
+                ? "border-[#71DDAE]/40 bg-[#71DDAE]/10"
+                : "border-white/20 bg-white/5 hover:border-white/40 hover:bg-white/10"
+            }`}
           >
-            Déconnexion
+            <div className="text-lg font-bold text-white mb-1">Nouveau devis</div>
+            <div className="text-xs text-white/60">Créer un nouveau devis PDF</div>
           </button>
-        </div>
-      </header>
 
-      {!isCreatingQuote && (
-        <section className="mb-10">
           <button
-            onClick={startNewQuote}
-            className="w-full max-w-md mx-auto rounded-2xl border border-white/20 bg-white/5 p-8 text-center transition hover:border-[#71DDAE]/40 hover:bg-[#71DDAE]/10 hover:shadow-lg hover:shadow-[rgba(113,221,174,0.15)]"
+            onClick={() => {
+              setActiveSection("newsletter");
+              setIsCreatingQuote(false);
+            }}
+            className={`w-full rounded-xl border p-4 text-left transition ${
+              activeSection === "newsletter"
+                ? "border-[#71DDAE]/40 bg-[#71DDAE]/10"
+                : "border-white/20 bg-white/5 hover:border-white/40 hover:bg-white/10"
+            }`}
           >
-            <div className="text-2xl font-bold text-white mb-2">Nouveau devis</div>
-            <div className="text-sm text-white/60">Créer un nouveau devis PDF</div>
+            <div className="text-lg font-bold text-white mb-1">Newsletter list</div>
+            <div className="text-xs text-white/60">Voir tous les emails inscrits</div>
           </button>
-        </section>
-      )}
+        </nav>
+      </aside>
 
-      {isCreatingQuote ? (
-        <section className="grid gap-6 xl:grid-cols-[0.75fr_1.25fr] max-w-7xl mx-auto">
+      {/* Contenu principal à droite */}
+      <div className="ml-64 flex-1 px-6 py-6 mt-20">
+        {activeSection === "newsletter" && (
+          <NewsletterListSection />
+        )}
+
+        {isCreatingQuote && (
+          <section className="grid gap-6 xl:grid-cols-[0.75fr_1.25fr] max-w-7xl mx-auto">
           {/* --- FORM --- */}
           <form
             onSubmit={(e) => {
@@ -542,8 +573,9 @@ export default function AdminPage() {
           </p>
           </div>
         </div>
-      </section>
-      ) : null}
+        </section>
+        )}
+      </div>
     </main>
   );
 }
