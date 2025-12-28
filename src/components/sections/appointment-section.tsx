@@ -1,58 +1,88 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export function AppointmentSection() {
   const [isMounted, setIsMounted] = useState(false);
-  const [widgetKey, setWidgetKey] = useState(0);
-  const [scriptKey, setScriptKey] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const widgetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
-    // Incrémenter les clés à chaque montage pour forcer React à recréer complètement
-    setWidgetKey(prev => prev + 1);
-    setScriptKey(prev => prev + 1);
-    
-    // Nettoyer les iframes Calendly existantes
-    const existingIframes = document.querySelectorAll('.calendly-inline-widget iframe');
-    existingIframes.forEach(iframe => iframe.remove());
-    
-    // Supprimer l'ancien script Calendly s'il existe
-    const existingScript = document.querySelector('script[src*="calendly.com/assets/external/widget.js"]');
-    if (existingScript) {
-      existingScript.remove();
-    }
-    
-    // Supprimer l'objet Calendly global pour forcer le rechargement
-    if (typeof window !== 'undefined') {
-      delete (window as any).Calendly;
-    }
   }, []);
 
+  useEffect(() => {
+    if (!isMounted || !sectionRef.current || !widgetRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Quand la section entre dans le viewport
+          if (entry.isIntersecting) {
+            const widget = widgetRef.current;
+            if (!widget) return;
+
+            // Vérifier si le widget a déjà un iframe chargé
+            const hasIframe = widget.querySelector('iframe');
+            
+            // Si pas d'iframe, forcer le rechargement
+            if (!hasIframe && typeof window !== 'undefined' && (window as any).Calendly) {
+              // Nettoyer et recréer le widget
+              widget.innerHTML = '';
+              widget.setAttribute('data-url', 'https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae');
+              
+              // Forcer Calendly à détecter le widget
+              setTimeout(() => {
+                // Le script Calendly devrait détecter automatiquement le widget
+                // Mais on peut aussi essayer de déclencher manuellement
+                if ((window as any).Calendly && (window as any).Calendly.initInlineWidget) {
+                  try {
+                    (window as any).Calendly.initInlineWidget({
+                      url: "https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae",
+                      parentElement: widget,
+                    });
+                  } catch (e) {
+                    // Si ça échoue, on laisse le script automatique faire son travail
+                  }
+                }
+              }, 100);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Déclencher quand 10% de la section est visible
+      }
+    );
+
+    observer.observe(sectionRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isMounted]);
+
   return (
-    <section className="border-t border-white/10 py-16" suppressHydrationWarning>
+    <section ref={sectionRef} className="border-t border-white/10 py-16" suppressHydrationWarning>
       <div className="mx-auto max-w-7xl px-6" suppressHydrationWarning>
         <div className="flex flex-col gap-3 text-center">
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">
             Alors, <span className="text-[#71DDAE] text-4xl sm:text-5xl font-bold">quand</span> est ce qu'on <span className="text-[#71DDAE] text-4xl sm:text-5xl font-bold">commence</span> ?
           </h2>
         </div>
+        <div
+          ref={widgetRef}
+          className="calendly-inline-widget"
+          data-url="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae"
+          style={{ minWidth: "320px", height: "700px", minHeight: "700px", width: "100%" }}
+          suppressHydrationWarning
+        />
         {isMounted && (
-          <>
-            <div
-              key={widgetKey}
-              className="calendly-inline-widget"
-              data-url="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae"
-              style={{ minWidth: "320px", height: "700px", minHeight: "700px", width: "100%" }}
-              suppressHydrationWarning
-            />
-            <Script
-              key={`calendly-script-${scriptKey}`}
-              src="https://assets.calendly.com/assets/external/widget.js"
-              strategy="afterInteractive"
-            />
-          </>
+          <Script
+            src="https://assets.calendly.com/assets/external/widget.js"
+            strategy="afterInteractive"
+          />
         )}
       </div>
     </section>
