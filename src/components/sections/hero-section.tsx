@@ -59,17 +59,17 @@ export function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#71DDAE] to-[#2A9D7A] px-6 py-3 text-lg font-extrabold tracking-wide text-[#1C1C1C] shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95 h-12 whitespace-nowrap sm:w-auto sm:px-8 sm:py-4 sm:text-xl md:px-8 md:py-4 md:text-2xl md:h-[68px]"
+                suppressHydrationWarning
               >
                 <FaCalendarAlt className="text-lg sm:text-xl md:text-2xl" />
                 Prendre RDV
               </Link>
-              <div className="absolute top-full -left-12 -mt-4 pointer-events-none hidden sm:block">
-                <Image
+              <div className="absolute top-full -left-[52px] -mt-[18px] pointer-events-none hidden sm:block">
+                <img
                   src="/assets/main/unptitclick2.png"
                   alt="Un ptit click ?"
-                  width={200}
-                  height={150}
-                  className="w-auto h-auto max-w-[200px]"
+                  className="h-auto w-[145px] sm:w-[145px] md:w-[185px] lg:w-[205px]"
+                  loading="lazy"
                 />
               </div>
             </div>

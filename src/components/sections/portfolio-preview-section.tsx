@@ -160,6 +160,7 @@ export function PortfolioPreviewSection() {
             style={{
               height: "56px",
             }}
+            suppressHydrationWarning
           >
             <FaCalendarAlt className="text-xl sm:text-xl md:text-2xl" />
             Prendre un RDV →

@@ -112,15 +112,16 @@ export function SiteHeader() {
         </Link>
 
         {/* Bouton RDV mobile - juste l'icône */}
-        <Link
+        <a
           href="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Prendre rendez-vous"
           className="absolute right-6 md:hidden inline-flex items-center justify-center rounded-xl bg-[#1C1C1C] h-12 w-12 shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95"
+          suppressHydrationWarning
         >
           <FaCalendarAlt className="text-xl" color="#FFFFFF" aria-hidden="true" />
-        </Link>
+        </a>
 
         {/* Navigation desktop */}
         <nav className="hidden items-center gap-6 text-base font-extrabold md:flex">
@@ -148,7 +149,7 @@ export function SiteHeader() {
 
         {/* Boutons CTA desktop */}
         <div className="hidden items-center gap-2 md:flex">
-          <Link
+          <a
             href="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
             target="_blank"
             rel="noopener noreferrer"
@@ -156,10 +157,11 @@ export function SiteHeader() {
             style={{
               height: "56px",
             }}
+            suppressHydrationWarning
           >
             <FaCalendarAlt className="text-xl" color="#FFFFFF" />
             Prendre RDV
-          </Link>
+          </a>
           <Link
             href="tel:+33638723038"
             className="group relative inline-flex items-center justify-center rounded-xl bg-[#1C1C1C] shadow-lg transition-all duration-300 overflow-hidden"
@@ -267,16 +269,17 @@ export function SiteHeader() {
               
               {/* Boutons CTA en bas */}
               <div className="pt-2 border-t border-[#1C1C1C]/10 flex flex-col gap-3 pb-12 shrink-0" style={{ paddingBottom: 'max(3rem, calc(env(safe-area-inset-bottom) + 1.5rem))' }}>
-                <Link
+                <a
                   href="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1C1C1C] px-4 py-3 text-base font-extrabold text-white shadow-lg transition-transform duration-200 hover:scale-[1.02] active:scale-95"
+                  suppressHydrationWarning
                 >
                   <FaCalendarAlt className="text-lg" />
                   Prendre RDV
-                </Link>
+                </a>
                 <Link
                   href="tel:+33638723038"
                   onClick={() => setMenuOpen(false)}

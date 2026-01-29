@@ -4,9 +4,14 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const response = NextResponse.next();
 
+  // En développement, on évite les headers de sécurité stricts pour ne pas bloquer les fetchs locaux
+  if (process.env.NODE_ENV !== "production") {
+    return response;
+  }
+
   // Content Security Policy (CSP) stricte pour protéger contre les attaques XSS
   // Optimisée pour Next.js, Calendly, Clerk et Supabase
-  const cspHeader = [
+  const cspDirectives = [
     // Default: refuser tout par défaut
     "default-src 'self'",
     
@@ -56,9 +61,6 @@ export function middleware(request: NextRequest) {
     // Calendly nécessite que les formulaires puissent être soumis vers ses domaines
     "form-action 'self' https://calendly.com https://*.calendly.com",
     
-    // Upgrade insecure requests: forcer HTTPS
-    "upgrade-insecure-requests",
-    
     // Trusted Types: désactivé car incompatible avec Next.js et les scripts tiers (Calendly)
     // Next.js génère des scripts dynamiquement et Calendly nécessite des scripts externes
     // L'implémentation complète de Trusted Types nécessiterait une configuration complexe
@@ -67,7 +69,14 @@ export function middleware(request: NextRequest) {
     
     // Report URI: optionnel, pour recevoir les rapports de violation (décommentez si vous avez un endpoint)
     // "report-uri /api/csp-report",
-  ].join("; ");
+  ];
+
+  // Ne pas forcer HTTPS en développement (sinon les fetchs locaux peuvent échouer)
+  if (process.env.NODE_ENV === "production") {
+    cspDirectives.push("upgrade-insecure-requests");
+  }
+
+  const cspHeader = cspDirectives.join("; ");
 
   // Headers de sécurité supplémentaires
   response.headers.set("Content-Security-Policy", cspHeader);

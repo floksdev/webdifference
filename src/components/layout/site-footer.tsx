@@ -66,15 +66,16 @@ export function SiteFooter() {
           <div className="space-y-2">
             <h3 className="text-base font-extrabold text-[#1C1C1C]">Contact</h3>
             <div className="flex flex-col gap-1">
-              <Link
+              <a
                 href="https://calendly.com/webdifference/nouvelle-reunion?hide_gdpr_banner=1&background_color=282828&text_color=ffffff&primary_color=71ddae&month=2025-12"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-[#1C1C1C] transition-all hover:underline decoration-2 underline-offset-4"
+                suppressHydrationWarning
               >
                 <FaCalendarAlt className="text-[#1C1C1C]/75" />
                 Prendre RDV
-              </Link>
+              </a>
               <a
                 href="tel:+33638723038"
                 className="flex items-center gap-2 text-sm text-[#1C1C1C] transition-all hover:underline decoration-2 underline-offset-4"

@@ -10,15 +10,56 @@ datasource db {
 // High-level schema sketch capturing planned feature set.
 model Client {
   id        String    @id @default(cuid())
-  name      String
+  firstName String
+  lastName  String
   email     String    @unique
   company   String?
   phone     String?
+  address   String?
+  postalCode String?
+  city       String?
+  country    String?
+  totalRevenue Int? @default(0)
+  depositAmount Int? @default(0)
+  status     ClientStatus @default(TODO)
+  paymentStatus PaymentStatus @default(PENDING)
+  salesRep   SalesRep?
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   projects  Project[]
   quotes    Quote[]
+  documents Document[]
 }
+
+model CommissionPayment {
+  id        String   @id @default(cuid())
+  salesRep  SalesRep
+  month     String
+  amount    Int
+  isPaid    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([salesRep, month])
+}
+
+enum ClientStatus {
+  TODO
+  IN_PROGRESS
+  DONE
+}
+
+enum PaymentStatus {
+  PENDING
+  DEPOSIT_PAID
+  PAID
+}
+
+enum SalesRep {
+  TRISTAN_WEHRLE
+  FREDERIC_WEHRLE
+}
+
 
 model Project {
   id             String          @id @default(cuid())
@@ -193,4 +234,24 @@ model Newsletter {
   id        String   @id @default(cuid())
   email     String   @unique
   createdAt DateTime @default(now())
+}
+
+model Document {
+  id          String   @id @default(cuid())
+  clientId    String
+  client      Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  fileName    String
+  fileUrl     String
+  fileType    String
+  fileSize    Int      // en bytes
+  documentType DocumentType @default(OTHER)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum DocumentType {
+  QUOTE
+  INVOICE
+  CONTRACT
+  OTHER
 }

@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { NewsletterSection } from "@/components/sections/newsletter-section";
 import { MetaTheme } from "@/components/meta-theme";
 import { PreconnectHints } from "@/components/preconnect-hints";
+import { StructuredData } from "@/components/seo/structured-data";
 import "./globals.css";
 
 // Optimisation des polices pour LCP : preload et display swap
@@ -27,28 +28,64 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.webdifference.fr"),
   title: {
-    default: "Agence Web - Créer un site web vraiment unique",
+    default: "Développeur Web & Agence Web - Créer un site web professionnel | Web Difference",
     template: "%s · Web Difference",
   },
   description:
-    "Création de sites web qui retiennent vos visiteurs et vous apportent des résultats. Design moderne, SEO solide, suivi complet. Devis instantané et automatisations no-code.",
+    "Développeur web et agence web spécialisée dans la création de sites web professionnels. Création de sites web sur mesure, développement web, refonte de site. Devis gratuit et mise en ligne rapide. Paris, France.",
   keywords: [
-    "création de sites web",
+    "développeur web",
+    "développeur",
     "agence web",
+    "créer un site web",
+    "création site web",
+    "développement web",
+    "site web professionnel",
+    "création de sites web",
+    "développeur freelance",
+    "agence web Paris",
+    "développeur web Paris",
+    "créer site internet",
+    "refonte site web",
+    "site web sur mesure",
+    "développeur Next.js",
+    "développeur React",
+    "agence digitale",
+    "web designer",
+    "développeur frontend",
+    "développeur backend",
     "sites web performants",
     "design web",
     "SEO",
     "automatisation",
-    "Next.js",
-    "SaaS",
   ],
   openGraph: {
-    title: "Agence Web - Créer un site web vraiment unique",
+    title: "Développeur Web & Agence Web - Créer un site web professionnel | Web Difference",
     description:
-      "Création de sites web qui retiennent vos visiteurs et vous apportent des résultats. Design moderne, SEO solide, suivi complet. Devis instantané et automatisations no-code.",
+      "Développeur web et agence web spécialisée dans la création de sites web professionnels. Création de sites web sur mesure, développement web, refonte de site. Devis gratuit et mise en ligne rapide.",
     type: "website",
     url: "https://www.webdifference.fr",
     locale: "fr_FR",
+    siteName: "Web Difference",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Développeur Web & Agence Web - Créer un site web professionnel",
+    description: "Création de sites web professionnels sur mesure. Développeur web et agence web à Paris.",
+  },
+  alternates: {
+    canonical: "https://www.webdifference.fr",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: [
@@ -173,9 +210,10 @@ export default function RootLayout({
           />
           <PreconnectHints />
           <MetaTheme />
-          <div className="flex min-h-dvh flex-col bg-[color:var(--color-background-strong)]">
+          <StructuredData />
+          <div className="flex min-h-dvh flex-col bg-(--color-background-strong)">
             <SiteHeader />
-            <main className="flex-1 bg-[color:var(--color-background-strong)]" style={{ paddingTop: 'calc(5rem + env(safe-area-inset-top))' }}>
+            <main className="flex-1 bg-(--color-background-strong)" style={{ paddingTop: 'calc(5rem + env(safe-area-inset-top))' }}>
               {children}
             </main>
             <NewsletterSection />

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { FaCalendarAlt } from "react-icons/fa";
+import type { Metadata } from "next";
 
 // Contenu détaillé pour chaque article (format pour compatibilité)
 const articleContent: Record<string, { content: string }> = Object.fromEntries(
@@ -14,6 +15,25 @@ export async function generateStaticParams() {
   return articles.map((article) => ({
     slug: article.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const article = articles.find((a) => a.slug === slug);
+
+  if (!article) {
+    return {
+      title: "Article introuvable",
+    };
+  }
+
+  return {
+    title: article.title,
+  };
 }
 
 export default async function ArticlePage({

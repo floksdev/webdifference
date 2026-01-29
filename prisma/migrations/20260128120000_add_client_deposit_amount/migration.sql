@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Client" ADD COLUMN IF NOT EXISTS "depositAmount" INTEGER DEFAULT 0;
